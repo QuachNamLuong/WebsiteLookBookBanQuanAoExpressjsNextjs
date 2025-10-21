@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  CUSTOMER
+}
+
+model User {
+  userId       String @id @default(uuid()) @map("user_id")
+  username     String @unique
+  email        String @unique
+  passwordHash String @unique @map("password_hash")
+  role         Role
+
+  orders Order[]
+
+  @@map("users")
+}
+
+model Product {
+
+  productId   String @id @default(uuid()) @map("product_id")
+  productName String @unique @map("product_name")
+
+  productImage ProductImage[]
+  orderItems   OrderItem[]
+
+  @@map("products")
+}
+
+model ProductImage {
+
+  productImageId   String @id @default(uuid()) @map("product_image_id")
+  productImageName String @unique @map("product_image_name")
+  productId        String
+
+  product Product @relation(fields: [productId], references: [productId])
+
+  @@map("product_images")
+}
+
+model Order {
+
+  orderId         String  @id @default(uuid()) @map("order_id")
+  orderTotalPrice Decimal @map("order_total_price")
+
+  userId String
+  user   User   @relation(fields: [userId], references: [userId])
+
+  @@map("orders")
+}
+
+model OrderItem {
+
+  orderItemId        String  @id @default(uuid()) @map("order_item_id")
+  orderItemQuantity  Int     @map("order_item_quantity")
+  orderItemUnitPrice Decimal @map("order_item_unit_price")
+
+  productId String
+  product   Product @relation(fields: [productId], references: [productId])
+
+  @@map("order_items")
+}
