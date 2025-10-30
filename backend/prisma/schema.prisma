@@ -90,3 +90,19 @@ model LookBookStory {
   name String
   description String
 }
+
+model StarsSectionImage {
+  @@map("stars_section_images")
+
+  id String @id @default(uuid())
+  displayOrder Int 
+  imageUrl String @unique
+}
+
+model BannerImage {
+  @@map("banner_images")
+
+  id Int @id @default(autoincrement())
+  imageUrl String @unique
+  isActive Boolean @default(false)
+}
