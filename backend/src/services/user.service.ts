@@ -1,4 +1,4 @@
-import type { Role } from "../generated/prisma";
+import type { Role } from "../generated/prisma/index";
 import prisma from "../lib/prisma";
 import { hashPassword } from "../utils/password";
 
@@ -10,7 +10,7 @@ class UserService {
       data: {
         username,
         email,
-        password: hashedPassword,
+        passwordHash: hashedPassword,
         role: "CUSTOMER" as Role,
       },
     });

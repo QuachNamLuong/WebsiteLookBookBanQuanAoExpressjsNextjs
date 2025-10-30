@@ -1,0 +1,69 @@
+2025-10-24 21:25:52 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:26:05 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:26:13 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:34:02 [info] : Root endpoint hit
+2025-10-24 21:40:58 [info] : User login: john@example.com
+2025-10-24 21:40:58 [info] : User logged in: john_doe
+2025-10-24 21:41:25 [info] : User login: john@example.com
+2025-10-24 21:41:25 [info] : User logged in: john_doe
+2025-10-24 21:45:44 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:45:54 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:46:10 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:46:30 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:46:34 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:46:35 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:47:21 [info] : User login: john@example.com
+2025-10-24 21:47:21 [info] : User logged in: john_doe
+2025-10-24 21:47:21 [info] : User logged in: john_doe
+2025-10-24 21:48:45 [info] : User login: john@example.com
+2025-10-24 21:48:45 [info] : User logged in: john_doe
+2025-10-24 21:48:45 [info] : User logged in: john_doe
+2025-10-24 21:59:04 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:59:13 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:59:19 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:59:22 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:59:32 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 21:59:34 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:00:33 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:00:42 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:00:46 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:00:50 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:00:57 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:01:09 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:01:33 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:01:38 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:01:57 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:01:59 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:02:05 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:02:43 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:02:50 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:02:55 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:02:58 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:09:46 [info] : User registered: quachnamluong@gmail.com
+2025-10-24 22:09:46 [info] : User registered: quachnamluong@gmail.com
+2025-10-24 22:10:42 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:10:48 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:10:56 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:11:31 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:11:47 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:11:51 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:12:00 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:12:04 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:12:13 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:12:18 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:12:24 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:12:30 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:12:34 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:12:36 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:12:46 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:13:01 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:13:04 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:13:11 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:13:16 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:13:19 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:13:32 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:13:36 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:13:45 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:13:48 [info] : Server running in development mode at http://localhost:8080
+2025-10-24 22:13:58 [info] : User registered: quachnamluong1@gmail.com
+2025-10-24 22:13:58 [info] : User registered: quachnamluong1@gmail.com

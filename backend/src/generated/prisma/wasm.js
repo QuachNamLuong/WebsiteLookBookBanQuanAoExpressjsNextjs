@@ -99,7 +99,8 @@ exports.Prisma.UserScalarFieldEnum = {
 
 exports.Prisma.ProductScalarFieldEnum = {
   productId: 'productId',
-  productName: 'productName'
+  productName: 'productName',
+  quantity: 'quantity'
 };
 
 exports.Prisma.ProductImageScalarFieldEnum = {
@@ -118,7 +119,21 @@ exports.Prisma.OrderItemScalarFieldEnum = {
   orderItemId: 'orderItemId',
   orderItemQuantity: 'orderItemQuantity',
   orderItemUnitPrice: 'orderItemUnitPrice',
+  orderId: 'orderId',
   productId: 'productId'
+};
+
+exports.Prisma.CartItemScalarFieldEnum = {
+  id: 'id',
+  quantity: 'quantity',
+  userId: 'userId',
+  productId: 'productId'
+};
+
+exports.Prisma.LookBookStoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description'
 };
 
 exports.Prisma.SortOrder = {
@@ -135,7 +150,9 @@ exports.Prisma.ModelName = {
   Product: 'Product',
   ProductImage: 'ProductImage',
   Order: 'Order',
-  OrderItem: 'OrderItem'
+  OrderItem: 'OrderItem',
+  CartItem: 'CartItem',
+  LookBookStory: 'LookBookStory'
 };
 /**
  * Create the Client
@@ -176,6 +193,7 @@ const config = {
     "db"
   ],
   "activeProvider": "sqlite",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -184,13 +202,13 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n  url      = env(\"DATABASE_URL\")\n}\n\nenum Role {\n  ADMIN\n  CUSTOMER\n}\n\nmodel User {\n  userId       String @id @default(uuid()) @map(\"user_id\")\n  username     String @unique\n  email        String @unique\n  passwordHash String @unique @map(\"password_hash\")\n  role         Role\n\n  orders Order[]\n\n  @@map(\"users\")\n}\n\nmodel Product {\n\n  productId   String @id @default(uuid()) @map(\"product_id\")\n  productName String @unique @map(\"product_name\")\n\n  productImage ProductImage[]\n  orderItems   OrderItem[]\n\n  @@map(\"products\")\n}\n\nmodel ProductImage {\n\n  productImageId   String @id @default(uuid()) @map(\"product_image_id\")\n  productImageName String @unique @map(\"product_image_name\")\n  productId        String\n\n  product Product @relation(fields: [productId], references: [productId])\n\n  @@map(\"product_images\")\n}\n\nmodel Order {\n\n  orderId         String  @id @default(uuid()) @map(\"order_id\")\n  orderTotalPrice Decimal @map(\"order_total_price\")\n\n  userId String\n  user   User   @relation(fields: [userId], references: [userId])\n\n  @@map(\"orders\")\n}\n\nmodel OrderItem {\n\n  orderItemId        String  @id @default(uuid()) @map(\"order_item_id\")\n  orderItemQuantity  Int     @map(\"order_item_quantity\")\n  orderItemUnitPrice Decimal @map(\"order_item_unit_price\")\n\n  productId String\n  product   Product @relation(fields: [productId], references: [productId])\n\n  @@map(\"order_items\")\n}\n",
-  "inlineSchemaHash": "07b8b4d74a6751649caa0f09c59769c74cc78e53d433367363ce73b91717d740",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n  url      = env(\"DATABASE_URL\")\n}\n\nenum Role {\n  ADMIN\n  CUSTOMER\n}\n\nmodel User {\n  userId       String @id @default(uuid()) @map(\"user_id\")\n  username     String @unique\n  email        String @unique\n  passwordHash String @unique @map(\"password_hash\")\n  role         Role\n\n  orders    Order[]\n  cartItems CartItem[]\n\n  @@map(\"users\")\n}\n\nmodel Product {\n\n  productId    String         @id @default(uuid()) @map(\"product_id\")\n  productName  String         @unique @map(\"product_name\")\n  quantity     Int\n  productImage ProductImage[]\n  orderItems   OrderItem[]\n  cartItems    CartItem[]\n\n  @@map(\"products\")\n}\n\nmodel ProductImage {\n\n  productImageId   String @id @default(uuid()) @map(\"product_image_id\")\n  productImageName String @unique @map(\"product_image_name\")\n  productId        String\n\n  product Product @relation(fields: [productId], references: [productId])\n\n  @@map(\"product_images\")\n}\n\nmodel Order {\n\n  orderId         String  @id @default(uuid()) @map(\"order_id\")\n  orderTotalPrice Decimal @map(\"order_total_price\")\n\n  userId String\n  user   User   @relation(fields: [userId], references: [userId])\n\n  orderItems OrderItem[]\n\n  @@map(\"orders\")\n}\n\nmodel OrderItem {\n\n  orderItemId        String  @id @default(uuid()) @map(\"order_item_id\")\n  orderItemQuantity  Int     @map(\"order_item_quantity\")\n  orderItemUnitPrice Decimal @map(\"order_item_unit_price\")\n\n  orderId String\n  order   Order  @relation(fields: [orderId], references: [orderId])\n\n  productId String\n  product   Product @relation(fields: [productId], references: [productId])\n\n  @@map(\"order_items\")\n}\n\nmodel CartItem {\n\n  id        String  @id @default(uuid())\n  quantity  Int\n  userId    String\n  user      User    @relation(fields: [userId], references: [userId])\n  productId String\n  product   Product @relation(fields: [productId], references: [productId])\n\n  @@map(\"cart_items\")\n}\n\nmodel LookBookStory {\n\n  id          String @id @default(uuid())\n  name        String\n  description String\n\n  @@map(\"look_book_stories\")\n}\n",
+  "inlineSchemaHash": "ebc1e90fa87ac0c3265c535d8d3c9452ed16af5a562f87e0f6218553dc9ed1df",
   "copyEngine": true
 }
 config.dirname = '/'
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"user_id\"},{\"name\":\"username\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"passwordHash\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"password_hash\"},{\"name\":\"role\",\"kind\":\"enum\",\"type\":\"Role\"},{\"name\":\"orders\",\"kind\":\"object\",\"type\":\"Order\",\"relationName\":\"OrderToUser\"}],\"dbName\":\"users\"},\"Product\":{\"fields\":[{\"name\":\"productId\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"product_id\"},{\"name\":\"productName\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"product_name\"},{\"name\":\"productImage\",\"kind\":\"object\",\"type\":\"ProductImage\",\"relationName\":\"ProductToProductImage\"},{\"name\":\"orderItems\",\"kind\":\"object\",\"type\":\"OrderItem\",\"relationName\":\"OrderItemToProduct\"}],\"dbName\":\"products\"},\"ProductImage\":{\"fields\":[{\"name\":\"productImageId\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"product_image_id\"},{\"name\":\"productImageName\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"product_image_name\"},{\"name\":\"productId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"product\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"ProductToProductImage\"}],\"dbName\":\"product_images\"},\"Order\":{\"fields\":[{\"name\":\"orderId\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"order_id\"},{\"name\":\"orderTotalPrice\",\"kind\":\"scalar\",\"type\":\"Decimal\",\"dbName\":\"order_total_price\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"OrderToUser\"}],\"dbName\":\"orders\"},\"OrderItem\":{\"fields\":[{\"name\":\"orderItemId\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"order_item_id\"},{\"name\":\"orderItemQuantity\",\"kind\":\"scalar\",\"type\":\"Int\",\"dbName\":\"order_item_quantity\"},{\"name\":\"orderItemUnitPrice\",\"kind\":\"scalar\",\"type\":\"Decimal\",\"dbName\":\"order_item_unit_price\"},{\"name\":\"productId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"product\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"OrderItemToProduct\"}],\"dbName\":\"order_items\"}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"user_id\"},{\"name\":\"username\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"passwordHash\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"password_hash\"},{\"name\":\"role\",\"kind\":\"enum\",\"type\":\"Role\"},{\"name\":\"orders\",\"kind\":\"object\",\"type\":\"Order\",\"relationName\":\"OrderToUser\"},{\"name\":\"cartItems\",\"kind\":\"object\",\"type\":\"CartItem\",\"relationName\":\"CartItemToUser\"}],\"dbName\":\"users\"},\"Product\":{\"fields\":[{\"name\":\"productId\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"product_id\"},{\"name\":\"productName\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"product_name\"},{\"name\":\"quantity\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"productImage\",\"kind\":\"object\",\"type\":\"ProductImage\",\"relationName\":\"ProductToProductImage\"},{\"name\":\"orderItems\",\"kind\":\"object\",\"type\":\"OrderItem\",\"relationName\":\"OrderItemToProduct\"},{\"name\":\"cartItems\",\"kind\":\"object\",\"type\":\"CartItem\",\"relationName\":\"CartItemToProduct\"}],\"dbName\":\"products\"},\"ProductImage\":{\"fields\":[{\"name\":\"productImageId\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"product_image_id\"},{\"name\":\"productImageName\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"product_image_name\"},{\"name\":\"productId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"product\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"ProductToProductImage\"}],\"dbName\":\"product_images\"},\"Order\":{\"fields\":[{\"name\":\"orderId\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"order_id\"},{\"name\":\"orderTotalPrice\",\"kind\":\"scalar\",\"type\":\"Decimal\",\"dbName\":\"order_total_price\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"OrderToUser\"},{\"name\":\"orderItems\",\"kind\":\"object\",\"type\":\"OrderItem\",\"relationName\":\"OrderToOrderItem\"}],\"dbName\":\"orders\"},\"OrderItem\":{\"fields\":[{\"name\":\"orderItemId\",\"kind\":\"scalar\",\"type\":\"String\",\"dbName\":\"order_item_id\"},{\"name\":\"orderItemQuantity\",\"kind\":\"scalar\",\"type\":\"Int\",\"dbName\":\"order_item_quantity\"},{\"name\":\"orderItemUnitPrice\",\"kind\":\"scalar\",\"type\":\"Decimal\",\"dbName\":\"order_item_unit_price\"},{\"name\":\"orderId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"order\",\"kind\":\"object\",\"type\":\"Order\",\"relationName\":\"OrderToOrderItem\"},{\"name\":\"productId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"product\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"OrderItemToProduct\"}],\"dbName\":\"order_items\"},\"CartItem\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"quantity\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"CartItemToUser\"},{\"name\":\"productId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"product\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"CartItemToProduct\"}],\"dbName\":\"cart_items\"},\"LookBookStory\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"description\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":\"look_book_stories\"}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = {
   getRuntime: async () => require('./query_engine_bg.js'),

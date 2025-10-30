@@ -1,14 +1,13 @@
 import type { Secret } from "jsonwebtoken";
 import ms from "ms";
 import { getEnvValue } from "../utils/env-value";
-import logger from "../utils/logger";
 import { validateMsValue } from "../utils/validate-ms-value";
 
 interface JwtConfig {
   secret: Secret,
-  expiresIn: ms.StringValue
+  expiresIn: number
   refreshSecret: Secret
-  refreshExpiresIn: ms.StringValue
+  refreshExpiresIn: number
 };
 
 const expiresIn = getEnvValue<ms.StringValue>("JWT_EXPIRES_IN");
@@ -19,9 +18,9 @@ validateMsValue("JWT_REFRESH_EXPIRES_IN", refreshExpiresIn)
 
 const jwtConfig: JwtConfig = {
   secret: getEnvValue<Secret>("JWT_SECRET"),
-  expiresIn,
+  expiresIn: ms(expiresIn),
   refreshSecret: getEnvValue<Secret>("JWT_REFRESH_SECRET"),
-  refreshExpiresIn
+  refreshExpiresIn: ms(refreshExpiresIn)
 };
 
 export default jwtConfig;

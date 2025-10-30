@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
@@ -26,18 +20,20 @@ model User {
   passwordHash String @unique @map("password_hash")
   role         Role
 
-  orders Order[]
+  orders    Order[]
+  cartItems CartItem[]
 
   @@map("users")
 }
 
 model Product {
 
-  productId   String @id @default(uuid()) @map("product_id")
-  productName String @unique @map("product_name")
-
+  productId    String         @id @default(uuid()) @map("product_id")
+  productName  String         @unique @map("product_name")
+  quantity     Int
   productImage ProductImage[]
   orderItems   OrderItem[]
+  cartItems    CartItem[]
 
   @@map("products")
 }
@@ -61,6 +57,8 @@ model Order {
   userId String
   user   User   @relation(fields: [userId], references: [userId])
 
+  orderItems OrderItem[]
+
   @@map("orders")
 }
 
@@ -70,8 +68,32 @@ model OrderItem {
   orderItemQuantity  Int     @map("order_item_quantity")
   orderItemUnitPrice Decimal @map("order_item_unit_price")
 
+  orderId String
+  order   Order  @relation(fields: [orderId], references: [orderId])
+
   productId String
   product   Product @relation(fields: [productId], references: [productId])
 
   @@map("order_items")
+}
+
+model CartItem {
+
+  id        String  @id @default(uuid())
+  quantity  Int
+  userId    String
+  user      User    @relation(fields: [userId], references: [userId])
+  productId String
+  product   Product @relation(fields: [productId], references: [productId])
+
+  @@map("cart_items")
+}
+
+model LookBookStory {
+
+  id          String @id @default(uuid())
+  name        String
+  description String
+
+  @@map("look_book_stories")
 }
