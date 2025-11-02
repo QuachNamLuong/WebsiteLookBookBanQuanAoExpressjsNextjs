@@ -1,11 +1,37 @@
 import minio from "../lib/minio";
 import logger from "./logger";
 
-export async function ensureBucket(bucketName: string) {
-  const exists = await minio.bucketExists(bucketName);
-  if (!exists) {
-    await minio.makeBucket(bucketName, "");
-    console.log(`Bucket "${bucketName}" created`);
+export async function ensurePublicBucket(bucketName: string) {
+  try {
+    // 1️⃣ Check if bucket exists
+    const exists = await minio.bucketExists(bucketName);
+    if (!exists) {
+      await minio.makeBucket(bucketName);
+      console.log(`✅ Created bucket: ${bucketName}`);
+    } else {
+      console.log(`ℹ️ Bucket already exists: ${bucketName}`);
+    }
+
+    // 2️⃣ Set public read policy
+    const policy = {
+      Version: "2025",
+      Statement: [
+        {
+          Effect: "Allow",
+          Principal: { AWS: ["*"] },
+          Action: ["s3:GetObject"],
+          Resource: [`arn:aws:s3:::${bucketName}/*`],
+        },
+      ],
+    };
+
+    await minio.setBucketPolicy(bucketName, JSON.stringify(policy));
+    console.log(`🌍 Bucket "${bucketName}" is now public (read-only).`);
+
+    return { success: true };
+  } catch (error) {
+    console.error(`❌ Failed to ensure public bucket "${bucketName}":`, error);
+    return { success: false, error };
   }
 }
 

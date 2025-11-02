@@ -97,3 +97,21 @@ model LookBookStory {
 
   @@map("look_book_stories")
 }
+
+model StarsSectionImage {
+
+  id           String @id @default(uuid())
+  displayOrder Int
+  imageUrl     String @unique
+
+  @@map("stars_section_images")
+}
+
+model BannerImage {
+
+  id       Int     @id @default(autoincrement())
+  fileName String  @unique
+  isActive Boolean @default(false)
+
+  @@map("banner_images")
+}

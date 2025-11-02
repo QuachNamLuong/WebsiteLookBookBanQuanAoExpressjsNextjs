@@ -10,6 +10,9 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { ShoppingBag, BookOpen, User } from "lucide-react";
+import ShopIcon from "../icon/shop-icon";
+import { StoryIcon } from "../icon/story-icon";
+import { AccountIcon } from "../icon/account-icon";
 
 export default function Header() {
   const productLinks = [
@@ -26,8 +29,9 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-[#f6f7e6] border-b border-[#dfe3cc]">
+    <header className="bg-[#f6f7e6] border-b border-[#dfe3cc] sticky top-0 z-[9999]">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+        <Link href="/"><h1 className="text-[#4f6742] font-extrabold text-2xl">VIECHARM</h1></Link>
         {/* ---------- Left Navigation ---------- */}
         <NavigationMenu viewport={false}>
           <NavigationMenuList className="flex space-x-2">
@@ -81,14 +85,14 @@ export default function Header() {
 
         {/* ---------- Right Icons ---------- */}
         <div className="flex items-center gap-6 text-[#6b7f5f]">
-          <Link href="/cart" aria-label="Cart">
-            <ShoppingBag className="w-5 h-5 hover:opacity-80 transition" />
+          <Link href="/shop" aria-label="Shop">
+            <ShopIcon  className="w-5 h-5 hover:opacity-80 transition"/>
           </Link>
-          <Link href="/guides" aria-label="Guide">
-            <BookOpen className="w-5 h-5 hover:opacity-80 transition" />
+          <Link href="/blog" aria-label="Story">
+            <StoryIcon className="w-5 h-5 hover:opacity-80 transition" />
           </Link>
           <Link href="/account" aria-label="Account">
-            <User className="w-5 h-5 hover:opacity-80 transition" />
+            <AccountIcon className="w-5 h-5 hover:opacity-80 transition"/>
           </Link>
         </div>
       </div>

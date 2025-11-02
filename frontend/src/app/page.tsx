@@ -14,7 +14,6 @@ export default function Home() {
         <AboutSection />
         <StarsSection />
       </main>
-      <Footer />
     </div>
   );
 }

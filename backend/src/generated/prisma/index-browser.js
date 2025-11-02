@@ -164,6 +164,18 @@ exports.Prisma.LookBookStoryScalarFieldEnum = {
   description: 'description'
 };
 
+exports.Prisma.StarsSectionImageScalarFieldEnum = {
+  id: 'id',
+  displayOrder: 'displayOrder',
+  imageUrl: 'imageUrl'
+};
+
+exports.Prisma.BannerImageScalarFieldEnum = {
+  id: 'id',
+  fileName: 'fileName',
+  isActive: 'isActive'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -180,7 +192,9 @@ exports.Prisma.ModelName = {
   Order: 'Order',
   OrderItem: 'OrderItem',
   CartItem: 'CartItem',
-  LookBookStory: 'LookBookStory'
+  LookBookStory: 'LookBookStory',
+  StarsSectionImage: 'StarsSectionImage',
+  BannerImage: 'BannerImage'
 };
 
 /**

@@ -103,6 +103,6 @@ model BannerImage {
   @@map("banner_images")
 
   id Int @id @default(autoincrement())
-  imageUrl String @unique
+  fileName String @unique
   isActive Boolean @default(false)
 }

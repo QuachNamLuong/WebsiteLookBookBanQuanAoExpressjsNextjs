@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { ClientMessage } from "../config/error.config";
+import { ClientMessage } from "../constants/error";
 import prisma from "../lib/prisma";
 import { AppError } from "../types/app";
 
@@ -28,9 +28,9 @@ export const updateCartItemQuantity = async (cartItemId: string, quantity: numbe
     );
   }
 
-  const cartItem = await prisma.cartItem.findUnique({where: {id: cartItemId}});
+  const cartItem = await prisma.cartItem.findUnique({ where: { id: cartItemId } });
   if (!cartItem) throw new AppError(1, `cart_item with id is ${cartItemId} not found`, ClientMessage.SERVER_ERROR, StatusCodes.BAD_REQUEST);
-  
+
   const updatedCartItem = await prisma.cartItem.update({
     where: { id: cartItemId },
     data: { quantity },

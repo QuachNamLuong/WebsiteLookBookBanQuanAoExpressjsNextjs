@@ -48,6 +48,16 @@ export type CartItem = $Result.DefaultSelection<Prisma.$CartItemPayload>
  * 
  */
 export type LookBookStory = $Result.DefaultSelection<Prisma.$LookBookStoryPayload>
+/**
+ * Model StarsSectionImage
+ * 
+ */
+export type StarsSectionImage = $Result.DefaultSelection<Prisma.$StarsSectionImagePayload>
+/**
+ * Model BannerImage
+ * 
+ */
+export type BannerImage = $Result.DefaultSelection<Prisma.$BannerImagePayload>
 
 /**
  * Enums
@@ -253,6 +263,26 @@ export class PrismaClient<
     * ```
     */
   get lookBookStory(): Prisma.LookBookStoryDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.starsSectionImage`: Exposes CRUD operations for the **StarsSectionImage** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more StarsSectionImages
+    * const starsSectionImages = await prisma.starsSectionImage.findMany()
+    * ```
+    */
+  get starsSectionImage(): Prisma.StarsSectionImageDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.bannerImage`: Exposes CRUD operations for the **BannerImage** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more BannerImages
+    * const bannerImages = await prisma.bannerImage.findMany()
+    * ```
+    */
+  get bannerImage(): Prisma.BannerImageDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -699,7 +729,9 @@ export namespace Prisma {
     Order: 'Order',
     OrderItem: 'OrderItem',
     CartItem: 'CartItem',
-    LookBookStory: 'LookBookStory'
+    LookBookStory: 'LookBookStory',
+    StarsSectionImage: 'StarsSectionImage',
+    BannerImage: 'BannerImage'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -718,7 +750,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "product" | "productImage" | "order" | "orderItem" | "cartItem" | "lookBookStory"
+      modelProps: "user" | "product" | "productImage" | "order" | "orderItem" | "cartItem" | "lookBookStory" | "starsSectionImage" | "bannerImage"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1240,6 +1272,154 @@ export namespace Prisma {
           }
         }
       }
+      StarsSectionImage: {
+        payload: Prisma.$StarsSectionImagePayload<ExtArgs>
+        fields: Prisma.StarsSectionImageFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.StarsSectionImageFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StarsSectionImagePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.StarsSectionImageFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StarsSectionImagePayload>
+          }
+          findFirst: {
+            args: Prisma.StarsSectionImageFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StarsSectionImagePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.StarsSectionImageFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StarsSectionImagePayload>
+          }
+          findMany: {
+            args: Prisma.StarsSectionImageFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StarsSectionImagePayload>[]
+          }
+          create: {
+            args: Prisma.StarsSectionImageCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StarsSectionImagePayload>
+          }
+          createMany: {
+            args: Prisma.StarsSectionImageCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.StarsSectionImageCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StarsSectionImagePayload>[]
+          }
+          delete: {
+            args: Prisma.StarsSectionImageDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StarsSectionImagePayload>
+          }
+          update: {
+            args: Prisma.StarsSectionImageUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StarsSectionImagePayload>
+          }
+          deleteMany: {
+            args: Prisma.StarsSectionImageDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.StarsSectionImageUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.StarsSectionImageUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StarsSectionImagePayload>[]
+          }
+          upsert: {
+            args: Prisma.StarsSectionImageUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StarsSectionImagePayload>
+          }
+          aggregate: {
+            args: Prisma.StarsSectionImageAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateStarsSectionImage>
+          }
+          groupBy: {
+            args: Prisma.StarsSectionImageGroupByArgs<ExtArgs>
+            result: $Utils.Optional<StarsSectionImageGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.StarsSectionImageCountArgs<ExtArgs>
+            result: $Utils.Optional<StarsSectionImageCountAggregateOutputType> | number
+          }
+        }
+      }
+      BannerImage: {
+        payload: Prisma.$BannerImagePayload<ExtArgs>
+        fields: Prisma.BannerImageFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.BannerImageFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BannerImagePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.BannerImageFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BannerImagePayload>
+          }
+          findFirst: {
+            args: Prisma.BannerImageFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BannerImagePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.BannerImageFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BannerImagePayload>
+          }
+          findMany: {
+            args: Prisma.BannerImageFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BannerImagePayload>[]
+          }
+          create: {
+            args: Prisma.BannerImageCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BannerImagePayload>
+          }
+          createMany: {
+            args: Prisma.BannerImageCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.BannerImageCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BannerImagePayload>[]
+          }
+          delete: {
+            args: Prisma.BannerImageDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BannerImagePayload>
+          }
+          update: {
+            args: Prisma.BannerImageUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BannerImagePayload>
+          }
+          deleteMany: {
+            args: Prisma.BannerImageDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.BannerImageUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.BannerImageUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BannerImagePayload>[]
+          }
+          upsert: {
+            args: Prisma.BannerImageUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BannerImagePayload>
+          }
+          aggregate: {
+            args: Prisma.BannerImageAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBannerImage>
+          }
+          groupBy: {
+            args: Prisma.BannerImageGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BannerImageGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.BannerImageCountArgs<ExtArgs>
+            result: $Utils.Optional<BannerImageCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1343,6 +1523,8 @@ export namespace Prisma {
     orderItem?: OrderItemOmit
     cartItem?: CartItemOmit
     lookBookStory?: LookBookStoryOmit
+    starsSectionImage?: StarsSectionImageOmit
+    bannerImage?: BannerImageOmit
   }
 
   /* Types for Logging */
@@ -9049,6 +9231,2008 @@ export namespace Prisma {
 
 
   /**
+   * Model StarsSectionImage
+   */
+
+  export type AggregateStarsSectionImage = {
+    _count: StarsSectionImageCountAggregateOutputType | null
+    _avg: StarsSectionImageAvgAggregateOutputType | null
+    _sum: StarsSectionImageSumAggregateOutputType | null
+    _min: StarsSectionImageMinAggregateOutputType | null
+    _max: StarsSectionImageMaxAggregateOutputType | null
+  }
+
+  export type StarsSectionImageAvgAggregateOutputType = {
+    displayOrder: number | null
+  }
+
+  export type StarsSectionImageSumAggregateOutputType = {
+    displayOrder: number | null
+  }
+
+  export type StarsSectionImageMinAggregateOutputType = {
+    id: string | null
+    displayOrder: number | null
+    imageUrl: string | null
+  }
+
+  export type StarsSectionImageMaxAggregateOutputType = {
+    id: string | null
+    displayOrder: number | null
+    imageUrl: string | null
+  }
+
+  export type StarsSectionImageCountAggregateOutputType = {
+    id: number
+    displayOrder: number
+    imageUrl: number
+    _all: number
+  }
+
+
+  export type StarsSectionImageAvgAggregateInputType = {
+    displayOrder?: true
+  }
+
+  export type StarsSectionImageSumAggregateInputType = {
+    displayOrder?: true
+  }
+
+  export type StarsSectionImageMinAggregateInputType = {
+    id?: true
+    displayOrder?: true
+    imageUrl?: true
+  }
+
+  export type StarsSectionImageMaxAggregateInputType = {
+    id?: true
+    displayOrder?: true
+    imageUrl?: true
+  }
+
+  export type StarsSectionImageCountAggregateInputType = {
+    id?: true
+    displayOrder?: true
+    imageUrl?: true
+    _all?: true
+  }
+
+  export type StarsSectionImageAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which StarsSectionImage to aggregate.
+     */
+    where?: StarsSectionImageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of StarsSectionImages to fetch.
+     */
+    orderBy?: StarsSectionImageOrderByWithRelationInput | StarsSectionImageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: StarsSectionImageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` StarsSectionImages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` StarsSectionImages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned StarsSectionImages
+    **/
+    _count?: true | StarsSectionImageCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: StarsSectionImageAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: StarsSectionImageSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: StarsSectionImageMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: StarsSectionImageMaxAggregateInputType
+  }
+
+  export type GetStarsSectionImageAggregateType<T extends StarsSectionImageAggregateArgs> = {
+        [P in keyof T & keyof AggregateStarsSectionImage]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateStarsSectionImage[P]>
+      : GetScalarType<T[P], AggregateStarsSectionImage[P]>
+  }
+
+
+
+
+  export type StarsSectionImageGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: StarsSectionImageWhereInput
+    orderBy?: StarsSectionImageOrderByWithAggregationInput | StarsSectionImageOrderByWithAggregationInput[]
+    by: StarsSectionImageScalarFieldEnum[] | StarsSectionImageScalarFieldEnum
+    having?: StarsSectionImageScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: StarsSectionImageCountAggregateInputType | true
+    _avg?: StarsSectionImageAvgAggregateInputType
+    _sum?: StarsSectionImageSumAggregateInputType
+    _min?: StarsSectionImageMinAggregateInputType
+    _max?: StarsSectionImageMaxAggregateInputType
+  }
+
+  export type StarsSectionImageGroupByOutputType = {
+    id: string
+    displayOrder: number
+    imageUrl: string
+    _count: StarsSectionImageCountAggregateOutputType | null
+    _avg: StarsSectionImageAvgAggregateOutputType | null
+    _sum: StarsSectionImageSumAggregateOutputType | null
+    _min: StarsSectionImageMinAggregateOutputType | null
+    _max: StarsSectionImageMaxAggregateOutputType | null
+  }
+
+  type GetStarsSectionImageGroupByPayload<T extends StarsSectionImageGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<StarsSectionImageGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof StarsSectionImageGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], StarsSectionImageGroupByOutputType[P]>
+            : GetScalarType<T[P], StarsSectionImageGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type StarsSectionImageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    displayOrder?: boolean
+    imageUrl?: boolean
+  }, ExtArgs["result"]["starsSectionImage"]>
+
+  export type StarsSectionImageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    displayOrder?: boolean
+    imageUrl?: boolean
+  }, ExtArgs["result"]["starsSectionImage"]>
+
+  export type StarsSectionImageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    displayOrder?: boolean
+    imageUrl?: boolean
+  }, ExtArgs["result"]["starsSectionImage"]>
+
+  export type StarsSectionImageSelectScalar = {
+    id?: boolean
+    displayOrder?: boolean
+    imageUrl?: boolean
+  }
+
+  export type StarsSectionImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "displayOrder" | "imageUrl", ExtArgs["result"]["starsSectionImage"]>
+
+  export type $StarsSectionImagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "StarsSectionImage"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      displayOrder: number
+      imageUrl: string
+    }, ExtArgs["result"]["starsSectionImage"]>
+    composites: {}
+  }
+
+  type StarsSectionImageGetPayload<S extends boolean | null | undefined | StarsSectionImageDefaultArgs> = $Result.GetResult<Prisma.$StarsSectionImagePayload, S>
+
+  type StarsSectionImageCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<StarsSectionImageFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: StarsSectionImageCountAggregateInputType | true
+    }
+
+  export interface StarsSectionImageDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['StarsSectionImage'], meta: { name: 'StarsSectionImage' } }
+    /**
+     * Find zero or one StarsSectionImage that matches the filter.
+     * @param {StarsSectionImageFindUniqueArgs} args - Arguments to find a StarsSectionImage
+     * @example
+     * // Get one StarsSectionImage
+     * const starsSectionImage = await prisma.starsSectionImage.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends StarsSectionImageFindUniqueArgs>(args: SelectSubset<T, StarsSectionImageFindUniqueArgs<ExtArgs>>): Prisma__StarsSectionImageClient<$Result.GetResult<Prisma.$StarsSectionImagePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one StarsSectionImage that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {StarsSectionImageFindUniqueOrThrowArgs} args - Arguments to find a StarsSectionImage
+     * @example
+     * // Get one StarsSectionImage
+     * const starsSectionImage = await prisma.starsSectionImage.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends StarsSectionImageFindUniqueOrThrowArgs>(args: SelectSubset<T, StarsSectionImageFindUniqueOrThrowArgs<ExtArgs>>): Prisma__StarsSectionImageClient<$Result.GetResult<Prisma.$StarsSectionImagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first StarsSectionImage that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StarsSectionImageFindFirstArgs} args - Arguments to find a StarsSectionImage
+     * @example
+     * // Get one StarsSectionImage
+     * const starsSectionImage = await prisma.starsSectionImage.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends StarsSectionImageFindFirstArgs>(args?: SelectSubset<T, StarsSectionImageFindFirstArgs<ExtArgs>>): Prisma__StarsSectionImageClient<$Result.GetResult<Prisma.$StarsSectionImagePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first StarsSectionImage that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StarsSectionImageFindFirstOrThrowArgs} args - Arguments to find a StarsSectionImage
+     * @example
+     * // Get one StarsSectionImage
+     * const starsSectionImage = await prisma.starsSectionImage.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends StarsSectionImageFindFirstOrThrowArgs>(args?: SelectSubset<T, StarsSectionImageFindFirstOrThrowArgs<ExtArgs>>): Prisma__StarsSectionImageClient<$Result.GetResult<Prisma.$StarsSectionImagePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more StarsSectionImages that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StarsSectionImageFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all StarsSectionImages
+     * const starsSectionImages = await prisma.starsSectionImage.findMany()
+     * 
+     * // Get first 10 StarsSectionImages
+     * const starsSectionImages = await prisma.starsSectionImage.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const starsSectionImageWithIdOnly = await prisma.starsSectionImage.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends StarsSectionImageFindManyArgs>(args?: SelectSubset<T, StarsSectionImageFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$StarsSectionImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a StarsSectionImage.
+     * @param {StarsSectionImageCreateArgs} args - Arguments to create a StarsSectionImage.
+     * @example
+     * // Create one StarsSectionImage
+     * const StarsSectionImage = await prisma.starsSectionImage.create({
+     *   data: {
+     *     // ... data to create a StarsSectionImage
+     *   }
+     * })
+     * 
+     */
+    create<T extends StarsSectionImageCreateArgs>(args: SelectSubset<T, StarsSectionImageCreateArgs<ExtArgs>>): Prisma__StarsSectionImageClient<$Result.GetResult<Prisma.$StarsSectionImagePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many StarsSectionImages.
+     * @param {StarsSectionImageCreateManyArgs} args - Arguments to create many StarsSectionImages.
+     * @example
+     * // Create many StarsSectionImages
+     * const starsSectionImage = await prisma.starsSectionImage.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends StarsSectionImageCreateManyArgs>(args?: SelectSubset<T, StarsSectionImageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many StarsSectionImages and returns the data saved in the database.
+     * @param {StarsSectionImageCreateManyAndReturnArgs} args - Arguments to create many StarsSectionImages.
+     * @example
+     * // Create many StarsSectionImages
+     * const starsSectionImage = await prisma.starsSectionImage.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many StarsSectionImages and only return the `id`
+     * const starsSectionImageWithIdOnly = await prisma.starsSectionImage.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends StarsSectionImageCreateManyAndReturnArgs>(args?: SelectSubset<T, StarsSectionImageCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$StarsSectionImagePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a StarsSectionImage.
+     * @param {StarsSectionImageDeleteArgs} args - Arguments to delete one StarsSectionImage.
+     * @example
+     * // Delete one StarsSectionImage
+     * const StarsSectionImage = await prisma.starsSectionImage.delete({
+     *   where: {
+     *     // ... filter to delete one StarsSectionImage
+     *   }
+     * })
+     * 
+     */
+    delete<T extends StarsSectionImageDeleteArgs>(args: SelectSubset<T, StarsSectionImageDeleteArgs<ExtArgs>>): Prisma__StarsSectionImageClient<$Result.GetResult<Prisma.$StarsSectionImagePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one StarsSectionImage.
+     * @param {StarsSectionImageUpdateArgs} args - Arguments to update one StarsSectionImage.
+     * @example
+     * // Update one StarsSectionImage
+     * const starsSectionImage = await prisma.starsSectionImage.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends StarsSectionImageUpdateArgs>(args: SelectSubset<T, StarsSectionImageUpdateArgs<ExtArgs>>): Prisma__StarsSectionImageClient<$Result.GetResult<Prisma.$StarsSectionImagePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more StarsSectionImages.
+     * @param {StarsSectionImageDeleteManyArgs} args - Arguments to filter StarsSectionImages to delete.
+     * @example
+     * // Delete a few StarsSectionImages
+     * const { count } = await prisma.starsSectionImage.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends StarsSectionImageDeleteManyArgs>(args?: SelectSubset<T, StarsSectionImageDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more StarsSectionImages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StarsSectionImageUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many StarsSectionImages
+     * const starsSectionImage = await prisma.starsSectionImage.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends StarsSectionImageUpdateManyArgs>(args: SelectSubset<T, StarsSectionImageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more StarsSectionImages and returns the data updated in the database.
+     * @param {StarsSectionImageUpdateManyAndReturnArgs} args - Arguments to update many StarsSectionImages.
+     * @example
+     * // Update many StarsSectionImages
+     * const starsSectionImage = await prisma.starsSectionImage.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more StarsSectionImages and only return the `id`
+     * const starsSectionImageWithIdOnly = await prisma.starsSectionImage.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends StarsSectionImageUpdateManyAndReturnArgs>(args: SelectSubset<T, StarsSectionImageUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$StarsSectionImagePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one StarsSectionImage.
+     * @param {StarsSectionImageUpsertArgs} args - Arguments to update or create a StarsSectionImage.
+     * @example
+     * // Update or create a StarsSectionImage
+     * const starsSectionImage = await prisma.starsSectionImage.upsert({
+     *   create: {
+     *     // ... data to create a StarsSectionImage
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the StarsSectionImage we want to update
+     *   }
+     * })
+     */
+    upsert<T extends StarsSectionImageUpsertArgs>(args: SelectSubset<T, StarsSectionImageUpsertArgs<ExtArgs>>): Prisma__StarsSectionImageClient<$Result.GetResult<Prisma.$StarsSectionImagePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of StarsSectionImages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StarsSectionImageCountArgs} args - Arguments to filter StarsSectionImages to count.
+     * @example
+     * // Count the number of StarsSectionImages
+     * const count = await prisma.starsSectionImage.count({
+     *   where: {
+     *     // ... the filter for the StarsSectionImages we want to count
+     *   }
+     * })
+    **/
+    count<T extends StarsSectionImageCountArgs>(
+      args?: Subset<T, StarsSectionImageCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], StarsSectionImageCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a StarsSectionImage.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StarsSectionImageAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends StarsSectionImageAggregateArgs>(args: Subset<T, StarsSectionImageAggregateArgs>): Prisma.PrismaPromise<GetStarsSectionImageAggregateType<T>>
+
+    /**
+     * Group by StarsSectionImage.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StarsSectionImageGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends StarsSectionImageGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: StarsSectionImageGroupByArgs['orderBy'] }
+        : { orderBy?: StarsSectionImageGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, StarsSectionImageGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetStarsSectionImageGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the StarsSectionImage model
+   */
+  readonly fields: StarsSectionImageFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for StarsSectionImage.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__StarsSectionImageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the StarsSectionImage model
+   */
+  interface StarsSectionImageFieldRefs {
+    readonly id: FieldRef<"StarsSectionImage", 'String'>
+    readonly displayOrder: FieldRef<"StarsSectionImage", 'Int'>
+    readonly imageUrl: FieldRef<"StarsSectionImage", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * StarsSectionImage findUnique
+   */
+  export type StarsSectionImageFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StarsSectionImage
+     */
+    select?: StarsSectionImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StarsSectionImage
+     */
+    omit?: StarsSectionImageOmit<ExtArgs> | null
+    /**
+     * Filter, which StarsSectionImage to fetch.
+     */
+    where: StarsSectionImageWhereUniqueInput
+  }
+
+  /**
+   * StarsSectionImage findUniqueOrThrow
+   */
+  export type StarsSectionImageFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StarsSectionImage
+     */
+    select?: StarsSectionImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StarsSectionImage
+     */
+    omit?: StarsSectionImageOmit<ExtArgs> | null
+    /**
+     * Filter, which StarsSectionImage to fetch.
+     */
+    where: StarsSectionImageWhereUniqueInput
+  }
+
+  /**
+   * StarsSectionImage findFirst
+   */
+  export type StarsSectionImageFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StarsSectionImage
+     */
+    select?: StarsSectionImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StarsSectionImage
+     */
+    omit?: StarsSectionImageOmit<ExtArgs> | null
+    /**
+     * Filter, which StarsSectionImage to fetch.
+     */
+    where?: StarsSectionImageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of StarsSectionImages to fetch.
+     */
+    orderBy?: StarsSectionImageOrderByWithRelationInput | StarsSectionImageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for StarsSectionImages.
+     */
+    cursor?: StarsSectionImageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` StarsSectionImages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` StarsSectionImages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of StarsSectionImages.
+     */
+    distinct?: StarsSectionImageScalarFieldEnum | StarsSectionImageScalarFieldEnum[]
+  }
+
+  /**
+   * StarsSectionImage findFirstOrThrow
+   */
+  export type StarsSectionImageFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StarsSectionImage
+     */
+    select?: StarsSectionImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StarsSectionImage
+     */
+    omit?: StarsSectionImageOmit<ExtArgs> | null
+    /**
+     * Filter, which StarsSectionImage to fetch.
+     */
+    where?: StarsSectionImageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of StarsSectionImages to fetch.
+     */
+    orderBy?: StarsSectionImageOrderByWithRelationInput | StarsSectionImageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for StarsSectionImages.
+     */
+    cursor?: StarsSectionImageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` StarsSectionImages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` StarsSectionImages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of StarsSectionImages.
+     */
+    distinct?: StarsSectionImageScalarFieldEnum | StarsSectionImageScalarFieldEnum[]
+  }
+
+  /**
+   * StarsSectionImage findMany
+   */
+  export type StarsSectionImageFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StarsSectionImage
+     */
+    select?: StarsSectionImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StarsSectionImage
+     */
+    omit?: StarsSectionImageOmit<ExtArgs> | null
+    /**
+     * Filter, which StarsSectionImages to fetch.
+     */
+    where?: StarsSectionImageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of StarsSectionImages to fetch.
+     */
+    orderBy?: StarsSectionImageOrderByWithRelationInput | StarsSectionImageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing StarsSectionImages.
+     */
+    cursor?: StarsSectionImageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` StarsSectionImages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` StarsSectionImages.
+     */
+    skip?: number
+    distinct?: StarsSectionImageScalarFieldEnum | StarsSectionImageScalarFieldEnum[]
+  }
+
+  /**
+   * StarsSectionImage create
+   */
+  export type StarsSectionImageCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StarsSectionImage
+     */
+    select?: StarsSectionImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StarsSectionImage
+     */
+    omit?: StarsSectionImageOmit<ExtArgs> | null
+    /**
+     * The data needed to create a StarsSectionImage.
+     */
+    data: XOR<StarsSectionImageCreateInput, StarsSectionImageUncheckedCreateInput>
+  }
+
+  /**
+   * StarsSectionImage createMany
+   */
+  export type StarsSectionImageCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many StarsSectionImages.
+     */
+    data: StarsSectionImageCreateManyInput | StarsSectionImageCreateManyInput[]
+  }
+
+  /**
+   * StarsSectionImage createManyAndReturn
+   */
+  export type StarsSectionImageCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StarsSectionImage
+     */
+    select?: StarsSectionImageSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the StarsSectionImage
+     */
+    omit?: StarsSectionImageOmit<ExtArgs> | null
+    /**
+     * The data used to create many StarsSectionImages.
+     */
+    data: StarsSectionImageCreateManyInput | StarsSectionImageCreateManyInput[]
+  }
+
+  /**
+   * StarsSectionImage update
+   */
+  export type StarsSectionImageUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StarsSectionImage
+     */
+    select?: StarsSectionImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StarsSectionImage
+     */
+    omit?: StarsSectionImageOmit<ExtArgs> | null
+    /**
+     * The data needed to update a StarsSectionImage.
+     */
+    data: XOR<StarsSectionImageUpdateInput, StarsSectionImageUncheckedUpdateInput>
+    /**
+     * Choose, which StarsSectionImage to update.
+     */
+    where: StarsSectionImageWhereUniqueInput
+  }
+
+  /**
+   * StarsSectionImage updateMany
+   */
+  export type StarsSectionImageUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update StarsSectionImages.
+     */
+    data: XOR<StarsSectionImageUpdateManyMutationInput, StarsSectionImageUncheckedUpdateManyInput>
+    /**
+     * Filter which StarsSectionImages to update
+     */
+    where?: StarsSectionImageWhereInput
+    /**
+     * Limit how many StarsSectionImages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * StarsSectionImage updateManyAndReturn
+   */
+  export type StarsSectionImageUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StarsSectionImage
+     */
+    select?: StarsSectionImageSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the StarsSectionImage
+     */
+    omit?: StarsSectionImageOmit<ExtArgs> | null
+    /**
+     * The data used to update StarsSectionImages.
+     */
+    data: XOR<StarsSectionImageUpdateManyMutationInput, StarsSectionImageUncheckedUpdateManyInput>
+    /**
+     * Filter which StarsSectionImages to update
+     */
+    where?: StarsSectionImageWhereInput
+    /**
+     * Limit how many StarsSectionImages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * StarsSectionImage upsert
+   */
+  export type StarsSectionImageUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StarsSectionImage
+     */
+    select?: StarsSectionImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StarsSectionImage
+     */
+    omit?: StarsSectionImageOmit<ExtArgs> | null
+    /**
+     * The filter to search for the StarsSectionImage to update in case it exists.
+     */
+    where: StarsSectionImageWhereUniqueInput
+    /**
+     * In case the StarsSectionImage found by the `where` argument doesn't exist, create a new StarsSectionImage with this data.
+     */
+    create: XOR<StarsSectionImageCreateInput, StarsSectionImageUncheckedCreateInput>
+    /**
+     * In case the StarsSectionImage was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<StarsSectionImageUpdateInput, StarsSectionImageUncheckedUpdateInput>
+  }
+
+  /**
+   * StarsSectionImage delete
+   */
+  export type StarsSectionImageDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StarsSectionImage
+     */
+    select?: StarsSectionImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StarsSectionImage
+     */
+    omit?: StarsSectionImageOmit<ExtArgs> | null
+    /**
+     * Filter which StarsSectionImage to delete.
+     */
+    where: StarsSectionImageWhereUniqueInput
+  }
+
+  /**
+   * StarsSectionImage deleteMany
+   */
+  export type StarsSectionImageDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which StarsSectionImages to delete
+     */
+    where?: StarsSectionImageWhereInput
+    /**
+     * Limit how many StarsSectionImages to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * StarsSectionImage without action
+   */
+  export type StarsSectionImageDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StarsSectionImage
+     */
+    select?: StarsSectionImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StarsSectionImage
+     */
+    omit?: StarsSectionImageOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model BannerImage
+   */
+
+  export type AggregateBannerImage = {
+    _count: BannerImageCountAggregateOutputType | null
+    _avg: BannerImageAvgAggregateOutputType | null
+    _sum: BannerImageSumAggregateOutputType | null
+    _min: BannerImageMinAggregateOutputType | null
+    _max: BannerImageMaxAggregateOutputType | null
+  }
+
+  export type BannerImageAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type BannerImageSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type BannerImageMinAggregateOutputType = {
+    id: number | null
+    fileName: string | null
+    isActive: boolean | null
+  }
+
+  export type BannerImageMaxAggregateOutputType = {
+    id: number | null
+    fileName: string | null
+    isActive: boolean | null
+  }
+
+  export type BannerImageCountAggregateOutputType = {
+    id: number
+    fileName: number
+    isActive: number
+    _all: number
+  }
+
+
+  export type BannerImageAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type BannerImageSumAggregateInputType = {
+    id?: true
+  }
+
+  export type BannerImageMinAggregateInputType = {
+    id?: true
+    fileName?: true
+    isActive?: true
+  }
+
+  export type BannerImageMaxAggregateInputType = {
+    id?: true
+    fileName?: true
+    isActive?: true
+  }
+
+  export type BannerImageCountAggregateInputType = {
+    id?: true
+    fileName?: true
+    isActive?: true
+    _all?: true
+  }
+
+  export type BannerImageAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BannerImage to aggregate.
+     */
+    where?: BannerImageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BannerImages to fetch.
+     */
+    orderBy?: BannerImageOrderByWithRelationInput | BannerImageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: BannerImageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BannerImages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BannerImages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned BannerImages
+    **/
+    _count?: true | BannerImageCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: BannerImageAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: BannerImageSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: BannerImageMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: BannerImageMaxAggregateInputType
+  }
+
+  export type GetBannerImageAggregateType<T extends BannerImageAggregateArgs> = {
+        [P in keyof T & keyof AggregateBannerImage]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBannerImage[P]>
+      : GetScalarType<T[P], AggregateBannerImage[P]>
+  }
+
+
+
+
+  export type BannerImageGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BannerImageWhereInput
+    orderBy?: BannerImageOrderByWithAggregationInput | BannerImageOrderByWithAggregationInput[]
+    by: BannerImageScalarFieldEnum[] | BannerImageScalarFieldEnum
+    having?: BannerImageScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: BannerImageCountAggregateInputType | true
+    _avg?: BannerImageAvgAggregateInputType
+    _sum?: BannerImageSumAggregateInputType
+    _min?: BannerImageMinAggregateInputType
+    _max?: BannerImageMaxAggregateInputType
+  }
+
+  export type BannerImageGroupByOutputType = {
+    id: number
+    fileName: string
+    isActive: boolean
+    _count: BannerImageCountAggregateOutputType | null
+    _avg: BannerImageAvgAggregateOutputType | null
+    _sum: BannerImageSumAggregateOutputType | null
+    _min: BannerImageMinAggregateOutputType | null
+    _max: BannerImageMaxAggregateOutputType | null
+  }
+
+  type GetBannerImageGroupByPayload<T extends BannerImageGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BannerImageGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof BannerImageGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], BannerImageGroupByOutputType[P]>
+            : GetScalarType<T[P], BannerImageGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type BannerImageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fileName?: boolean
+    isActive?: boolean
+  }, ExtArgs["result"]["bannerImage"]>
+
+  export type BannerImageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fileName?: boolean
+    isActive?: boolean
+  }, ExtArgs["result"]["bannerImage"]>
+
+  export type BannerImageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fileName?: boolean
+    isActive?: boolean
+  }, ExtArgs["result"]["bannerImage"]>
+
+  export type BannerImageSelectScalar = {
+    id?: boolean
+    fileName?: boolean
+    isActive?: boolean
+  }
+
+  export type BannerImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fileName" | "isActive", ExtArgs["result"]["bannerImage"]>
+
+  export type $BannerImagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "BannerImage"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      fileName: string
+      isActive: boolean
+    }, ExtArgs["result"]["bannerImage"]>
+    composites: {}
+  }
+
+  type BannerImageGetPayload<S extends boolean | null | undefined | BannerImageDefaultArgs> = $Result.GetResult<Prisma.$BannerImagePayload, S>
+
+  type BannerImageCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<BannerImageFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BannerImageCountAggregateInputType | true
+    }
+
+  export interface BannerImageDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BannerImage'], meta: { name: 'BannerImage' } }
+    /**
+     * Find zero or one BannerImage that matches the filter.
+     * @param {BannerImageFindUniqueArgs} args - Arguments to find a BannerImage
+     * @example
+     * // Get one BannerImage
+     * const bannerImage = await prisma.bannerImage.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends BannerImageFindUniqueArgs>(args: SelectSubset<T, BannerImageFindUniqueArgs<ExtArgs>>): Prisma__BannerImageClient<$Result.GetResult<Prisma.$BannerImagePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one BannerImage that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {BannerImageFindUniqueOrThrowArgs} args - Arguments to find a BannerImage
+     * @example
+     * // Get one BannerImage
+     * const bannerImage = await prisma.bannerImage.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends BannerImageFindUniqueOrThrowArgs>(args: SelectSubset<T, BannerImageFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BannerImageClient<$Result.GetResult<Prisma.$BannerImagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BannerImage that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BannerImageFindFirstArgs} args - Arguments to find a BannerImage
+     * @example
+     * // Get one BannerImage
+     * const bannerImage = await prisma.bannerImage.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends BannerImageFindFirstArgs>(args?: SelectSubset<T, BannerImageFindFirstArgs<ExtArgs>>): Prisma__BannerImageClient<$Result.GetResult<Prisma.$BannerImagePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BannerImage that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BannerImageFindFirstOrThrowArgs} args - Arguments to find a BannerImage
+     * @example
+     * // Get one BannerImage
+     * const bannerImage = await prisma.bannerImage.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends BannerImageFindFirstOrThrowArgs>(args?: SelectSubset<T, BannerImageFindFirstOrThrowArgs<ExtArgs>>): Prisma__BannerImageClient<$Result.GetResult<Prisma.$BannerImagePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more BannerImages that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BannerImageFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all BannerImages
+     * const bannerImages = await prisma.bannerImage.findMany()
+     * 
+     * // Get first 10 BannerImages
+     * const bannerImages = await prisma.bannerImage.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const bannerImageWithIdOnly = await prisma.bannerImage.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends BannerImageFindManyArgs>(args?: SelectSubset<T, BannerImageFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BannerImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a BannerImage.
+     * @param {BannerImageCreateArgs} args - Arguments to create a BannerImage.
+     * @example
+     * // Create one BannerImage
+     * const BannerImage = await prisma.bannerImage.create({
+     *   data: {
+     *     // ... data to create a BannerImage
+     *   }
+     * })
+     * 
+     */
+    create<T extends BannerImageCreateArgs>(args: SelectSubset<T, BannerImageCreateArgs<ExtArgs>>): Prisma__BannerImageClient<$Result.GetResult<Prisma.$BannerImagePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many BannerImages.
+     * @param {BannerImageCreateManyArgs} args - Arguments to create many BannerImages.
+     * @example
+     * // Create many BannerImages
+     * const bannerImage = await prisma.bannerImage.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends BannerImageCreateManyArgs>(args?: SelectSubset<T, BannerImageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many BannerImages and returns the data saved in the database.
+     * @param {BannerImageCreateManyAndReturnArgs} args - Arguments to create many BannerImages.
+     * @example
+     * // Create many BannerImages
+     * const bannerImage = await prisma.bannerImage.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many BannerImages and only return the `id`
+     * const bannerImageWithIdOnly = await prisma.bannerImage.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends BannerImageCreateManyAndReturnArgs>(args?: SelectSubset<T, BannerImageCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BannerImagePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a BannerImage.
+     * @param {BannerImageDeleteArgs} args - Arguments to delete one BannerImage.
+     * @example
+     * // Delete one BannerImage
+     * const BannerImage = await prisma.bannerImage.delete({
+     *   where: {
+     *     // ... filter to delete one BannerImage
+     *   }
+     * })
+     * 
+     */
+    delete<T extends BannerImageDeleteArgs>(args: SelectSubset<T, BannerImageDeleteArgs<ExtArgs>>): Prisma__BannerImageClient<$Result.GetResult<Prisma.$BannerImagePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one BannerImage.
+     * @param {BannerImageUpdateArgs} args - Arguments to update one BannerImage.
+     * @example
+     * // Update one BannerImage
+     * const bannerImage = await prisma.bannerImage.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends BannerImageUpdateArgs>(args: SelectSubset<T, BannerImageUpdateArgs<ExtArgs>>): Prisma__BannerImageClient<$Result.GetResult<Prisma.$BannerImagePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more BannerImages.
+     * @param {BannerImageDeleteManyArgs} args - Arguments to filter BannerImages to delete.
+     * @example
+     * // Delete a few BannerImages
+     * const { count } = await prisma.bannerImage.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends BannerImageDeleteManyArgs>(args?: SelectSubset<T, BannerImageDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BannerImages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BannerImageUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many BannerImages
+     * const bannerImage = await prisma.bannerImage.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends BannerImageUpdateManyArgs>(args: SelectSubset<T, BannerImageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BannerImages and returns the data updated in the database.
+     * @param {BannerImageUpdateManyAndReturnArgs} args - Arguments to update many BannerImages.
+     * @example
+     * // Update many BannerImages
+     * const bannerImage = await prisma.bannerImage.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more BannerImages and only return the `id`
+     * const bannerImageWithIdOnly = await prisma.bannerImage.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends BannerImageUpdateManyAndReturnArgs>(args: SelectSubset<T, BannerImageUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BannerImagePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one BannerImage.
+     * @param {BannerImageUpsertArgs} args - Arguments to update or create a BannerImage.
+     * @example
+     * // Update or create a BannerImage
+     * const bannerImage = await prisma.bannerImage.upsert({
+     *   create: {
+     *     // ... data to create a BannerImage
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the BannerImage we want to update
+     *   }
+     * })
+     */
+    upsert<T extends BannerImageUpsertArgs>(args: SelectSubset<T, BannerImageUpsertArgs<ExtArgs>>): Prisma__BannerImageClient<$Result.GetResult<Prisma.$BannerImagePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of BannerImages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BannerImageCountArgs} args - Arguments to filter BannerImages to count.
+     * @example
+     * // Count the number of BannerImages
+     * const count = await prisma.bannerImage.count({
+     *   where: {
+     *     // ... the filter for the BannerImages we want to count
+     *   }
+     * })
+    **/
+    count<T extends BannerImageCountArgs>(
+      args?: Subset<T, BannerImageCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BannerImageCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a BannerImage.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BannerImageAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends BannerImageAggregateArgs>(args: Subset<T, BannerImageAggregateArgs>): Prisma.PrismaPromise<GetBannerImageAggregateType<T>>
+
+    /**
+     * Group by BannerImage.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BannerImageGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends BannerImageGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: BannerImageGroupByArgs['orderBy'] }
+        : { orderBy?: BannerImageGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, BannerImageGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBannerImageGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the BannerImage model
+   */
+  readonly fields: BannerImageFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for BannerImage.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__BannerImageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the BannerImage model
+   */
+  interface BannerImageFieldRefs {
+    readonly id: FieldRef<"BannerImage", 'Int'>
+    readonly fileName: FieldRef<"BannerImage", 'String'>
+    readonly isActive: FieldRef<"BannerImage", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * BannerImage findUnique
+   */
+  export type BannerImageFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BannerImage
+     */
+    select?: BannerImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BannerImage
+     */
+    omit?: BannerImageOmit<ExtArgs> | null
+    /**
+     * Filter, which BannerImage to fetch.
+     */
+    where: BannerImageWhereUniqueInput
+  }
+
+  /**
+   * BannerImage findUniqueOrThrow
+   */
+  export type BannerImageFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BannerImage
+     */
+    select?: BannerImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BannerImage
+     */
+    omit?: BannerImageOmit<ExtArgs> | null
+    /**
+     * Filter, which BannerImage to fetch.
+     */
+    where: BannerImageWhereUniqueInput
+  }
+
+  /**
+   * BannerImage findFirst
+   */
+  export type BannerImageFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BannerImage
+     */
+    select?: BannerImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BannerImage
+     */
+    omit?: BannerImageOmit<ExtArgs> | null
+    /**
+     * Filter, which BannerImage to fetch.
+     */
+    where?: BannerImageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BannerImages to fetch.
+     */
+    orderBy?: BannerImageOrderByWithRelationInput | BannerImageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BannerImages.
+     */
+    cursor?: BannerImageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BannerImages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BannerImages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BannerImages.
+     */
+    distinct?: BannerImageScalarFieldEnum | BannerImageScalarFieldEnum[]
+  }
+
+  /**
+   * BannerImage findFirstOrThrow
+   */
+  export type BannerImageFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BannerImage
+     */
+    select?: BannerImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BannerImage
+     */
+    omit?: BannerImageOmit<ExtArgs> | null
+    /**
+     * Filter, which BannerImage to fetch.
+     */
+    where?: BannerImageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BannerImages to fetch.
+     */
+    orderBy?: BannerImageOrderByWithRelationInput | BannerImageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BannerImages.
+     */
+    cursor?: BannerImageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BannerImages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BannerImages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BannerImages.
+     */
+    distinct?: BannerImageScalarFieldEnum | BannerImageScalarFieldEnum[]
+  }
+
+  /**
+   * BannerImage findMany
+   */
+  export type BannerImageFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BannerImage
+     */
+    select?: BannerImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BannerImage
+     */
+    omit?: BannerImageOmit<ExtArgs> | null
+    /**
+     * Filter, which BannerImages to fetch.
+     */
+    where?: BannerImageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BannerImages to fetch.
+     */
+    orderBy?: BannerImageOrderByWithRelationInput | BannerImageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing BannerImages.
+     */
+    cursor?: BannerImageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BannerImages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BannerImages.
+     */
+    skip?: number
+    distinct?: BannerImageScalarFieldEnum | BannerImageScalarFieldEnum[]
+  }
+
+  /**
+   * BannerImage create
+   */
+  export type BannerImageCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BannerImage
+     */
+    select?: BannerImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BannerImage
+     */
+    omit?: BannerImageOmit<ExtArgs> | null
+    /**
+     * The data needed to create a BannerImage.
+     */
+    data: XOR<BannerImageCreateInput, BannerImageUncheckedCreateInput>
+  }
+
+  /**
+   * BannerImage createMany
+   */
+  export type BannerImageCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many BannerImages.
+     */
+    data: BannerImageCreateManyInput | BannerImageCreateManyInput[]
+  }
+
+  /**
+   * BannerImage createManyAndReturn
+   */
+  export type BannerImageCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BannerImage
+     */
+    select?: BannerImageSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BannerImage
+     */
+    omit?: BannerImageOmit<ExtArgs> | null
+    /**
+     * The data used to create many BannerImages.
+     */
+    data: BannerImageCreateManyInput | BannerImageCreateManyInput[]
+  }
+
+  /**
+   * BannerImage update
+   */
+  export type BannerImageUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BannerImage
+     */
+    select?: BannerImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BannerImage
+     */
+    omit?: BannerImageOmit<ExtArgs> | null
+    /**
+     * The data needed to update a BannerImage.
+     */
+    data: XOR<BannerImageUpdateInput, BannerImageUncheckedUpdateInput>
+    /**
+     * Choose, which BannerImage to update.
+     */
+    where: BannerImageWhereUniqueInput
+  }
+
+  /**
+   * BannerImage updateMany
+   */
+  export type BannerImageUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update BannerImages.
+     */
+    data: XOR<BannerImageUpdateManyMutationInput, BannerImageUncheckedUpdateManyInput>
+    /**
+     * Filter which BannerImages to update
+     */
+    where?: BannerImageWhereInput
+    /**
+     * Limit how many BannerImages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BannerImage updateManyAndReturn
+   */
+  export type BannerImageUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BannerImage
+     */
+    select?: BannerImageSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BannerImage
+     */
+    omit?: BannerImageOmit<ExtArgs> | null
+    /**
+     * The data used to update BannerImages.
+     */
+    data: XOR<BannerImageUpdateManyMutationInput, BannerImageUncheckedUpdateManyInput>
+    /**
+     * Filter which BannerImages to update
+     */
+    where?: BannerImageWhereInput
+    /**
+     * Limit how many BannerImages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BannerImage upsert
+   */
+  export type BannerImageUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BannerImage
+     */
+    select?: BannerImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BannerImage
+     */
+    omit?: BannerImageOmit<ExtArgs> | null
+    /**
+     * The filter to search for the BannerImage to update in case it exists.
+     */
+    where: BannerImageWhereUniqueInput
+    /**
+     * In case the BannerImage found by the `where` argument doesn't exist, create a new BannerImage with this data.
+     */
+    create: XOR<BannerImageCreateInput, BannerImageUncheckedCreateInput>
+    /**
+     * In case the BannerImage was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BannerImageUpdateInput, BannerImageUncheckedUpdateInput>
+  }
+
+  /**
+   * BannerImage delete
+   */
+  export type BannerImageDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BannerImage
+     */
+    select?: BannerImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BannerImage
+     */
+    omit?: BannerImageOmit<ExtArgs> | null
+    /**
+     * Filter which BannerImage to delete.
+     */
+    where: BannerImageWhereUniqueInput
+  }
+
+  /**
+   * BannerImage deleteMany
+   */
+  export type BannerImageDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BannerImages to delete
+     */
+    where?: BannerImageWhereInput
+    /**
+     * Limit how many BannerImages to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * BannerImage without action
+   */
+  export type BannerImageDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BannerImage
+     */
+    select?: BannerImageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BannerImage
+     */
+    omit?: BannerImageOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -9127,6 +11311,24 @@ export namespace Prisma {
   export type LookBookStoryScalarFieldEnum = (typeof LookBookStoryScalarFieldEnum)[keyof typeof LookBookStoryScalarFieldEnum]
 
 
+  export const StarsSectionImageScalarFieldEnum: {
+    id: 'id',
+    displayOrder: 'displayOrder',
+    imageUrl: 'imageUrl'
+  };
+
+  export type StarsSectionImageScalarFieldEnum = (typeof StarsSectionImageScalarFieldEnum)[keyof typeof StarsSectionImageScalarFieldEnum]
+
+
+  export const BannerImageScalarFieldEnum: {
+    id: 'id',
+    fileName: 'fileName',
+    isActive: 'isActive'
+  };
+
+  export type BannerImageScalarFieldEnum = (typeof BannerImageScalarFieldEnum)[keyof typeof BannerImageScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -9165,6 +11367,13 @@ export namespace Prisma {
    * Reference to a field of type 'Decimal'
    */
   export type DecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -9541,6 +11750,94 @@ export namespace Prisma {
     description?: StringWithAggregatesFilter<"LookBookStory"> | string
   }
 
+  export type StarsSectionImageWhereInput = {
+    AND?: StarsSectionImageWhereInput | StarsSectionImageWhereInput[]
+    OR?: StarsSectionImageWhereInput[]
+    NOT?: StarsSectionImageWhereInput | StarsSectionImageWhereInput[]
+    id?: StringFilter<"StarsSectionImage"> | string
+    displayOrder?: IntFilter<"StarsSectionImage"> | number
+    imageUrl?: StringFilter<"StarsSectionImage"> | string
+  }
+
+  export type StarsSectionImageOrderByWithRelationInput = {
+    id?: SortOrder
+    displayOrder?: SortOrder
+    imageUrl?: SortOrder
+  }
+
+  export type StarsSectionImageWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    imageUrl?: string
+    AND?: StarsSectionImageWhereInput | StarsSectionImageWhereInput[]
+    OR?: StarsSectionImageWhereInput[]
+    NOT?: StarsSectionImageWhereInput | StarsSectionImageWhereInput[]
+    displayOrder?: IntFilter<"StarsSectionImage"> | number
+  }, "id" | "imageUrl">
+
+  export type StarsSectionImageOrderByWithAggregationInput = {
+    id?: SortOrder
+    displayOrder?: SortOrder
+    imageUrl?: SortOrder
+    _count?: StarsSectionImageCountOrderByAggregateInput
+    _avg?: StarsSectionImageAvgOrderByAggregateInput
+    _max?: StarsSectionImageMaxOrderByAggregateInput
+    _min?: StarsSectionImageMinOrderByAggregateInput
+    _sum?: StarsSectionImageSumOrderByAggregateInput
+  }
+
+  export type StarsSectionImageScalarWhereWithAggregatesInput = {
+    AND?: StarsSectionImageScalarWhereWithAggregatesInput | StarsSectionImageScalarWhereWithAggregatesInput[]
+    OR?: StarsSectionImageScalarWhereWithAggregatesInput[]
+    NOT?: StarsSectionImageScalarWhereWithAggregatesInput | StarsSectionImageScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"StarsSectionImage"> | string
+    displayOrder?: IntWithAggregatesFilter<"StarsSectionImage"> | number
+    imageUrl?: StringWithAggregatesFilter<"StarsSectionImage"> | string
+  }
+
+  export type BannerImageWhereInput = {
+    AND?: BannerImageWhereInput | BannerImageWhereInput[]
+    OR?: BannerImageWhereInput[]
+    NOT?: BannerImageWhereInput | BannerImageWhereInput[]
+    id?: IntFilter<"BannerImage"> | number
+    fileName?: StringFilter<"BannerImage"> | string
+    isActive?: BoolFilter<"BannerImage"> | boolean
+  }
+
+  export type BannerImageOrderByWithRelationInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    isActive?: SortOrder
+  }
+
+  export type BannerImageWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    fileName?: string
+    AND?: BannerImageWhereInput | BannerImageWhereInput[]
+    OR?: BannerImageWhereInput[]
+    NOT?: BannerImageWhereInput | BannerImageWhereInput[]
+    isActive?: BoolFilter<"BannerImage"> | boolean
+  }, "id" | "fileName">
+
+  export type BannerImageOrderByWithAggregationInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    isActive?: SortOrder
+    _count?: BannerImageCountOrderByAggregateInput
+    _avg?: BannerImageAvgOrderByAggregateInput
+    _max?: BannerImageMaxOrderByAggregateInput
+    _min?: BannerImageMinOrderByAggregateInput
+    _sum?: BannerImageSumOrderByAggregateInput
+  }
+
+  export type BannerImageScalarWhereWithAggregatesInput = {
+    AND?: BannerImageScalarWhereWithAggregatesInput | BannerImageScalarWhereWithAggregatesInput[]
+    OR?: BannerImageScalarWhereWithAggregatesInput[]
+    NOT?: BannerImageScalarWhereWithAggregatesInput | BannerImageScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"BannerImage"> | number
+    fileName?: StringWithAggregatesFilter<"BannerImage"> | string
+    isActive?: BoolWithAggregatesFilter<"BannerImage"> | boolean
+  }
+
   export type UserCreateInput = {
     userId?: string
     username: string
@@ -9888,6 +12185,87 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
   }
 
+  export type StarsSectionImageCreateInput = {
+    id?: string
+    displayOrder: number
+    imageUrl: string
+  }
+
+  export type StarsSectionImageUncheckedCreateInput = {
+    id?: string
+    displayOrder: number
+    imageUrl: string
+  }
+
+  export type StarsSectionImageUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    imageUrl?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type StarsSectionImageUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    imageUrl?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type StarsSectionImageCreateManyInput = {
+    id?: string
+    displayOrder: number
+    imageUrl: string
+  }
+
+  export type StarsSectionImageUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    imageUrl?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type StarsSectionImageUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    imageUrl?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type BannerImageCreateInput = {
+    fileName: string
+    isActive?: boolean
+  }
+
+  export type BannerImageUncheckedCreateInput = {
+    id?: number
+    fileName: string
+    isActive?: boolean
+  }
+
+  export type BannerImageUpdateInput = {
+    fileName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type BannerImageUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    fileName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type BannerImageCreateManyInput = {
+    id?: number
+    fileName: string
+    isActive?: boolean
+  }
+
+  export type BannerImageUpdateManyMutationInput = {
+    fileName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type BannerImageUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    fileName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[]
@@ -10218,6 +12596,71 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
+  }
+
+  export type StarsSectionImageCountOrderByAggregateInput = {
+    id?: SortOrder
+    displayOrder?: SortOrder
+    imageUrl?: SortOrder
+  }
+
+  export type StarsSectionImageAvgOrderByAggregateInput = {
+    displayOrder?: SortOrder
+  }
+
+  export type StarsSectionImageMaxOrderByAggregateInput = {
+    id?: SortOrder
+    displayOrder?: SortOrder
+    imageUrl?: SortOrder
+  }
+
+  export type StarsSectionImageMinOrderByAggregateInput = {
+    id?: SortOrder
+    displayOrder?: SortOrder
+    imageUrl?: SortOrder
+  }
+
+  export type StarsSectionImageSumOrderByAggregateInput = {
+    displayOrder?: SortOrder
+  }
+
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type BannerImageCountOrderByAggregateInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    isActive?: SortOrder
+  }
+
+  export type BannerImageAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type BannerImageMaxOrderByAggregateInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    isActive?: SortOrder
+  }
+
+  export type BannerImageMinOrderByAggregateInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    isActive?: SortOrder
+  }
+
+  export type BannerImageSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type OrderCreateNestedManyWithoutUserInput = {
@@ -10580,6 +13023,10 @@ export namespace Prisma {
     update?: XOR<XOR<ProductUpdateToOneWithWhereWithoutCartItemsInput, ProductUpdateWithoutCartItemsInput>, ProductUncheckedUpdateWithoutCartItemsInput>
   }
 
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[]
@@ -10691,6 +13138,19 @@ export namespace Prisma {
     _sum?: NestedDecimalFilter<$PrismaModel>
     _min?: NestedDecimalFilter<$PrismaModel>
     _max?: NestedDecimalFilter<$PrismaModel>
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type OrderCreateWithoutUserInput = {
