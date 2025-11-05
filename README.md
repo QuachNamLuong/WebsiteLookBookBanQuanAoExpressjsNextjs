@@ -1,14 +1,3 @@
-# 🚀 Fullstack App — Express.js + Next.js + MySQL + MinIO + Docker
-
-Dự án bao gồm:
-- **Backend:** Express.js (TypeScript + tsx)
-- **Frontend:** Next.js
-- **Database:** MySQL + phpMyAdmin
-- **Storage:** MinIO (S3-compatible)
-- **Container:** Docker Compose hỗ trợ toàn bộ môi trường
-
----
-
 ## 📂 Cấu trúc thư mục
 ```
 .
