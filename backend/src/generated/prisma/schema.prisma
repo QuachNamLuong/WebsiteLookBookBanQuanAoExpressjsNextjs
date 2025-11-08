@@ -20,31 +20,61 @@ model User {
   passwordHash String @unique @map("password_hash")
   role         Role
 
-  orders    Order[]
-  cartItems CartItem[]
+  orders  Order[]
+  ratings Rating[]
+  carts   Cart[]
 
   @@map("users")
 }
 
 model Product {
 
-  productId    String         @id @default(uuid()) @map("product_id")
-  productName  String         @unique @map("product_name")
-  quantity     Int
+  productId   String   @id @default(uuid()) @map("product_id")
+  productName String   @unique @map("product_name")
+  quantity    Int
+  createdAt   DateTime @default(now())
+  updateAt    DateTime @default(now()) @updatedAt()
+  price       Decimal
+  material    String
+  color       String
+  nameMeaning String
+  style       String
+  usage       String
+
   productImage ProductImage[]
   orderItems   OrderItem[]
   cartItems    CartItem[]
+  ratings      Rating[]
+  productSizes ProductSize[]
 
   @@map("products")
+}
+
+model ProductSize {
+  id       Int       @id @default(autoincrement())
+  size     Size      @unique
+  products Product[]
+}
+
+enum Size {
+  XS
+  S
+  M
+  L
+  XL
+  XXL
+  XXXL
 }
 
 model ProductImage {
 
   productImageId   String @id @default(uuid()) @map("product_image_id")
+  productImageUrl  String @unique
   productImageName String @unique @map("product_image_name")
+  objectName       String @unique
   productId        String
 
-  product Product @relation(fields: [productId], references: [productId])
+  product Product @relation(fields: [productId], references: [productId], onDelete: Cascade)
 
   @@map("product_images")
 }
@@ -77,41 +107,44 @@ model OrderItem {
   @@map("order_items")
 }
 
+model Cart {
+  id        String     @id @default(uuid())
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  isActive  Boolean    @default(true)
+  user      User       @relation(fields: [userId], references: [userId])
+  userId    String
+  cartItems CartItem[]
+}
+
 model CartItem {
 
   id        String  @id @default(uuid())
   quantity  Int
-  userId    String
-  user      User    @relation(fields: [userId], references: [userId])
   productId String
   product   Product @relation(fields: [productId], references: [productId])
+  cart      Cart    @relation(fields: [cartId], references: [id])
+  cartId    String
 
   @@map("cart_items")
 }
 
-model LookBookStory {
+model Rating {
+  id        String     @id @default(uuid())
+  userId    String
+  productId String
+  rate      RateNumber
+  comment   String?
+  createdAt DateTime   @default(now())
 
-  id          String @id @default(uuid())
-  name        String
-  description String
-
-  @@map("look_book_stories")
+  product Product @relation(fields: [productId], references: [productId])
+  user    User    @relation(fields: [userId], references: [userId])
 }
 
-model StarsSectionImage {
-
-  id           String @id @default(uuid())
-  displayOrder Int
-  imageUrl     String @unique
-
-  @@map("stars_section_images")
-}
-
-model BannerImage {
-
-  id       Int     @id @default(autoincrement())
-  fileName String  @unique
-  isActive Boolean @default(false)
-
-  @@map("banner_images")
+enum RateNumber {
+  ONE   @map("1")
+  TWO   @map("2")
+  THREE @map("3")
+  FOUR  @map("4")
+  FIVE  @map("5")
 }

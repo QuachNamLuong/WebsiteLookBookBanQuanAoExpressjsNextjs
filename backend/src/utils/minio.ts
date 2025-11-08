@@ -14,7 +14,7 @@ export async function ensurePublicBucket(bucketName: string) {
 
     // 2️⃣ Set public read policy
     const policy = {
-      Version: "2025",
+      Version: "2012-10-17",
       Statement: [
         {
           Effect: "Allow",
@@ -52,16 +52,20 @@ export const getListFileInBucket = async (bucketName: string) => {
   return fileNames;
 }
 
-export const uploadFile = async (bucketName: string, objectName: string, filePath: string) => {
+export const uploadFile = async (
+  bucketName: string,
+  objectName: string,
+  fileBuffer: Buffer
+) => {
   try {
-    await minio.fPutObject(bucketName, objectName, filePath, {});
+    await minio.putObject(bucketName, objectName, fileBuffer);
     console.log(`File "${objectName}" uploaded to bucket "${bucketName}"`);
     return { success: true };
   } catch (error) {
     console.error(`Failed to upload "${objectName}" to bucket "${bucketName}":`, error);
     return { success: false, error };
   }
-}
+};
 
 export async function deleteFile(bucketName: string, objectName: string) {
   try {

@@ -13,6 +13,8 @@ import { ShoppingBag, BookOpen, User } from "lucide-react";
 import ShopIcon from "../icon/shop-icon";
 import { StoryIcon } from "../icon/story-icon";
 import { AccountIcon } from "../icon/account-icon";
+import { CartButton } from "../features/cart/cart-button";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 
 export default function Header() {
   const productLinks = [
@@ -85,15 +87,43 @@ export default function Header() {
 
         {/* ---------- Right Icons ---------- */}
         <div className="flex items-center gap-6 text-[#6b7f5f]">
+          <Link href="/cart">
+            <CartButton />
+          </Link>
           <Link href="/shop" aria-label="Shop">
-            <ShopIcon  className="w-5 h-5 hover:opacity-80 transition"/>
+            <ShopIcon className="w-5 h-5 hover:opacity-80 transition" />
           </Link>
           <Link href="/blog" aria-label="Story">
             <StoryIcon className="w-5 h-5 hover:opacity-80 transition" />
           </Link>
-          <Link href="/account" aria-label="Account">
-            <AccountIcon className="w-5 h-5 hover:opacity-80 transition"/>
-          </Link>
+          <NavigationMenu viewport={false}>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>
+                  <AccountIcon className="w-5 h-5 hover:opacity-80 transition" />
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="flex flex-col space-y-1">
+                    <Link
+                      href="/account"
+                      className="px-2 py-1.5 rounded-md hover:bg-accent transition text-sm"
+                    >
+                      My Account
+                    </Link>
+                    <Link
+                      href="/settings"
+                      className="px-2 py-1.5 rounded-md hover:bg-accent transition text-sm"
+                    >
+                      Settings
+                    </Link>
+                    <button className="text-left px-2 py-1.5 rounded-md hover:bg-destructive/10 text-destructive text-sm">
+                      Log out
+                    </button>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
       </div>
     </header>

@@ -1,11 +1,14 @@
 import { Router } from "express";
-import authRouter from "./auth.route";
-import router from "./stars-section-image.route";
-
+import productRouter from "./product.route";
+import productImageRouter from "./product-image.route";
+import cartRouter from "./cart.route";
+import { authRoutes } from "../features";
 
 const appRouter = Router()
 
-appRouter.use("/api", authRouter);
-appRouter.use("/api", router)
+appRouter.use("/api", authRoutes);
+appRouter.use("/api", productRouter);
+appRouter.use("/api", productImageRouter);
+appRouter.use("/api", cartRouter);
 
 export default appRouter;

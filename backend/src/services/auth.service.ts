@@ -1,7 +1,7 @@
 import { signAccessToken, signRefreshToken, verifyRefreshToken } from "../utils/jwt";
 import logger from "../utils/logger";
 import * as AuthHelper from "../helpers/auth.helper";
-import UserService from "./user.service";
+import * as UserService from "./user.service";
 import prisma from "../lib/prisma";
 import { comparePassword } from "../utils/password";
 

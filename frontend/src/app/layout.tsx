@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner"
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import QueryProvider from "@/components/provider/query-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,13 +29,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
         <Header />
-        {children}
+
+        {/* Main content expands to fill available space */}
+        <main className="flex-grow">
+          <QueryProvider>{children}</QueryProvider>
+        </main>
+
+        {/* Footer stays at bottom when content is short */}
         <Footer />
+
+        {/* Toaster stays on top */}
         <Toaster />
-        
       </body>
     </html>
   );

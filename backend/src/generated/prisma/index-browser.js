@@ -128,12 +128,27 @@ exports.Prisma.UserScalarFieldEnum = {
 exports.Prisma.ProductScalarFieldEnum = {
   productId: 'productId',
   productName: 'productName',
-  quantity: 'quantity'
+  quantity: 'quantity',
+  createdAt: 'createdAt',
+  updateAt: 'updateAt',
+  price: 'price',
+  material: 'material',
+  color: 'color',
+  nameMeaning: 'nameMeaning',
+  style: 'style',
+  usage: 'usage'
+};
+
+exports.Prisma.ProductSizeScalarFieldEnum = {
+  id: 'id',
+  size: 'size'
 };
 
 exports.Prisma.ProductImageScalarFieldEnum = {
   productImageId: 'productImageId',
+  productImageUrl: 'productImageUrl',
   productImageName: 'productImageName',
+  objectName: 'objectName',
   productId: 'productId'
 };
 
@@ -151,50 +166,72 @@ exports.Prisma.OrderItemScalarFieldEnum = {
   productId: 'productId'
 };
 
+exports.Prisma.CartScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  isActive: 'isActive',
+  userId: 'userId'
+};
+
 exports.Prisma.CartItemScalarFieldEnum = {
   id: 'id',
   quantity: 'quantity',
+  productId: 'productId',
+  cartId: 'cartId'
+};
+
+exports.Prisma.RatingScalarFieldEnum = {
+  id: 'id',
   userId: 'userId',
-  productId: 'productId'
-};
-
-exports.Prisma.LookBookStoryScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  description: 'description'
-};
-
-exports.Prisma.StarsSectionImageScalarFieldEnum = {
-  id: 'id',
-  displayOrder: 'displayOrder',
-  imageUrl: 'imageUrl'
-};
-
-exports.Prisma.BannerImageScalarFieldEnum = {
-  id: 'id',
-  fileName: 'fileName',
-  isActive: 'isActive'
+  productId: 'productId',
+  rate: 'rate',
+  comment: 'comment',
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
 };
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
 exports.Role = exports.$Enums.Role = {
   ADMIN: 'ADMIN',
   CUSTOMER: 'CUSTOMER'
 };
 
+exports.Size = exports.$Enums.Size = {
+  XS: 'XS',
+  S: 'S',
+  M: 'M',
+  L: 'L',
+  XL: 'XL',
+  XXL: 'XXL',
+  XXXL: 'XXXL'
+};
+
+exports.RateNumber = exports.$Enums.RateNumber = {
+  ONE: 'ONE',
+  TWO: 'TWO',
+  THREE: 'THREE',
+  FOUR: 'FOUR',
+  FIVE: 'FIVE'
+};
+
 exports.Prisma.ModelName = {
   User: 'User',
   Product: 'Product',
+  ProductSize: 'ProductSize',
   ProductImage: 'ProductImage',
   Order: 'Order',
   OrderItem: 'OrderItem',
+  Cart: 'Cart',
   CartItem: 'CartItem',
-  LookBookStory: 'LookBookStory',
-  StarsSectionImage: 'StarsSectionImage',
-  BannerImage: 'BannerImage'
+  Rating: 'Rating'
 };
 
 /**

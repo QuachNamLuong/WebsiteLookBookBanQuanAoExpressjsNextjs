@@ -1,5 +1,5 @@
 import multer from "multer";
-import { uploadFile, ensureBucket } from "../utils/minio"; // adjust path
+import { uploadFile, ensurePublicBucket } from "../utils/minio"; // adjust path
 import path from "path";
 import { Router, type Request, type Response } from "express";
 
@@ -9,7 +9,7 @@ const upload = multer({ dest: "uploads/" }); // temp local storage
 const BUCKET_NAME = "my-bucket";
 
 // Ensure bucket exists on server start
-ensureBucket(BUCKET_NAME).catch(console.error);
+ensurePublicBucket(BUCKET_NAME).catch(console.error);
 
 
 router.post("/upload", upload.single("file"), async (req: Request, res: Response) => {

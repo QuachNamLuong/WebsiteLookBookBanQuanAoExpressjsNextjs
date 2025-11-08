@@ -1,13 +1,9 @@
 import jwt, { type JwtPayload } from 'jsonwebtoken';
-import type { Role } from '../generated/prisma';
 import jwtConfig from '../config/jwt.config';
 import logger from './logger';
 
 export interface AccessJwtPayload extends JwtPayload {
   userId: string;
-  username: string;
-  email: string;
-  role: Role;
 }
 
 export interface RefreshJwtPayload extends JwtPayload {

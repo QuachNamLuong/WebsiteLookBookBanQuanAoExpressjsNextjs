@@ -1,0 +1,854 @@
+2025-11-05 01:09:24 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:09:30 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:10:00 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:10:05 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:10:11 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:11:01 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:11:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:11:11 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:11:52 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:11:56 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:12:00 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:12:24 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:12:31 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:12:37 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:12:44 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:13:00 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:13:10 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:13:18 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:13:22 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:13:30 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:13:34 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:13:36 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:13:41 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:14:16 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:14:20 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:14:33 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:14:37 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:15:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:15:07 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:15:11 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:15:19 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:15:25 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:23:42 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 01:29:32 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 01:29:33 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:26:34 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 09:35:17 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:35:17 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:35:18 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:35:21 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:35:21 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:35:44 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:35:47 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:35:48 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:35:48 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:35:51 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:35:51 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:36:14 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:36:17 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:36:34 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:40:49 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:41:11 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:41:22 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:45
+
+  13 
+  14 export const deleteProdcut = async (productId: string) => {
+  15   try {
+→ 16     const newProduct = await prisma.product.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:16:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:26:3)
+2025-11-05 09:45:41 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 09:46:23 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 09:46:33 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 09:46:35 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 09:46:41 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 09:46:43 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:44:05 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:44:21 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:44:27 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:44:48 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:45:21 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:45:32 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:46:07 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:46:15 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:46:38 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:46:41 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:46:46 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:47:04 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:47:06 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:47:12 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:47:21 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:50:46 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:51:17 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:52:18 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:52:22 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:52:34 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:53:17 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:53:22 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:53:26 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:53:32 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:53:36 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:53:41 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:53:43 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:53:47 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:53:53 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:54:15 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:54:23 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:54:32 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:54:38 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:54:42 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:55:02 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:55:35 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:55:42 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:56:04 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:56:14 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:56:26 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:58:22 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:58:27 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:58:45 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:59:11 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 12:59:19 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:01:20 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:01:37 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:01:47 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:02:06 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:02:22 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:02:31 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:02:36 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:02:44 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:02:50 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:04:08 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:04:52 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:05:01 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:05:07 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:05:10 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:06:04 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:06:58 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:07:40 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:08:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:11:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:11:31 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:12:57 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:17:11 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:19:51 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:20:04 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:20:18 [info] : files length: 0
+2025-11-05 13:23:25 [info] : files length: 2
+2025-11-05 13:24:31 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:24:38 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:24:59 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:26:25 [info] : files length: 2
+2025-11-05 13:26:59 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:27:47 [info] : files length: 2
+2025-11-05 13:42:16 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:43:44 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 13:45:36 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 14:04:41 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 14:06:08 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 14:07:23 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 14:11:17 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 14:12:13 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 14:21:30 [info] : files length: 1
+2025-11-05 14:22:00 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 14:23:17 [info] : files length: 1
+2025-11-05 14:24:11 [info] : files length: 1
+2025-11-05 14:25:05 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 14:25:59 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 14:27:36 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 14:27:36 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 15:16:18 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 15:20:06 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 15:55:12 [info] : files length: 1
+2025-11-05 15:55:51 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 15:56:04 [info] : files length: 1
+2025-11-05 16:41:18 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 16:41:41 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 16:41:50 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 16:42:36 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 16:43:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 16:43:06 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:01:53 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:02:02 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:20:48 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:21:19 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:21:25 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:22:01 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:22:21 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:22:34 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:22:38 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:23:05 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:23:17 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:23:32 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:23:53 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:24:00 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:24:30 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:24:55 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:25:02 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:25:15 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:25:34 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:25:45 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:25:48 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:25:52 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:26:16 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:26:25 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:27:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:27:10 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:27:17 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:27:23 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:27:44 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:27:57 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:28:11 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:28:20 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:28:23 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:37:53 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:38:25 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:38:33 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:39:01 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:39:15 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:39:27 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:39:54 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:39:59 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:43:57 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:44:05 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 17:50:02 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 18:02:22 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 18:03:05 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 18:06:15 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 18:06:17 [info] : Files to delete: 
+2025-11-05 21:23:32 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 21:24:04 [info] : Files to delete: 
+2025-11-05 21:24:35 [info] : Files to delete: 
+2025-11-05 21:24:47 [info] : Files to delete: 
+2025-11-05 21:26:30 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 21:26:38 [info] : Files to delete: 
+2025-11-05 21:26:50 [info] : Files to delete: 
+2025-11-05 21:27:01 [info] : Files to delete: 
+2025-11-05 21:29:25 [info] : Files to delete: 
+2025-11-05 21:30:15 [info] : Files to delete: 
+2025-11-05 21:32:22 [info] : Files to delete: 
+2025-11-05 22:43:13 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 22:45:47 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 22:45:57 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 22:46:30 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 22:46:48 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 22:47:05 [info] : files length: 2
+2025-11-05 22:47:19 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 22:49:50 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 22:50:44 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 22:51:04 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 22:51:12 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 22:52:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 22:52:06 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 22:52:30 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 22:52:34 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 22:52:37 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 22:52:46 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 22:53:35 [info] : Files to delete: undefined
+2025-11-05 22:54:48 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 22:54:49 [info] : Files to delete: undefined
+2025-11-05 22:55:01 [info] : Files to delete: undefined
+2025-11-05 22:55:36 [info] : Root endpoint hit
+2025-11-05 22:56:37 [info] : Files to delete: undefined
+2025-11-05 22:58:16 [info] : Files to delete: undefined
+2025-11-05 23:01:00 [info] : Files to delete: 73f706ac-f633-4d2d-9e7b-68cf94c3d1cc.png,ce904089-51cb-496e-a455-313266856f38.png
+2025-11-05 23:01:18 [info] : Files to delete: 9ed389d4-a6ac-4b5c-8b7f-31b593393f39.png,61771bfd-7f3e-447c-b81a-e54f1bf1f72a.jpg
+2025-11-05 23:01:26 [info] : Files to delete: 9a2f59af-bf4c-41dd-87c1-fe27683bc8ea.png
+2025-11-05 23:01:35 [info] : Files to delete: 9a2f59af-bf4c-41dd-87c1-fe27683bc8ea.png
+2025-11-05 23:02:35 [info] : Files to delete: undefined
+2025-11-05 23:02:50 [info] : Files to delete: undefined
+2025-11-05 23:02:55 [info] : Files to delete: 9a2f59af-bf4c-41dd-87c1-fe27683bc8ea.png
+2025-11-05 23:04:51 [info] : Files to delete: undefined
+2025-11-05 23:05:28 [info] : Files to delete: d69e0448-25b6-42c5-ab79-4aaf5470bbfc.png
+2025-11-05 23:06:38 [info] : Files to delete: d69e0448-25b6-42c5-ab79-4aaf5470bbfc.png
+2025-11-05 23:06:46 [info] : Files to delete: ecd40d62-55e3-4574-9d92-226b9c2ff813.png
+2025-11-05 23:07:32 [info] : Files to delete: d69e0448-25b6-42c5-ab79-4aaf5470bbfc.png,ecd40d62-55e3-4574-9d92-226b9c2ff813.png
+2025-11-05 23:07:57 [info] : Files to delete: undefined
+2025-11-05 23:08:10 [info] : Files to delete: c4d6c048-ba08-4365-a057-62041da6360d.png
+2025-11-05 23:12:58 [info] : Files to delete: undefined
+2025-11-05 23:16:34 [info] : Files to delete: c4d6c048-ba08-4365-a057-62041da6360d.png
+2025-11-05 23:18:03 [info] : Files to delete: undefined
+2025-11-05 23:18:07 [info] : Files to delete: f34b6427-e82a-43b1-b122-20bc5a220f30.png
+2025-11-05 23:20:20 [info] : Files to delete: f34b6427-e82a-43b1-b122-20bc5a220f30.png
+2025-11-05 23:22:55 [info] : Files to delete: b191a399-c513-4b86-b2b6-568fd6a49744.png
+2025-11-05 23:22:59 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:23:02 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:45:10 [info] : files length: 1
+2025-11-05 23:45:29 [info] : Files to delete: undefined
+2025-11-05 23:45:33 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:45:43 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:45:44 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:45:45 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:47:16 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:47:17 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:48:34 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:48:50 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:48:51 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:48:52 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:48:52 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:48:52 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:49:22 [error] : PrismaClientKnownRequestError: 
+Invalid `prisma.product.delete()` invocation in
+D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:45
+
+  91 
+  92 export const deleteProdcut = async (productId: string) => {
+  93   try {
+→ 94     const newProduct = await prisma.product.delete(
+Foreign key constraint violated on the foreign key
+    at ei.handleRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:7268)
+    at ei.handleAndLogRequestError (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6593)
+    at ei.request (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:124:6300)
+    at async a (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\generated\prisma\runtime\library.js:133:9551)
+    at async Module.deleteProdcut (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\services\product.service.ts:94:24)
+    at async deleteProductByIdHandler (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\controllers\product.controller.ts:50:3)
+2025-11-05 23:49:55 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:50:00 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:51:01 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:52:19 [info] : files length: 1
+2025-11-05 23:54:34 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:55:04 [info] : files length: 1
+2025-11-05 23:55:49 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:56:12 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:56:19 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:56:37 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:56:50 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:56:58 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:57:22 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:57:32 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:57:35 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:57:43 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:58:10 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:58:20 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:58:27 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:58:32 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:58:52 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:59:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:59:19 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:59:22 [info] : Server running in development mode at http://localhost:8080
+2025-11-05 23:59:29 [info] : Server running in development mode at http://localhost:8080

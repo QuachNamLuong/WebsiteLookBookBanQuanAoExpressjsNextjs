@@ -14,6 +14,4 @@ const minioConfig: MinioConfig = {
   secretKey: 'minioadmin'
 }
 
-export const STARS_IMAGE_BUCKET = "stars-image";
-
 export default minioConfig;

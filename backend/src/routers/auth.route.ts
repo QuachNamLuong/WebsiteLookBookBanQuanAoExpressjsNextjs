@@ -12,10 +12,27 @@ authRouter.post("/auth/refresh-token", catchAsync(AuthController.refreshToken));
 authRouter.get(
   "/auth/me",
   authenticate,
-  catchAsync((req, res) => {
+  catchAsync((req, res): any => {
     const userReq = req as AuthenticatedRequest;
-    res.json({ user: { userId: userReq.user?.userId } });
+    res.json({ user: { userId: userReq.userId } });
   })
 );
+
+authRouter.post("/auth/logout", (req, res) => {
+
+  res.clearCookie("accessToken", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict"
+  });
+
+  res.clearCookie("refreshToken", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict"
+  });
+
+  return res.status(200).json({ message: "Logged out successfully" });
+});
 
 export default authRouter;
