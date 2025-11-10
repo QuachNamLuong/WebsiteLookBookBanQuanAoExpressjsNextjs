@@ -4,7 +4,7 @@ import { startTransition, useEffect, useState } from "react";
 import ProductItem from "./product-item";
 import { ProductPagination } from "./product-pagination";
 import { toast } from "sonner";
-import { getPaginateProduct, Product } from "@/lib/services/product/get-paginate-product";
+import { getPaginateProduct, Product } from "@/services/product/get-paginate-product";
 
 export default function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);

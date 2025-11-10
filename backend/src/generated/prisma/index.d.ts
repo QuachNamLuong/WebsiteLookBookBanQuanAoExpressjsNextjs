@@ -373,8 +373,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.17.1
-   * Query Engine version: 272a37d34178c2894197e17273bf937f25acdeac
+   * Prisma Client JS version: 6.19.0
+   * Query Engine version: 2ba551f319ab1df4bc874a89965d8b3641056773
    */
   export type PrismaVersion = {
     client: string
@@ -387,6 +387,7 @@ export namespace Prisma {
    */
 
 
+  export import Bytes = runtime.Bytes
   export import JsonObject = runtime.JsonObject
   export import JsonArray = runtime.JsonArray
   export import JsonValue = runtime.JsonValue
@@ -5344,6 +5345,7 @@ export namespace Prisma {
     productImageName: string | null
     objectName: string | null
     productId: string | null
+    createdAt: Date | null
   }
 
   export type ProductImageMaxAggregateOutputType = {
@@ -5352,6 +5354,7 @@ export namespace Prisma {
     productImageName: string | null
     objectName: string | null
     productId: string | null
+    createdAt: Date | null
   }
 
   export type ProductImageCountAggregateOutputType = {
@@ -5360,6 +5363,7 @@ export namespace Prisma {
     productImageName: number
     objectName: number
     productId: number
+    createdAt: number
     _all: number
   }
 
@@ -5370,6 +5374,7 @@ export namespace Prisma {
     productImageName?: true
     objectName?: true
     productId?: true
+    createdAt?: true
   }
 
   export type ProductImageMaxAggregateInputType = {
@@ -5378,6 +5383,7 @@ export namespace Prisma {
     productImageName?: true
     objectName?: true
     productId?: true
+    createdAt?: true
   }
 
   export type ProductImageCountAggregateInputType = {
@@ -5386,6 +5392,7 @@ export namespace Prisma {
     productImageName?: true
     objectName?: true
     productId?: true
+    createdAt?: true
     _all?: true
   }
 
@@ -5467,6 +5474,7 @@ export namespace Prisma {
     productImageName: string
     objectName: string
     productId: string
+    createdAt: Date
     _count: ProductImageCountAggregateOutputType | null
     _min: ProductImageMinAggregateOutputType | null
     _max: ProductImageMaxAggregateOutputType | null
@@ -5492,6 +5500,7 @@ export namespace Prisma {
     productImageName?: boolean
     objectName?: boolean
     productId?: boolean
+    createdAt?: boolean
     product?: boolean | ProductDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["productImage"]>
 
@@ -5501,6 +5510,7 @@ export namespace Prisma {
     productImageName?: boolean
     objectName?: boolean
     productId?: boolean
+    createdAt?: boolean
     product?: boolean | ProductDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["productImage"]>
 
@@ -5510,6 +5520,7 @@ export namespace Prisma {
     productImageName?: boolean
     objectName?: boolean
     productId?: boolean
+    createdAt?: boolean
     product?: boolean | ProductDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["productImage"]>
 
@@ -5519,9 +5530,10 @@ export namespace Prisma {
     productImageName?: boolean
     objectName?: boolean
     productId?: boolean
+    createdAt?: boolean
   }
 
-  export type ProductImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"productImageId" | "productImageUrl" | "productImageName" | "objectName" | "productId", ExtArgs["result"]["productImage"]>
+  export type ProductImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"productImageId" | "productImageUrl" | "productImageName" | "objectName" | "productId" | "createdAt", ExtArgs["result"]["productImage"]>
   export type ProductImageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     product?: boolean | ProductDefaultArgs<ExtArgs>
   }
@@ -5543,6 +5555,7 @@ export namespace Prisma {
       productImageName: string
       objectName: string
       productId: string
+      createdAt: Date
     }, ExtArgs["result"]["productImage"]>
     composites: {}
   }
@@ -5972,6 +5985,7 @@ export namespace Prisma {
     readonly productImageName: FieldRef<"ProductImage", 'String'>
     readonly objectName: FieldRef<"ProductImage", 'String'>
     readonly productId: FieldRef<"ProductImage", 'String'>
+    readonly createdAt: FieldRef<"ProductImage", 'DateTime'>
   }
     
 
@@ -11880,7 +11894,8 @@ export namespace Prisma {
     productImageUrl: 'productImageUrl',
     productImageName: 'productImageName',
     objectName: 'objectName',
-    productId: 'productId'
+    productId: 'productId',
+    createdAt: 'createdAt'
   };
 
   export type ProductImageScalarFieldEnum = (typeof ProductImageScalarFieldEnum)[keyof typeof ProductImageScalarFieldEnum]
@@ -12237,6 +12252,7 @@ export namespace Prisma {
     productImageName?: StringFilter<"ProductImage"> | string
     objectName?: StringFilter<"ProductImage"> | string
     productId?: StringFilter<"ProductImage"> | string
+    createdAt?: DateTimeFilter<"ProductImage"> | Date | string
     product?: XOR<ProductScalarRelationFilter, ProductWhereInput>
   }
 
@@ -12246,6 +12262,7 @@ export namespace Prisma {
     productImageName?: SortOrder
     objectName?: SortOrder
     productId?: SortOrder
+    createdAt?: SortOrder
     product?: ProductOrderByWithRelationInput
   }
 
@@ -12258,6 +12275,7 @@ export namespace Prisma {
     OR?: ProductImageWhereInput[]
     NOT?: ProductImageWhereInput | ProductImageWhereInput[]
     productId?: StringFilter<"ProductImage"> | string
+    createdAt?: DateTimeFilter<"ProductImage"> | Date | string
     product?: XOR<ProductScalarRelationFilter, ProductWhereInput>
   }, "productImageId" | "productImageUrl" | "productImageName" | "objectName">
 
@@ -12267,6 +12285,7 @@ export namespace Prisma {
     productImageName?: SortOrder
     objectName?: SortOrder
     productId?: SortOrder
+    createdAt?: SortOrder
     _count?: ProductImageCountOrderByAggregateInput
     _max?: ProductImageMaxOrderByAggregateInput
     _min?: ProductImageMinOrderByAggregateInput
@@ -12281,6 +12300,7 @@ export namespace Prisma {
     productImageName?: StringWithAggregatesFilter<"ProductImage"> | string
     objectName?: StringWithAggregatesFilter<"ProductImage"> | string
     productId?: StringWithAggregatesFilter<"ProductImage"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"ProductImage"> | Date | string
   }
 
   export type OrderWhereInput = {
@@ -12474,6 +12494,7 @@ export namespace Prisma {
 
   export type CartItemWhereUniqueInput = Prisma.AtLeast<{
     id?: string
+    cartId_productId?: CartItemCartIdProductIdCompoundUniqueInput
     AND?: CartItemWhereInput | CartItemWhereInput[]
     OR?: CartItemWhereInput[]
     NOT?: CartItemWhereInput | CartItemWhereInput[]
@@ -12482,7 +12503,7 @@ export namespace Prisma {
     cartId?: StringFilter<"CartItem"> | string
     product?: XOR<ProductScalarRelationFilter, ProductWhereInput>
     cart?: XOR<CartScalarRelationFilter, CartWhereInput>
-  }, "id">
+  }, "id" | "cartId_productId">
 
   export type CartItemOrderByWithAggregationInput = {
     id?: SortOrder
@@ -12796,6 +12817,7 @@ export namespace Prisma {
     productImageUrl: string
     productImageName: string
     objectName: string
+    createdAt?: Date | string
     product: ProductCreateNestedOneWithoutProductImageInput
   }
 
@@ -12805,6 +12827,7 @@ export namespace Prisma {
     productImageName: string
     objectName: string
     productId: string
+    createdAt?: Date | string
   }
 
   export type ProductImageUpdateInput = {
@@ -12812,6 +12835,7 @@ export namespace Prisma {
     productImageUrl?: StringFieldUpdateOperationsInput | string
     productImageName?: StringFieldUpdateOperationsInput | string
     objectName?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     product?: ProductUpdateOneRequiredWithoutProductImageNestedInput
   }
 
@@ -12821,6 +12845,7 @@ export namespace Prisma {
     productImageName?: StringFieldUpdateOperationsInput | string
     objectName?: StringFieldUpdateOperationsInput | string
     productId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProductImageCreateManyInput = {
@@ -12829,6 +12854,7 @@ export namespace Prisma {
     productImageName: string
     objectName: string
     productId: string
+    createdAt?: Date | string
   }
 
   export type ProductImageUpdateManyMutationInput = {
@@ -12836,6 +12862,7 @@ export namespace Prisma {
     productImageUrl?: StringFieldUpdateOperationsInput | string
     productImageName?: StringFieldUpdateOperationsInput | string
     objectName?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProductImageUncheckedUpdateManyInput = {
@@ -12844,6 +12871,7 @@ export namespace Prisma {
     productImageName?: StringFieldUpdateOperationsInput | string
     objectName?: StringFieldUpdateOperationsInput | string
     productId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type OrderCreateInput = {
@@ -13446,6 +13474,7 @@ export namespace Prisma {
     productImageName?: SortOrder
     objectName?: SortOrder
     productId?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ProductImageMaxOrderByAggregateInput = {
@@ -13454,6 +13483,7 @@ export namespace Prisma {
     productImageName?: SortOrder
     objectName?: SortOrder
     productId?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ProductImageMinOrderByAggregateInput = {
@@ -13462,6 +13492,7 @@ export namespace Prisma {
     productImageName?: SortOrder
     objectName?: SortOrder
     productId?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type UserScalarRelationFilter = {
@@ -13574,6 +13605,11 @@ export namespace Prisma {
   export type CartScalarRelationFilter = {
     is?: CartWhereInput
     isNot?: CartWhereInput
+  }
+
+  export type CartItemCartIdProductIdCompoundUniqueInput = {
+    cartId: string
+    productId: string
   }
 
   export type CartItemCountOrderByAggregateInput = {
@@ -14692,6 +14728,7 @@ export namespace Prisma {
     productImageUrl: string
     productImageName: string
     objectName: string
+    createdAt?: Date | string
   }
 
   export type ProductImageUncheckedCreateWithoutProductInput = {
@@ -14699,6 +14736,7 @@ export namespace Prisma {
     productImageUrl: string
     productImageName: string
     objectName: string
+    createdAt?: Date | string
   }
 
   export type ProductImageCreateOrConnectWithoutProductInput = {
@@ -14818,6 +14856,7 @@ export namespace Prisma {
     productImageName?: StringFilter<"ProductImage"> | string
     objectName?: StringFilter<"ProductImage"> | string
     productId?: StringFilter<"ProductImage"> | string
+    createdAt?: DateTimeFilter<"ProductImage"> | Date | string
   }
 
   export type OrderItemUpsertWithWhereUniqueWithoutProductInput = {
@@ -15760,6 +15799,7 @@ export namespace Prisma {
     productImageUrl: string
     productImageName: string
     objectName: string
+    createdAt?: Date | string
   }
 
   export type OrderItemCreateManyProductInput = {
@@ -15788,6 +15828,7 @@ export namespace Prisma {
     productImageUrl?: StringFieldUpdateOperationsInput | string
     productImageName?: StringFieldUpdateOperationsInput | string
     objectName?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProductImageUncheckedUpdateWithoutProductInput = {
@@ -15795,6 +15836,7 @@ export namespace Prisma {
     productImageUrl?: StringFieldUpdateOperationsInput | string
     productImageName?: StringFieldUpdateOperationsInput | string
     objectName?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProductImageUncheckedUpdateManyWithoutProductInput = {
@@ -15802,6 +15844,7 @@ export namespace Prisma {
     productImageUrl?: StringFieldUpdateOperationsInput | string
     productImageName?: StringFieldUpdateOperationsInput | string
     objectName?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type OrderItemUpdateWithoutProductInput = {

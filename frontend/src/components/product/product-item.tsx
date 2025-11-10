@@ -4,7 +4,7 @@ import { useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { Product } from "@/lib/services/product/get-paginate-product";
+import { Product } from "@/services/product/get-paginate-product";
 
 
 export default function ProductItem({ product }: { product: Product }) {

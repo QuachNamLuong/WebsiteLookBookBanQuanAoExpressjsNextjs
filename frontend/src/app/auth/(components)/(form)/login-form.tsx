@@ -6,25 +6,30 @@ import { toast } from "sonner";
 import { tr } from "date-fns/locale";
 import { mutate } from "swr";
 import api from "@/lib/axios";
+import { useAuthStore } from "@/lib/use-auth-store";
 
 export default function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const setLoggedIn = useAuthStore((state) => state.setLoggedIn);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-     try {
+    try {
       await api.post("/auth/login", { username, password });
       mutate("/auth/me");
       toast.success("Đăng nhập thành công");
-      window.location.href = "/"; 
+      window.location.href = "/";
+      setLoggedIn(true);
     } catch (err: any) {
       const msg = err?.response?.data?.message || "Đăng nhập thất bại";
       toast.error(msg);
+      setLoggedIn(false);
     } finally {
       setLoading(false);
+  
     }
   };
 
@@ -72,7 +77,7 @@ export default function LoginForm() {
 
       <button
         type="submit"
-        onClick={(e) => {toast.info(`username: ${username} password: ${password}`)}}
+        onClick={(e) => { toast.info(`username: ${username} password: ${password}`) }}
         className="w-full bg-[#f2f3dc] text-[#4f6742] font-semibold py-2 rounded-none"
       >
         ĐĂNG NHẬP

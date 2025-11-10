@@ -1,15 +1,20 @@
-import { cookies } from "next/headers";
 import api from "../lib/axios";
 import { HttpStatusCode } from "axios";
 
+export type IsLoginResponse = {
+  user: {
+    userId: string
+  }
+}
+
 export async function isLogin() {
   try {
-    const res = await api.get("/auth/me");
+    const res = await api.get<IsLoginResponse>("/auth/me");
     if (res.status === HttpStatusCode.Ok) {
-      return true;
+      return res.data.user.userId;
     }
   } catch (error) {
-    return false;
+    return;
   }
 }
 
@@ -18,6 +23,6 @@ export async function isAdmin() {
     if (!isLogin()) return false;
 
   } catch (error) {
-    
+
   }
 }

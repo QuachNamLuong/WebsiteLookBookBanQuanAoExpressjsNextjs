@@ -1,6 +1,6 @@
 "use client";
 
-import { getProductImage } from "@/lib/services/product-image/get-product-image";
+import { getProductImage } from "@/services/product-image/get-product-image";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -44,7 +44,7 @@ export default function ProductGallery({ productId }: { productId: string }) {
         <div
           key={i}
           className="rounded-[3px] overflow-hidden bg-gray-100"
-  
+
         >
           <Image
             src={img}

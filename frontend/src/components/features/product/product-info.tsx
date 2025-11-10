@@ -1,8 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button"
-import { addProductToCart } from "@/lib/services/cart/add-product-to-cart";
-import { getProductInfo } from "@/lib/services/product/get-product-info";
+import { addProductToCart } from "@/services/cart/add-product-to-cart";
+import { getProductInfo } from "@/services/product/get-product-info";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
@@ -93,7 +93,7 @@ export default function ProductInfo({ productId }: { productId: string }) {
         </div>
       </div>
 
-      <Button className="mt-6 w-full bg-green-800 hover:bg-green-700 text-white" 
+      <Button className="mt-6 w-full bg-green-800 hover:bg-green-700 text-white"
         onClick={async () => await addProductToCart(productId)}>
         Thêm vào giỏ hàng
       </Button>

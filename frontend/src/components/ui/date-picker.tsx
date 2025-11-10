@@ -12,6 +12,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { vi } from "date-fns/locale";
+import { CalendarMonth } from "react-day-picker"
 
 type DatePickerProps = {
   className?: string
@@ -31,8 +33,8 @@ export function DatePicker({ className }: DatePickerProps) {
               !date && "text-muted-foreground"
             )}
           >
-            <CalendarIcon className="mr-2 h-4 w-4"/>
-            {date ? format(date, "PPP") : <span>Pick a date</span>}
+            <CalendarIcon className="mr-2 h-4 w-4" />
+            {date ? format(date, "dd/MM/yyyy", { locale: vi }) : <span>Chọn ngày</span>}
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0">
@@ -40,6 +42,9 @@ export function DatePicker({ className }: DatePickerProps) {
             mode="single"
             selected={date}
             onSelect={setDate}
+            captionLayout="dropdown"
+            locale={vi}
+            formatters={{formatMonthDropdown: (month, dateLib) => (month.getMonth() + 1).toString()}}
           />
         </PopoverContent>
       </Popover>

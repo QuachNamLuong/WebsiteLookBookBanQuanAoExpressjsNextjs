@@ -1,0 +1,438 @@
+2025-11-09 16:06:23 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:21:41 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:25:19 [info] : User login: luong123@gmail.com
+2025-11-09 16:25:19 [info] : User logged in: luong123
+2025-11-09 16:25:19 [info] : User logged in: luong123
+2025-11-09 16:30:48 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:30:59 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:31:12 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:31:22 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:41:18 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:41:35 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:44:39 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:45:02 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:45:16 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:45:49 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:46:12 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:46:20 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:46:33 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:47:04 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:47:56 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:48:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:48:11 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:49:43 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:49:53 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:50:47 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:50:54 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:51:16 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:51:57 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:52:23 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:53:57 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:54:29 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:54:53 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:55:10 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:56:04 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:56:12 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:56:23 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:56:50 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:56:55 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:57:04 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:58:14 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:58:29 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 16:59:38 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:06:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:13:09 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:13:14 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:13:26 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:13:35 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:19:22 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:19:35 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:20:07 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:20:11 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:23:20 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:23:49 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:26:50 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:28:27 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:9:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:30:18 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:30:25 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:9:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:31:13 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:31:17 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:10:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:31:40 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:31:47 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:31:55 [error] : [object Object]
+2025-11-09 17:32:12 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:32:20 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:10:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:33:52 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:33:56 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:10:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:34:25 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:10:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:34:26 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:10:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:34:26 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:10:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:34:50 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:35:31 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:35:42 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:35:47 [info] : [object Object]
+2025-11-09 17:35:47 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:36:06 [info] : [object Object]
+2025-11-09 17:36:06 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:36:33 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:36:37 [info] : {"__next_hmr_refresh_hash__":"71"}
+2025-11-09 17:36:37 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:36:43 [info] : {"__next_hmr_refresh_hash__":"71"}
+2025-11-09 17:36:43 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:37:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:37:06 [info] : {"__next_hmr_refresh_hash__":"71"}
+2025-11-09 17:37:06 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:37:58 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:38:00 [info] : undefined
+2025-11-09 17:38:00 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 17:40:12 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:40:38 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 17:41:18 [info] : undefined
+2025-11-09 17:41:18 [info] : User login: luong123@gmail.com
+2025-11-09 17:41:18 [info] : User logged in: luong123
+2025-11-09 17:41:18 [info] : User logged in: luong123
+2025-11-09 18:27:11 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 18:28:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 18:28:21 [info] : undefined
+2025-11-09 18:28:21 [error] : ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "refreshToken"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 18:28:41 [info] : undefined
+2025-11-09 18:28:41 [info] : User login: luong123@gmail.com
+2025-11-09 18:28:41 [info] : User logged in: luong123
+2025-11-09 18:28:41 [info] : User logged in: luong123
+2025-11-09 18:31:07 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 18:31:43 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 18:32:03 [info] : Server running in development mode at http://localhost:8080
+2025-11-09 18:32:18 [info] : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZWUzYmVhMC1iZDExLTRjMzYtODYwOC02YWFiZGZhZjE3NzkiLCJ1c2VybmFtZSI6Imx1b25nMTIzIiwiZW1haWwiOiJsdW9uZzEyM0BnbWFpbC5jb20iLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3NjI2ODc3MjEsImV4cCI6MTc2MzU4NzcyMX0.fl_rWYYPXK4YpfPdXkR1vU0zrqU4VCT40f_DS8PE3qk"
+2025-11-09 18:32:18 [error] : ZodError: [
+  {
+    "origin": "string",
+    "code": "invalid_format",
+    "format": "uuid",
+    "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+    "path": [
+      "userId"
+    ],
+    "message": "Invalid UUID"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 18:32:19 [info] : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZWUzYmVhMC1iZDExLTRjMzYtODYwOC02YWFiZGZhZjE3NzkiLCJ1c2VybmFtZSI6Imx1b25nMTIzIiwiZW1haWwiOiJsdW9uZzEyM0BnbWFpbC5jb20iLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3NjI2ODc3MjEsImV4cCI6MTc2MzU4NzcyMX0.fl_rWYYPXK4YpfPdXkR1vU0zrqU4VCT40f_DS8PE3qk"
+2025-11-09 18:32:19 [error] : ZodError: [
+  {
+    "origin": "string",
+    "code": "invalid_format",
+    "format": "uuid",
+    "pattern": "/^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/",
+    "path": [
+      "userId"
+    ],
+    "message": "Invalid UUID"
+  }
+]
+    at new ZodError (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///D:/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\src\middlewares\validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at next (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\route.js:117:3)
+    at handle (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\lib\layer.js:152:17)
+    at D:\Projects\WebsiteLookBookBanQuanAoExpressjsNextjs\backend\node_modules\router\index.js:295:15
+2025-11-09 18:34:55 [info] : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZWUzYmVhMC1iZDExLTRjMzYtODYwOC02YWFiZGZhZjE3NzkiLCJ1c2VybmFtZSI6Imx1b25nMTIzIiwiZW1haWwiOiJsdW9uZzEyM0BnbWFpbC5jb20iLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3NjI2ODc3MjEsImV4cCI6MTc2MzU4NzcyMX0.fl_rWYYPXK4YpfPdXkR1vU0zrqU4VCT40f_DS8PE3qk"
+2025-11-09 18:35:24 [info] : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZWUzYmVhMC1iZDExLTRjMzYtODYwOC02YWFiZGZhZjE3NzkiLCJ1c2VybmFtZSI6Imx1b25nMTIzIiwiZW1haWwiOiJsdW9uZzEyM0BnbWFpbC5jb20iLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3NjI2ODc3MjEsImV4cCI6MTc2MzU4NzcyMX0.fl_rWYYPXK4YpfPdXkR1vU0zrqU4VCT40f_DS8PE3qk"
+2025-11-09 18:35:42 [info] : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZWUzYmVhMC1iZDExLTRjMzYtODYwOC02YWFiZGZhZjE3NzkiLCJ1c2VybmFtZSI6Imx1b25nMTIzIiwiZW1haWwiOiJsdW9uZzEyM0BnbWFpbC5jb20iLCJyb2xlIjoiQ1VTVE9NRVIiLCJpYXQiOjE3NjI2ODc3MjEsImV4cCI6MTc2MzU4NzcyMX0.fl_rWYYPXK4YpfPdXkR1vU0zrqU4VCT40f_DS8PE3qk"

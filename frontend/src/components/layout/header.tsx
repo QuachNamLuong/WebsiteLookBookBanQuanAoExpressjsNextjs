@@ -15,8 +15,20 @@ import { StoryIcon } from "../icon/story-icon";
 import { AccountIcon } from "../icon/account-icon";
 import { CartButton } from "../features/cart/cart-button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { logout } from "@/services/auth/logout";
+import { isLogin } from "@/utils/auth";
+import { useEffect, useState } from "react";
+import { useAuthStore } from "@/lib/use-auth-store";
+import { Button } from "../ui/button";
 
 export default function Header() {
+  const loggedIn = useAuthStore((state) => state.loggedIn);
+  const setLoggedIn = useAuthStore((state) => state.setLoggedIn);
+  const handleLogout = async () => {
+    const isLogout = await logout();
+    setLoggedIn(!isLogout);
+  };
+
   const productLinks = [
     { name: "Áo dài", href: "/products/ao-dai" },
     { name: "Phụ kiện", href: "/products/phu-kien" },
@@ -103,22 +115,37 @@ export default function Header() {
                   <AccountIcon className="w-5 h-5 hover:opacity-80 transition" />
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="flex flex-col space-y-1">
-                    <Link
-                      href="/account"
-                      className="px-2 py-1.5 rounded-md hover:bg-accent transition text-sm"
-                    >
-                      My Account
-                    </Link>
-                    <Link
-                      href="/settings"
-                      className="px-2 py-1.5 rounded-md hover:bg-accent transition text-sm"
-                    >
-                      Settings
-                    </Link>
-                    <button className="text-left px-2 py-1.5 rounded-md hover:bg-destructive/10 text-destructive text-sm">
-                      Log out
-                    </button>
+                  <div className="flex flex-col">
+                    {loggedIn ?
+                      <>
+                        <Link
+                          href="/account"
+                          className="px-2 py-1.5 rounded-md hover:bg-accent transition text-sm w-[100px]"
+                        >
+                          Tài khoản
+                        </Link>
+                        <Button
+                          className="text-left px-2 py-1.5 rounded-md hover:bg-destructive/10 text-destructive text-sm"
+                          onClick={handleLogout}>
+                          Đăng xuất
+                        </Button>
+                      </>
+                      :
+                      <>
+                        <Link
+                          href="/auth?state=login"
+                          className="px-2 py-1.5 rounded-md hover:bg-accent transition text-sm w-[100px]"
+                        >
+                          Đăng nhập
+                        </Link>
+                        <Link
+                          href="/auth?state=register"
+                          className="px-2 py-1.5 rounded-md hover:bg-accent transition text-sm w-[100px]"
+                        >
+                          Đăng ký
+                        </Link>
+                      </>
+                    }
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>

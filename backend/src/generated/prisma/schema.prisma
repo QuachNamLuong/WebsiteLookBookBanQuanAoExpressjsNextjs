@@ -68,11 +68,12 @@ enum Size {
 
 model ProductImage {
 
-  productImageId   String @id @default(uuid()) @map("product_image_id")
-  productImageUrl  String @unique
-  productImageName String @unique @map("product_image_name")
-  objectName       String @unique
+  productImageId   String   @id @default(uuid()) @map("product_image_id")
+  productImageUrl  String   @unique
+  productImageName String   @unique @map("product_image_name")
+  objectName       String   @unique
   productId        String
+  createdAt        DateTime @default(now())
 
   product Product @relation(fields: [productId], references: [productId], onDelete: Cascade)
 
@@ -126,6 +127,7 @@ model CartItem {
   cart      Cart    @relation(fields: [cartId], references: [id])
   cartId    String
 
+  @@unique([cartId, productId])
   @@map("cart_items")
 }
 

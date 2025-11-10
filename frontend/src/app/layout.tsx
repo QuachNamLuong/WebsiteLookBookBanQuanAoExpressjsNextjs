@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sonner"
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import QueryProvider from "@/components/provider/query-provider";
+import AuthInitializer from "./auth-initializer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +36,7 @@ export default function RootLayout({
 
         {/* Main content expands to fill available space */}
         <main className="flex-grow">
-          <QueryProvider>{children}</QueryProvider>
+          <QueryProvider><AuthInitializer>{children}</AuthInitializer></QueryProvider>
         </main>
 
         {/* Footer stays at bottom when content is short */}

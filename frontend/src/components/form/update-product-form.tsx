@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Field, FieldGroup, FieldLabel, FieldSet } from "../ui/field";
 import { Button } from "../ui/button";
-import { getProductDetail } from "@/lib/services/product/get-product-detail";
-import { updateProduct } from "@/lib/services/product/update-product";
+import { getProductDetail } from "@/services/product/get-product-detail";
+import { updateProduct } from "@/services/product/update-product";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Checkbox } from "../ui/checkbox";
 import { Label } from "../ui/label";
@@ -152,7 +152,7 @@ export default function UpdateProductForm({ productId }: UpdateProductFormProps)
       existingImages,
       newImages,
       deletedImages,
-      sizes: selectedSizes.map(({id, size}) => size),
+      sizes: selectedSizes.map(({ id, size }) => size),
       nameMean,
       material,
       style,

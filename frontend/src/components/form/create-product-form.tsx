@@ -5,7 +5,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { Field, FieldGroup, FieldLabel, FieldSet } from "../ui/field";
 import { Button } from "../ui/button";
-import { createProduct } from "@/lib/services/product/create-product";
+import { createProduct } from "@/services/product/create-product";
 import { Checkbox } from "../ui/checkbox";
 import { Label } from "../ui/label";
 

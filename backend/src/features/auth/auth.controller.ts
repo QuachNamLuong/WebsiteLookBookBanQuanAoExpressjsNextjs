@@ -72,7 +72,7 @@ export const loginHandler = async (req: Request, res: Response) => {
 
 export const refreshTokenHandler = async (req: Request, res: Response) => {
   const { refreshToken } = req.cookies as RefreshTokenRequestSchema;
-
+  
   const decode = verifyRefreshToken(refreshToken);
   if (!decode) return res.status(401).json({
     message: "Invalid token"
@@ -105,6 +105,7 @@ export const getMeHandler = async (req: AuthenticatedRequest, res: Response) => 
       "Internal server error",
       500
     );
+    
   return res.json(validated.data);
 };
 

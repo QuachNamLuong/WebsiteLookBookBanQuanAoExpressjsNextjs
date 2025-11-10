@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useId } from "react";
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -8,25 +8,34 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
 import { LogOut, Settings, User } from "lucide-react";
 import api from "@/lib/axios";
+import { isLogin } from "@/utils/auth";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { getUserProfile } from "@/services/user/get-user-profile";
+import { useAuthStore } from "@/lib/use-auth-store";
 
 export default function AccountPage() {
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
+  const loggedIn = useAuthStore((state) => state.loggedIn);
 
   useEffect(() => {
     const fetchUser = async () => {
-      try {
-        const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8080";
-        const res = await api.get(`${backend}/api/auth/me`, { withCredentials: true });
-        setUser(res.data.user);
-      } catch (err) {
-        console.error("Failed to fetch user:", err);
-      } finally {
-        setLoading(false);
+      const userId = await isLogin();
+
+      if (!userId) {
+        router.push("/auth"); // redirect if not logged in
+        return;
       }
+      const userProfile = await getUserProfile(userId);
+      if (userProfile) setUser(userProfile); // set user if found
+
+      setLoading(false); // done loading
     };
+    if (!loggedIn) router.push("/auth");
     fetchUser();
-  }, []);
+  }, [router, loggedIn]);
 
   const handleLogout = async () => {
     try {

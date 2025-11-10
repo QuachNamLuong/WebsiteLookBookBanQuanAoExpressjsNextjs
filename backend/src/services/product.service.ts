@@ -44,8 +44,7 @@ export const createProduct = async (
         quantity,
         color,
         material,
-        nameMeaning:
-        nameMean,
+        nameMeaning: nameMean,
         style,
         usage,
         productSizes: {
