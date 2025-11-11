@@ -118,3 +118,7 @@ export const changeQuantityOfProductInCart = async (cartItemId: string, quantity
   const cartItem = await prisma.cartItem.update({ where: { id: cartItemId }, data: { quantity } });
   return cartItem;
 }
+
+export const removeCartItem = (cartId: string, productId: string) => {
+  return prisma.cartItem.delete({where: {cartId_productId: {cartId, productId}},})
+};

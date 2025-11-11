@@ -20,7 +20,7 @@ export type Product = {
   productImage: ProductImage[];
 };
 
-export type CartItem = {
+export type CartItemData = {
   id: string;
   productId: string;
   quantity: number;
@@ -34,7 +34,7 @@ export type CartDetailResponse = {
   updatedAt: Date;
   isActive: boolean;
   userId: string;
-  cartItems: CartItem[];
+  cartItems: CartItemData[];
 };
 
 export const getCartDetail = async (userId: string) => {

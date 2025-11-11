@@ -1,25 +1,71 @@
 // app/cart/page.tsx
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { CartDetailResponse, CartItem, getCartDetail } from "@/services/cart/get-cart-detail";
+import { CartDetailResponse, CartItemData, getCartDetail } from "@/services/cart/get-cart-detail";
 import { getMe } from "@/services/auth/me";
+import { removeProductInCart, RemoveProductInCartEnum } from "@/services/cart/remove-product-in-cart";
+import { toast } from "sonner";
+import Link from "next/link";
+import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
+import CartItem from "./(components)/cart-item";
+import { changeProductQuntityInCart, ChangeProductQuntityInCartEnum } from "@/services/cart/change-product-quatity-in-cart";
+
 
 export default function CartPage() {
   const [cart, setCart] = useState<CartDetailResponse | null>(null);
   const [loading, setLoading] = useState(true);
+  const route = useRouter();
 
-// Replace with real user ID from auth/session
+  const handleQuantityChange = async (productId: string, newQuantity: number) => {
+  if (!cart) return;
+  const res = await changeProductQuntityInCart(productId, newQuantity);
+  if (res === ChangeProductQuntityInCartEnum.OK) {
+    setCart({
+        ...cart,
+        cartItems: cart.cartItems.map((item) =>
+          item.productId === productId
+            ? { ...item, quantity: newQuantity }
+            : item
+        ),
+      });
+  }
+  
+};
+
+    const handleRemoveProduct = async (cartId: string, productId: string) => {
+        const res = await removeProductInCart(productId);
+        if (res === RemoveProductInCartEnum.NOT_AUTHORIZED) {
+            toast.info("Phien dang nhap cua ban da het");
+            route.push("/auth");
+            return;
+        }
+
+        if (res === RemoveProductInCartEnum.FETCH_FAIL) {
+            toast.error("");
+            return;
+        }
+
+        if (res === RemoveProductInCartEnum.OK) {
+          await removeItem(cartId, productId);
+          toast.info("Da xoa san pham khoi gio hang");
+        }
+        
+    }
 
   useEffect(() => {
     const fetchCart = async () => {
       try {
         const res = await getMe();
+        if (!res) {
+          toast.error("")
+          return;
+        }
         const data = await getCartDetail(res.user.userId);
         if (data) setCart(data);
       } finally {
@@ -30,7 +76,7 @@ export default function CartPage() {
     fetchCart();
   }, []);
 
-  const removeItem = (id: string) => {
+  const removeItem = async (id: string, productId: string) => {
     if (!cart) return;
     setCart({
       ...cart,
@@ -53,45 +99,26 @@ export default function CartPage() {
 
       {!cart || cart.cartItems.length === 0 ? (
         <p className="text-muted-foreground text-center mt-20">
-          Your cart is empty 🛒
+          Giỏ hàng trống
         </p>
       ) : (
         <div className="grid md:grid-cols-3 gap-6">
           <div className="md:col-span-2 space-y-4">
-            {cart.cartItems.map((item: CartItem) => (
-              <Card key={item.id} className="overflow-hidden">
-                <CardContent className="flex items-center justify-between p-4">
-                  <div className="flex items-center gap-4">
-                    <Image
-                      src={item.product.productImage[0]?.productImageUrl || ""}
-                      alt={item.product.productName}
-                      width={80}
-                      height={80}
-                      className="rounded-md object-cover"
-                    />
-                    <div>
-                      <h3 className="font-medium">{item.product.productName}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        ${item.product.price}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        Qty: {item.quantity}
-                      </p>
-                    </div>
-                  </div>
-
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => removeItem(item.id)}
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
+            {cart.cartItems.map((item: CartItemData) => 
+            <CartItem
+              key={item.id}
+              cartId={item.id}
+              onRemoveProduct={() => handleRemoveProduct(item.id, item.productId)}
+              productId={item.productId}
+              productImageUrl={item.product.productImage[0].productImageUrl}
+              productName={item.product.productName}
+              productPrice={item.product.price}
+              productQuantity={item.quantity}
+              onQuantityChange={(productId, newQuantity) =>
+                handleQuantityChange(productId, newQuantity)
+              }
+            />)}
+            </div>
           <div>
             <Card>
               <CardContent className="p-6 space-y-4">
@@ -110,7 +137,8 @@ export default function CartPage() {
                   <span>Total</span>
                   <span>${(total + 5).toFixed(2)}</span>
                 </div>
-                <Button className="w-full mt-4 bg-[#4f6742] hover:bg-[#4f6742]">
+                <Button className="w-full mt-4 bg-[#4f6742] hover:bg-[#4f6742]"
+                >
                   Thanh toán
                 </Button>
               </CardContent>

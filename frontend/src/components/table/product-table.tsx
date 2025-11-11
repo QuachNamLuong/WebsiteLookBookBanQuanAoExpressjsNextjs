@@ -18,7 +18,13 @@ type Product = {
   productName: string;
   quantity: number;
   price?: number;
+  nameMeaning: string;
+  material: string;
+  style: string;
+  color: string;
+  usage: string;
 };
+
 
 export default function ProductTable() {
   const queryClient = useQueryClient();
@@ -43,7 +49,11 @@ export default function ProductTable() {
     { accessorKey: "productId", header: "ID" },
     { accessorKey: "productName", header: "Tên sản phẩm" },
     { accessorKey: "price", header: "Giá" },
-    { accessorKey: "quantity", header: "Số lượng" },
+    { accessorKey: "Ý nghĩa tên", header: "Số lượng" },
+    { accessorKey: "material", header: "Chất liệu" },
+    { accessorKey: "color", header: "Màu sắc" },
+    { accessorKey: "style", header: "Phong cách" },
+    { accessorKey: "usage", header: "Sử dụng" },
     {
       accessorKey: "functions",
       header: "Chức năng",

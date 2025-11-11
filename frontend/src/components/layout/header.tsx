@@ -115,7 +115,7 @@ export default function Header() {
                   <AccountIcon className="w-5 h-5 hover:opacity-80 transition" />
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col gap-2">
                     {loggedIn ?
                       <>
                         <Link
@@ -125,7 +125,7 @@ export default function Header() {
                           Tài khoản
                         </Link>
                         <Button
-                          className="text-left px-2 py-1.5 rounded-md hover:bg-destructive/10 text-destructive text-sm"
+                          className=""
                           onClick={handleLogout}>
                           Đăng xuất
                         </Button>

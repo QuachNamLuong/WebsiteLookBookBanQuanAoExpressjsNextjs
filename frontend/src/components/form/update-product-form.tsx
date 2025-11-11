@@ -269,7 +269,7 @@ export default function UpdateProductForm({ productId }: UpdateProductFormProps)
               className="border p-2 w-full rounded"
             />
           </Field>
-
+{/* 
           <Field>
             <FieldLabel>Kích thước</FieldLabel>
             <div className="flex flex-row gap-4">
@@ -284,7 +284,7 @@ export default function UpdateProductForm({ productId }: UpdateProductFormProps)
                 </div>
               ))}
             </div>
-          </Field>
+          </Field> */}
 
           <Field>
             <FieldLabel>Ảnh sản phẩm</FieldLabel>

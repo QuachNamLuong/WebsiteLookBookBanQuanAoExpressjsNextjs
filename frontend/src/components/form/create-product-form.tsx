@@ -208,7 +208,7 @@ export default function CreateProductForm() {
             />
           </Field>
 
-          <Field>
+          {/* <Field>
             <FieldLabel>Kích thước</FieldLabel>
             <div className="flex flex-row gap-4">
               {sizes.map((size) => (
@@ -222,7 +222,7 @@ export default function CreateProductForm() {
                 </div>
               ))}
             </div>
-          </Field>
+          </Field> */}
 
           <Field>
             <FieldLabel>Ảnh sản phẩm</FieldLabel>

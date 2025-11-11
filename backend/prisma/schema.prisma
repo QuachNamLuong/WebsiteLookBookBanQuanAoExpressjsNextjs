@@ -81,12 +81,21 @@ model Order {
   @@map("orders")
 
   orderId String @id @default(uuid()) @map("order_id")
+
   orderTotalPrice Decimal @map("order_total_price")
+  orderStatus OrderStatus
   
   userId String
   user User  @relation(fields: [userId], references: [userId])
 
   orderItems OrderItem[]
+}
+
+enum OrderStatus {
+  PENDING
+  SHIPPING
+  CANCEL
+  FISNISH
 }
 
 model OrderItem {
