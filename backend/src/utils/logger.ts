@@ -3,19 +3,17 @@ import "winston-daily-rotate-file";
 
 const { combine, timestamp, printf, colorize, errors } = winston.format;
 
-// Custom log format
 const logFormat = printf(({ level, message, timestamp, stack }) => {
-  return `${timestamp} [${level}] : ${stack || message}`;
+  return `${timestamp} [${level.toUpperCase()}] ${message}${stack ? `\n${stack}` : ""}`;
 });
 
-// Daily rotate file transport
 const fileTransport = new winston.transports.DailyRotateFile({
-  dirname: "logs",          // folder to store logs
-  filename: "%DATE%.log",   // daily file
+  dirname: "logs",
+  filename: "%DATE%.log",
   datePattern: "YYYY-MM-DD",
   zippedArchive: true,
   maxSize: "20m",
-  maxFiles: "14d",          // keep logs for 14 days
+  maxFiles: "14d",
   level: "info",
 });
 

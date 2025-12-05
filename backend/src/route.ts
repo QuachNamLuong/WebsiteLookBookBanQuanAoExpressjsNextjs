@@ -1,11 +1,12 @@
+import authRouter from "@features/auth/auth.route";
+import createProductRoute from "@features/products/create-product/route";
 import { Router } from "express";
-import { authRoutes, cartRoutes, productRoutes, userRoutes } from "./features";
 
-const appRouter = Router()
+const appRoute = Router();
 
-appRouter.use("/api", authRoutes);
-appRouter.use("/api", userRoutes);
-appRouter.use("/api", cartRoutes);
-appRouter.use("/api", productRoutes);
+// Product
+appRoute.use("/api/product", createProductRoute);
+appRoute.use("/api", authRouter)
 
-export default appRouter;
+
+export default appRoute;

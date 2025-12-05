@@ -119,77 +119,94 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 });
 
 exports.Prisma.UserScalarFieldEnum = {
-  userId: 'userId',
+  id: 'id',
   username: 'username',
   email: 'email',
   passwordHash: 'passwordHash',
-  role: 'role'
-};
-
-exports.Prisma.ProductScalarFieldEnum = {
-  productId: 'productId',
-  productName: 'productName',
-  quantity: 'quantity',
   createdAt: 'createdAt',
-  updateAt: 'updateAt',
-  price: 'price',
-  material: 'material',
-  color: 'color',
-  nameMeaning: 'nameMeaning',
-  style: 'style',
-  usage: 'usage'
+  updatedAt: 'updatedAt'
 };
 
-exports.Prisma.ProductSizeScalarFieldEnum = {
+exports.Prisma.RoleScalarFieldEnum = {
   id: 'id',
-  size: 'size'
-};
-
-exports.Prisma.ProductImageScalarFieldEnum = {
-  productImageId: 'productImageId',
-  productImageUrl: 'productImageUrl',
-  productImageName: 'productImageName',
-  objectName: 'objectName',
-  productId: 'productId',
+  name: 'name',
+  description: 'description',
   createdAt: 'createdAt'
 };
 
-exports.Prisma.OrderScalarFieldEnum = {
-  orderId: 'orderId',
-  orderTotalPrice: 'orderTotalPrice',
-  userId: 'userId'
+exports.Prisma.PermissionScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  createdAt: 'createdAt'
 };
 
-exports.Prisma.OrderItemScalarFieldEnum = {
-  orderItemId: 'orderItemId',
-  orderItemQuantity: 'orderItemQuantity',
-  orderItemUnitPrice: 'orderItemUnitPrice',
-  orderId: 'orderId',
+exports.Prisma.ProductCategoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
+exports.Prisma.ProductScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  name: 'name',
+  productCategoryId: 'productCategoryId'
+};
+
+exports.Prisma.ProductImageScalarFieldEnum = {
+  id: 'id',
+  alt: 'alt',
+  href: 'href',
   productId: 'productId'
 };
 
-exports.Prisma.CartScalarFieldEnum = {
+exports.Prisma.ProductVariantScalarFieldEnum = {
   id: 'id',
+  size: 'size',
+  stock: 'stock',
+  productId: 'productId',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  isActive: 'isActive',
-  userId: 'userId'
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.GoodsReceiptScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  quantity: 'quantity',
+  createdByUserId: 'createdByUserId',
+  updatedByUserId: 'updatedByUserId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.OrderScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  totalPrice: 'totalPrice'
+};
+
+exports.Prisma.OrderItemScalarFieldEnum = {
+  id: 'id',
+  productVariantId: 'productVariantId'
+};
+
+exports.Prisma.CartScalarFieldEnum = {
+  id: 'id'
 };
 
 exports.Prisma.CartItemScalarFieldEnum = {
   id: 'id',
-  quantity: 'quantity',
-  productId: 'productId',
+  productVariantId: 'productVariantId',
   cartId: 'cartId'
 };
 
-exports.Prisma.RatingScalarFieldEnum = {
+exports.Prisma.ProductEventScalarFieldEnum = {
   id: 'id',
-  userId: 'userId',
-  productId: 'productId',
-  rate: 'rate',
-  comment: 'comment',
-  createdAt: 'createdAt'
+  clickCount: 'clickCount',
+  addToCartCount: 'addToCartCount',
+  orderCount: 'orderCount',
+  day: 'day',
+  productId: 'productId'
 };
 
 exports.Prisma.SortOrder = {
@@ -201,39 +218,29 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
-exports.Role = exports.$Enums.Role = {
-  ADMIN: 'ADMIN',
-  CUSTOMER: 'CUSTOMER'
-};
-
 exports.Size = exports.$Enums.Size = {
   XS: 'XS',
   S: 'S',
   M: 'M',
   L: 'L',
   XL: 'XL',
-  XXL: 'XXL',
-  XXXL: 'XXXL'
-};
-
-exports.RateNumber = exports.$Enums.RateNumber = {
-  ONE: 'ONE',
-  TWO: 'TWO',
-  THREE: 'THREE',
-  FOUR: 'FOUR',
-  FIVE: 'FIVE'
+  XXL: 'XXL'
 };
 
 exports.Prisma.ModelName = {
   User: 'User',
+  Role: 'Role',
+  Permission: 'Permission',
+  ProductCategory: 'ProductCategory',
   Product: 'Product',
-  ProductSize: 'ProductSize',
   ProductImage: 'ProductImage',
+  ProductVariant: 'ProductVariant',
+  GoodsReceipt: 'GoodsReceipt',
   Order: 'Order',
   OrderItem: 'OrderItem',
   Cart: 'Cart',
   CartItem: 'CartItem',
-  Rating: 'Rating'
+  ProductEvent: 'ProductEvent'
 };
 
 /**

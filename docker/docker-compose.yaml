@@ -52,33 +52,33 @@ services:
   # ===============================
   # Backend (Express.js)
   # ===============================
-  backend:
-    image: node:22
-    container_name: backend
-    working_dir: /app
-    volumes:
-      - ../backend:/app
-    command: sh -c "npm install && npm run build && npm run start"
-    ports:
-      - "8080:8080"
-    depends_on:
-      - mysql
-      - minio
+  # backend:
+  #   image: node:22
+  #   container_name: backend
+  #   working_dir: /app
+  #   volumes:
+  #     - ../backend:/app
+  #   command: sh -c "npm install && npm run build && npm run start"
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - mysql
+  #     - minio
 
   # ===============================
   # Frontend (Next.js)
   # ===============================
-  frontend:
-    image: node:22
-    container_name: frontend
-    working_dir: /app
-    volumes:
-      - ../frontend:/app
-    command: sh -c "npm install && npm run build && npm run start"
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
+  # frontend:
+  #   image: node:22
+  #   container_name: frontend
+  #   working_dir: /app
+  #   volumes:
+  #     - ../frontend:/app
+  #   command: sh -c "npm install && npm run build && npm run start"
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - backend
 
 # ===============================
 # Volumes

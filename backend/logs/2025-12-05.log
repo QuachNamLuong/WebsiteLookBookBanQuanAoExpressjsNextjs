@@ -1,0 +1,44 @@
+2025-12-05 08:31:29 [INFO] Server running in development mode at http://localhost:3000
+2025-12-05 08:45:20 [INFO] Server running in development mode at http://localhost:3000
+2025-12-05 08:45:50 [INFO] Root endpoint hit
+2025-12-05 08:50:22 [INFO] Server running in development mode at http://localhost:3000
+2025-12-05 08:51:02 [INFO] Server running in development mode at http://localhost:3000
+2025-12-05 08:51:03 [INFO] Server running in development mode at http://localhost:3000
+2025-12-05 08:51:07 [INFO] undefined
+2025-12-05 08:51:07 [ERROR] [
+  {
+    "origin": "string",
+    "code": "too_small",
+    "minimum": 6,
+    "inclusive": true,
+    "path": [
+      "password"
+    ],
+    "message": "Too small: expected string to have >=6 characters"
+  }
+]
+ZodError: [
+  {
+    "origin": "string",
+    "code": "too_small",
+    "minimum": 6,
+    "inclusive": true,
+    "path": [
+      "password"
+    ],
+    "message": "Too small: expected string to have >=6 characters"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-05 08:51:26 [INFO] undefined
+2025-12-05 08:52:40 [INFO] Server running in development mode at http://localhost:3000
+2025-12-05 08:52:46 [INFO] undefined

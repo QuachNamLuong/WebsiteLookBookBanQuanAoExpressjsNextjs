@@ -18,7 +18,7 @@ export default function RegisterForm() {
     setLoading(true);
     try {
       await api.post("/auth/register", { username, email, password });
-      mutate("/auth/me");
+      // mutate("/auth/me");
       toast.success("Đăng ky thành công");
       window.location.href = "/";
     } catch (err: any) {
@@ -89,7 +89,7 @@ export default function RegisterForm() {
         <Label className="text-[#f2f3dc] flex-[1]">Ngày sinh</Label>
         <DatePicker className="flex-[3]" />
       </div>
-      
+
       <div className="relative">
         <input
           type="email"
