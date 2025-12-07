@@ -6,7 +6,11 @@ import { ProductPagination } from "./product-pagination";
 import { toast } from "sonner";
 import { getPaginateProduct, Product } from "@/services/product/get-paginate-product";
 
-export default function ProductList() {
+type ProductListProps = {
+  category?: string
+};
+
+export default function ProductList({ category }: ProductListProps) {
   const [products, setProducts] = useState<Product[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);

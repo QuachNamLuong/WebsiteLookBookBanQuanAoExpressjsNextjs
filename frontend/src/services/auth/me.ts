@@ -13,7 +13,7 @@ interface GetMeResponse {
 
 export const getMe = async () => {
   try {
-    const res = await api.get<GetMeResponse>(`/auth/me`);
+    const res = await api.get<GetMeResponse>(`/auth/get-me`);
     if (res.status === HttpStatusCode.Ok) {
       return res.data;
     }
@@ -21,7 +21,7 @@ export const getMe = async () => {
     if (res.status === HttpStatusCode.Unauthorized) {
       const isRefeshSuccess = await refreshToken();
       if (isRefeshSuccess) {
-        const res = await api.get<GetMeResponse>(`/auth/me`);
+        const res = await api.get<GetMeResponse>(`/auth/get-me`);
         if (res.status === HttpStatusCode.Ok) {
           return res.data;
         }

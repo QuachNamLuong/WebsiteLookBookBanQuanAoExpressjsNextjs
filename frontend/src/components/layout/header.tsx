@@ -20,20 +20,26 @@ import { isLogin } from "@/utils/auth";
 import { useEffect, useState } from "react";
 import { useAuthStore } from "@/lib/use-auth-store";
 import { Button } from "../ui/button";
+// Assuming you have an axios instance or similar utility for API calls
+import api from "@/lib/axios"; 
+import { toast } from "sonner";
+
+
+// 1. Define the structure for the category data
+interface Category {
+  id: string;
+  name: string;
+  slug: string;
+}
 
 export default function Header() {
   const loggedIn = useAuthStore((state) => state.loggedIn);
   const setLoggedIn = useAuthStore((state) => state.setLoggedIn);
-  const handleLogout = async () => {
-    const isLogout = await logout();
-    setLoggedIn(!isLogout);
-  };
-
-  const productLinks = [
-    { name: "Áo dài", href: "/products/ao-dai" },
-    { name: "Phụ kiện", href: "/products/phu-kien" },
-  ];
-
+  
+  // 2. State to hold the fetched categories
+  const [productLinks, setProductLinks] = useState<Category[]>([]); 
+  
+  // 3. The hardcoded collection links remain
   const collectionLinks = [
     { name: "Thùy túc uyển tâm", href: "/collections/thuy-tuc-uyen-tam" },
     { name: "Sải cánh chi hoa", href: "/collections/sai-canh-chi-hoa" },
@@ -42,37 +48,74 @@ export default function Header() {
     { name: "Diên dao", href: "/collections/dien-dao" },
   ];
 
+  const handleLogout = async () => {
+    const isLogout = await logout();
+    setLoggedIn(!isLogout);
+  };
+  
+  // 4. Function to call the categories API
+  const fetchCategories = async () => {
+    try {
+      // API call to the /categories route
+      const response = await api.get<{ data: Category[] }>("/categories/get-categories");
+      
+      // Map the fetched data to the desired link format (name and href)
+      const mappedLinks = response.data.data.map(category => ({
+        ...category, // Keep original category data
+        name: category.name, // Use name for display
+        href: `/products/${category.slug}`, // Use slug for the link path
+      }));
+      
+      setProductLinks(mappedLinks);
+    } catch (error) {
+      console.error("Failed to fetch categories:", error);
+      toast.error("Không thể tải danh mục sản phẩm.");
+    }
+  };
+
+  // 5. useEffect hook to fetch data on component mount
+  useEffect(() => {
+    fetchCategories();
+  }, []); // Empty dependency array means this runs once on mount
+
   return (
-    <header className="bg-[#f6f7e6] border-b border-[#dfe3cc] sticky top-0 z-[9999]">
+    <header className="bg-[#f6f7e6] border-b border-[#dfe3cc] sticky top-0 z-[999] h-16">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <Link href="/"><h1 className="text-[#4f6742] font-extrabold text-2xl">VIECHARM</h1></Link>
         {/* ---------- Left Navigation ---------- */}
         <NavigationMenu viewport={false}>
           <NavigationMenuList className="flex space-x-2">
-            {/* --- SẢN PHẨM --- */}
+            
+            {/* --- SẢN PHẨM (Categories fetched from API) --- */}
             <NavigationMenuItem>
               <NavigationMenuTrigger className="bg-[#7b8f6d] text-white px-10 py-3 rounded-none text-sm font-medium hover:bg-[#6b7f5f] transition-colors">
                 SẢN PHẨM
               </NavigationMenuTrigger>
               <NavigationMenuContent className="p-0 shadow-md rounded-md overflow-hidden">
                 <ul className="flex flex-col bg-[#7b8f6d] text-white min-w-[220px]">
-                  {productLinks.map((link) => (
-                    <li key={link.name}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href={link.href}
-                          className="block px-4 py-3 text-center hover:bg-[#6b7f5f] transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
+                  {/* --- Use the state variable productLinks --- */}
+                  {productLinks.length > 0 ? (
+                    productLinks.map((link) => (
+                      <li key={link.id}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={`${link.slug}`} 
+                            className="block px-4 py-3 text-center hover:bg-[#6b7f5f] transition-colors"
+                          >
+                            {link.name}
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))
+                  ) : (
+                    // Optional: Show a loading state or default item while fetching
+                    <li className="p-4 text-center text-sm opacity-70">Đang tải danh mục...</li>
+                  )}
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
 
-            {/* --- BỘ SƯU TẬP --- */}
+            {/* --- BỘ SƯU TẬP (Collections) --- */}
             <NavigationMenuItem>
               <NavigationMenuTrigger className="bg-[#7b8f6d] text-white px-10 py-3 rounded-none text-sm font-medium hover:bg-[#6b7f5f] transition-colors">
                 BỘ SƯU TẬP
@@ -99,13 +142,13 @@ export default function Header() {
 
         {/* ---------- Right Icons ---------- */}
         <div className="flex items-center gap-6 text-[#6b7f5f]">
-          <Link href="/cart">
+          <Link href="/cart" aria-label="Giỏ hàng">
             <CartButton />
           </Link>
-          <Link href="/shop" aria-label="Shop">
+          <Link href="/shop" aria-label="Cửa hàng">
             <ShopIcon className="w-5 h-5 hover:opacity-80 transition" />
           </Link>
-          <Link href="/blog" aria-label="Story">
+          <Link href="/blog" aria-label="Câu chuyện">
             <StoryIcon className="w-5 h-5 hover:opacity-80 transition" />
           </Link>
           <NavigationMenu viewport={false}>

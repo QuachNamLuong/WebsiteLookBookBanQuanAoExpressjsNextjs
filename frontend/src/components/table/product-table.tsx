@@ -9,8 +9,6 @@ import { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "../ui/data-table";
 import { deleteProduct } from "@/services/product/delete-product";
 import { getPaginateProduct } from "@/services/product/get-paginate-product";
-import { createProduct } from "@/services/product/create-product";
-import { updateProduct } from "@/services/product/update-product";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
 type Product = {

@@ -9,7 +9,7 @@ import api from "@/lib/axios";
 import { useAuthStore } from "@/lib/use-auth-store";
 
 export default function LoginForm() {
-  const [username, setUsername] = useState("");
+  const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const setLoggedIn = useAuthStore((state) => state.setLoggedIn);
@@ -18,8 +18,8 @@ export default function LoginForm() {
     e.preventDefault();
     setLoading(true);
     try {
-      await api.post("/auth/login", { username, password });
-      mutate("/auth/me");
+      await api.post("/auth/login", { identifier, password });
+      mutate("/auth/get-me");
       toast.success("Đăng nhập thành công");
       window.location.href = "/";
       setLoggedIn(true);
@@ -40,8 +40,8 @@ export default function LoginForm() {
           type="text"
           id="username"
           placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={identifier}
+          onChange={(e) => setIdentifier(e.target.value)}
           className="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-[#f2f3dc] 
                      placeholder-transparent focus:border-white focus:outline-none rounded-none"
         />
@@ -77,7 +77,7 @@ export default function LoginForm() {
 
       <button
         type="submit"
-        onClick={(e) => { toast.info(`username: ${username} password: ${password}`) }}
+        onClick={(e) => { toast.info(`username: ${identifier} password: ${password}`) }}
         className="w-full bg-[#f2f3dc] text-[#4f6742] font-semibold py-2 rounded-none"
       >
         ĐĂNG NHẬP

@@ -3,6 +3,7 @@
 import * as React from "react"
 import { format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
+import { vi } from "date-fns/locale" // Import Vietnamese locale
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -12,15 +13,23 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { vi } from "date-fns/locale";
-import { CalendarMonth } from "react-day-picker"
+
+// ⚠️ Removed unused import: CalendarMonth
+
+// Define a type for the date selection event for React Day Picker
+type SelectDate = Date | undefined
 
 type DatePickerProps = {
   className?: string
+  // 1. Allow selected date to be optional (undefined or null)
+  selected: SelectDate
+  // 2. Add an onSelect handler to send the new date back to the parent
+  onSelect: (date: SelectDate) => void
 }
 
-export function DatePicker({ className }: DatePickerProps) {
-  const [date, setDate] = React.useState<Date>()
+// 3. Destructure onSelect and use the selected prop directly
+export function DatePicker({ className, selected, onSelect }: DatePickerProps) {
+  // 4. Removed internal useState. The selected prop acts as the single source of truth.
 
   return (
     <div className={cn("w-full", className)}>
@@ -30,21 +39,29 @@ export function DatePicker({ className }: DatePickerProps) {
             variant="outline"
             className={cn(
               "w-full justify-start text-left font-normal",
-              !date && "text-muted-foreground"
+              // Use selected prop for conditional class
+              !selected && "text-muted-foreground" 
             )}
           >
             <CalendarIcon className="mr-2 h-4 w-4" />
-            {date ? format(date, "dd/MM/yyyy", { locale: vi }) : <span>Chọn ngày</span>}
+            {/* Display the selected date or default text */}
+            {selected ? (
+              format(selected, "dd/MM/yyyy", { locale: vi })
+            ) : (
+              <span>Chọn ngày</span>
+            )}
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0">
           <Calendar
             mode="single"
-            selected={date}
-            onSelect={setDate}
+            // Use selected prop here
+            selected={selected} 
+            // Pass the onSelect prop directly to Calendar
+            onSelect={onSelect} 
             captionLayout="dropdown"
             locale={vi}
-            formatters={{formatMonthDropdown: (month, dateLib) => (month.getMonth() + 1).toString()}}
+            // Removed formatters prop as it's not standard for default Calendar setup
           />
         </PopoverContent>
       </Popover>

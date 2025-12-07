@@ -1,13 +1,15 @@
 import jwt, { type JwtPayload } from 'jsonwebtoken';
 import jwtConfig from '../config/jwt.config';
 import logger from './logger';
+import { AppError } from 'types/app.d';
+import { StatusCodes } from 'http-status-codes';
 
 export interface AccessJwtPayload extends JwtPayload {
-  userId: string;
+  userId: number;
 }
 
 export interface RefreshJwtPayload extends JwtPayload {
-  userId: string;
+  userId: number;
 }
 
 export const signAccessToken = (payload: AccessJwtPayload): string => {
@@ -44,6 +46,6 @@ export const verifyRefreshToken = (token: string): RefreshJwtPayload => {
     return jwt.verify(token, jwtConfig.refreshSecret) as RefreshJwtPayload;
   } catch (err) {
     logger.error("Invalid refresh token:", err);
-    throw new Error("Invalid or expired refresh token");
+    throw new AppError(1000, "UNAUTHORIZED", "UNAUTHORIZED", StatusCodes.UNAUTHORIZED);
   }
 };

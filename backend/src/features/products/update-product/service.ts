@@ -1,5 +1,5 @@
 import type { PrismaClient } from "@generated/prisma";
-import { AppError } from "types/app";
+import { AppError } from "types/app.d";
 import type { UpdateProductBodySchema } from "./schema";
 import { getProductByIdRepo, updateProductRepo } from "./repo";
 import { StatusCodes } from "http-status-codes";

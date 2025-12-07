@@ -1,42 +1,63 @@
 import { toast } from "sonner";
 import { DatePicker } from "@/components/ui/date-picker";
-import { Field, FieldGroup, FieldLabel, FieldSet } from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { mutate } from "swr";
 import api from "@/lib/axios";
 import { useState } from "react";
+// Removed unused imports: Field, FieldGroup, FieldLabel, FieldSet, Input, axios
 
 export default function RegisterForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState(""); 
+  const [dateOfBirth, setDateOfBirth] = useState<Date | undefined>(undefined);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
+    // 1. Critical Validation: Check password confirmation
+    if (password !== confirmPassword) {
+      toast.error("Mật khẩu và xác nhận mật khẩu không khớp.");
+      setLoading(false);
+      return;
+    }
+
     try {
-      await api.post("/auth/register", { username, email, password });
-      // mutate("/auth/me");
-      toast.success("Đăng ky thành công");
+      await api.post("/auth/register", {
+        username,
+        email,
+        password,
+        firstName,
+        lastName,
+        birthday: dateOfBirth
+      });
+
+      toast.success("Đăng ký thành công");
       window.location.href = "/";
     } catch (err: any) {
-      const msg = err?.response?.data?.message || "Đăng ky thất bại";
-      toast.error(msg);
+      const msg = err?.response?.data?.message || "Đăng ký thất bại";
+      toast.error(err.toString());
     } finally {
       setLoading(false);
     }
   };
+
   return (
     <form className="w-full max-w-sm space-y-6 bg-[#4f6742] p-8" onSubmit={handleSubmit}>
+      
+      {/* Username Field */}
       <div className="relative">
         <input
           type="text"
           id="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="Nhap username"
+          placeholder="Nhập username"
+          required
           className="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-[#f2f3dc] 
                      placeholder-transparent focus:border-white focus:outline-none rounded-none"
         />
@@ -49,11 +70,16 @@ export default function RegisterForm() {
           Username
         </label>
       </div>
+      
+      {/* Họ (First Name) Field - NOW HAS STATE */}
       <div className="relative">
         <input
           type="text"
           id="first-name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
           placeholder="Họ"
+          required
           className="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-[#f2f3dc] 
                      placeholder-transparent focus:border-white focus:outline-none rounded-none"
         />
@@ -67,11 +93,15 @@ export default function RegisterForm() {
         </label>
       </div>
 
+      {/* Tên (Last Name) Field - NOW HAS STATE */}
       <div className="relative">
         <input
           type="text"
           id="last-name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
           placeholder="Tên"
+          required
           className="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-[#f2f3dc]
                      placeholder-transparent focus:border-white focus:outline-none rounded-none"
         />
@@ -85,11 +115,17 @@ export default function RegisterForm() {
         </label>
       </div>
 
+      {/* Ngày sinh (Date of Birth) Field - NOW CAPTURES VALUE */}
       <div className="mt-8 mb-0 flex flex-row gap-3">
         <Label className="text-[#f2f3dc] flex-[1]">Ngày sinh</Label>
-        <DatePicker className="flex-[3]" />
+        <DatePicker 
+          className="flex-[3]"
+          selected={dateOfBirth}
+          onSelect={setDateOfBirth} // Set the state on date selection
+        />
       </div>
 
+      {/* Email Field */}
       <div className="relative">
         <input
           type="email"
@@ -97,6 +133,7 @@ export default function RegisterForm() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
           className="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-[#f2f3dc]
                      placeholder-transparent focus:border-white focus:outline-none rounded-none"
         />
@@ -110,6 +147,7 @@ export default function RegisterForm() {
         </label>
       </div>
 
+      {/* Mật khẩu (Password) Field */}
       <div className="relative">
         <input
           type="password"
@@ -117,6 +155,7 @@ export default function RegisterForm() {
           placeholder="Mật khẩu"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
           className="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-[#f2f3dc]
                      placeholder-transparent focus:border-white focus:outline-none rounded-none"
         />
@@ -130,11 +169,15 @@ export default function RegisterForm() {
         </label>
       </div>
 
+      {/* Nhập lại mật khẩu (Confirm Password) Field - NOW HAS STATE */}
       <div className="relative">
         <input
           type="password"
           id="confirm-password"
           placeholder="Nhập lại mật khẩu"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          required
           className="peer w-full border-b-2 border-gray-300 bg-transparent pt-5 pb-2 text-[#f2f3dc]
                      placeholder-transparent focus:border-white focus:outline-none rounded-none"
         />
@@ -148,11 +191,13 @@ export default function RegisterForm() {
         </label>
       </div>
 
+      {/* Submit Button */}
       <button
         type="submit"
-        className="w-full bg-[#f2f3dc] text-[#4f6742] font-semibold py-2 rounded-none"
+        disabled={loading}
+        className="w-full bg-[#f2f3dc] text-[#4f6742] font-semibold py-2 rounded-none disabled:opacity-50"
       >
-        ĐĂNG KÝ
+        {loading ? "ĐANG XỬ LÝ..." : "ĐĂNG KÝ"}
       </button>
     </form>
   );

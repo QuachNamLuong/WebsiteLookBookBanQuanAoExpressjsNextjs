@@ -20,8 +20,11 @@ export const validateRequest = (schema: ZodType, source: "body" | "query" | "coo
         StatusCodes.BAD_REQUEST
       );
     }
+    if (!req.validatedData) {
+      req.validatedData = {};
+    }
 
-    (req as any)[source] = result.data;
+    (req.validatedData as any)[source] = result.data;
     next();
   };
 };

@@ -1,0 +1,883 @@
+2025-12-07 01:53:18 [INFO] Server running in development mode at http://localhost:3000
+2025-12-07 01:54:05 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 01:54:08 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 01:58:56 [INFO] Root endpoint hit
+2025-12-07 02:56:03 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 02:56:06 [INFO] undefined
+2025-12-07 02:56:06 [ERROR] [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "fristName"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  },
+  {
+    "expected": "date",
+    "code": "invalid_type",
+    "path": [
+      "birthday"
+    ],
+    "message": "Invalid input: expected date, received undefined"
+  }
+]
+ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "fristName"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  },
+  {
+    "expected": "date",
+    "code": "invalid_type",
+    "path": [
+      "birthday"
+    ],
+    "message": "Invalid input: expected date, received undefined"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 02:59:34 [INFO] undefined
+2025-12-07 02:59:34 [ERROR] [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "fristName"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  },
+  {
+    "expected": "date",
+    "code": "invalid_type",
+    "path": [
+      "birthday"
+    ],
+    "message": "Invalid input: expected date, received undefined"
+  }
+]
+ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "fristName"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  },
+  {
+    "expected": "date",
+    "code": "invalid_type",
+    "path": [
+      "birthday"
+    ],
+    "message": "Invalid input: expected date, received undefined"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 02:59:51 [INFO] undefined
+2025-12-07 02:59:51 [ERROR] [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "fristName"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  },
+  {
+    "expected": "date",
+    "code": "invalid_type",
+    "path": [
+      "birthday"
+    ],
+    "message": "Invalid input: expected date, received string"
+  }
+]
+ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "fristName"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  },
+  {
+    "expected": "date",
+    "code": "invalid_type",
+    "path": [
+      "birthday"
+    ],
+    "message": "Invalid input: expected date, received string"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 03:00:54 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 03:00:57 [INFO] undefined
+2025-12-07 03:00:57 [ERROR] [
+  {
+    "expected": "date",
+    "code": "invalid_type",
+    "path": [
+      "birthday"
+    ],
+    "message": "Invalid input: expected date, received string"
+  }
+]
+ZodError: [
+  {
+    "expected": "date",
+    "code": "invalid_type",
+    "path": [
+      "birthday"
+    ],
+    "message": "Invalid input: expected date, received string"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 03:01:42 [INFO] undefined
+2025-12-07 03:01:42 [ERROR] [
+  {
+    "expected": "date",
+    "code": "invalid_type",
+    "path": [
+      "birthday"
+    ],
+    "message": "Invalid input: expected date, received string"
+  }
+]
+ZodError: [
+  {
+    "expected": "date",
+    "code": "invalid_type",
+    "path": [
+      "birthday"
+    ],
+    "message": "Invalid input: expected date, received string"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 03:01:54 [INFO] undefined
+2025-12-07 03:01:54 [ERROR] [
+  {
+    "expected": "date",
+    "code": "invalid_type",
+    "path": [
+      "birthday"
+    ],
+    "message": "Invalid input: expected date, received string"
+  }
+]
+ZodError: [
+  {
+    "expected": "date",
+    "code": "invalid_type",
+    "path": [
+      "birthday"
+    ],
+    "message": "Invalid input: expected date, received string"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 03:03:04 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 03:03:08 [INFO] undefined
+2025-12-07 03:03:43 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 03:04:02 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 03:04:04 [INFO] undefined
+2025-12-07 03:04:56 [INFO] undefined
+2025-12-07 03:13:29 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 03:13:32 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 03:13:58 [INFO] undefined
+2025-12-07 03:13:58 [ERROR] [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "identifier"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "identifier"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 03:14:05 [INFO] undefined
+2025-12-07 03:14:05 [ERROR] [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "identifier"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "identifier"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 03:15:38 [INFO] undefined
+2025-12-07 03:32:07 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 03:32:16 [INFO] undefined
+2025-12-07 03:45:58 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 03:46:25 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 03:46:25 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 03:46:46 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 03:48:31 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 03:54:04 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:32:18 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:35:21 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:36:16 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:36:16 [ERROR] [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+ZodError: [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 05:36:19 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:36:19 [ERROR] [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+ZodError: [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 05:36:20 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:36:20 [ERROR] [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+ZodError: [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 05:38:35 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:38:43 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:38:43 [ERROR] [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+ZodError: [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 05:38:45 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:38:45 [ERROR] [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+ZodError: [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 05:38:46 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:38:46 [ERROR] [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+ZodError: [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 05:38:48 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:38:48 [ERROR] [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+ZodError: [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 05:39:10 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:39:10 [ERROR] [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+ZodError: [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "page"
+    ],
+    "message": "Invalid input: expected number, received string"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "limit"
+    ],
+    "message": "Invalid input: expected number, received string"
+  }
+]
+    at new ZodError (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/core.js:30:39)
+    at Module.<anonymous> (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/core/parse.js:53:20)
+    at inst.safeParseAsync (file:///home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/zod/v4/classic/schemas.js:30:57)
+    at <anonymous> (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/middlewares/validate-request.middleware.ts:11:33)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/lib/layer.js:152:17)
+    at /home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/node_modules/router/index.js:295:15
+2025-12-07 05:39:42 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:39:45 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:39:56 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:39:57 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:39:58 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:39:59 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:40:39 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:40:43 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:40:56 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:49:33 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:49:41 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:49:41 [ERROR] [getProducts] Failed to fetch products with options: {"paging":{"page":"1","maxItem":"10"},"query":{"name":""}} 
+Invalid `prisma.product.findMany()` invocation in
+/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/features/products/get-products/repo.ts:33:22
+
+  30 try {
+  31   const where = { ...((options.query && options.query.name) && { name: { contains: options.query.name } }) }
+  32   const [products, totalCount] = await prisma.$transaction([
+→ 33     prisma.product.findMany({
+           where: {},
+           skip: 0,
+           take: "10"
+                 ~~~~
+         })
+
+Argument `take`: Invalid value provided. Expected Int, provided String.
+PrismaClientValidationError: 
+Invalid `prisma.product.findMany()` invocation in
+/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/features/products/get-products/repo.ts:33:22
+
+  30 try {
+  31   const where = { ...((options.query && options.query.name) && { name: { contains: options.query.name } }) }
+  32   const [products, totalCount] = await prisma.$transaction([
+→ 33     prisma.product.findMany({
+           where: {},
+           skip: 0,
+           take: "10"
+                 ~~~~
+         })
+
+Argument `take`: Invalid value provided. Expected Int, provided String.
+    at Nn (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:33:1363)
+    at ei.handleRequestError (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:125:6911)
+    at ei.handleAndLogRequestError (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:134:9551)
+2025-12-07 05:49:43 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:49:43 [ERROR] [getProducts] Failed to fetch products with options: {"paging":{"page":"1","maxItem":"10"},"query":{"name":""}} 
+Invalid `prisma.product.findMany()` invocation in
+/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/features/products/get-products/repo.ts:33:22
+
+  30 try {
+  31   const where = { ...((options.query && options.query.name) && { name: { contains: options.query.name } }) }
+  32   const [products, totalCount] = await prisma.$transaction([
+→ 33     prisma.product.findMany({
+           where: {},
+           skip: 0,
+           take: "10"
+                 ~~~~
+         })
+
+Argument `take`: Invalid value provided. Expected Int, provided String.
+PrismaClientValidationError: 
+Invalid `prisma.product.findMany()` invocation in
+/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/features/products/get-products/repo.ts:33:22
+
+  30 try {
+  31   const where = { ...((options.query && options.query.name) && { name: { contains: options.query.name } }) }
+  32   const [products, totalCount] = await prisma.$transaction([
+→ 33     prisma.product.findMany({
+           where: {},
+           skip: 0,
+           take: "10"
+                 ~~~~
+         })
+
+Argument `take`: Invalid value provided. Expected Int, provided String.
+    at Nn (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:33:1363)
+    at ei.handleRequestError (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:125:6911)
+    at ei.handleAndLogRequestError (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:134:9551)
+2025-12-07 05:49:45 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:49:45 [ERROR] [getProducts] Failed to fetch products with options: {"paging":{"page":"1","maxItem":"10"},"query":{"name":""}} 
+Invalid `prisma.product.findMany()` invocation in
+/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/features/products/get-products/repo.ts:33:22
+
+  30 try {
+  31   const where = { ...((options.query && options.query.name) && { name: { contains: options.query.name } }) }
+  32   const [products, totalCount] = await prisma.$transaction([
+→ 33     prisma.product.findMany({
+           where: {},
+           skip: 0,
+           take: "10"
+                 ~~~~
+         })
+
+Argument `take`: Invalid value provided. Expected Int, provided String.
+PrismaClientValidationError: 
+Invalid `prisma.product.findMany()` invocation in
+/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/features/products/get-products/repo.ts:33:22
+
+  30 try {
+  31   const where = { ...((options.query && options.query.name) && { name: { contains: options.query.name } }) }
+  32   const [products, totalCount] = await prisma.$transaction([
+→ 33     prisma.product.findMany({
+           where: {},
+           skip: 0,
+           take: "10"
+                 ~~~~
+         })
+
+Argument `take`: Invalid value provided. Expected Int, provided String.
+    at Nn (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:33:1363)
+    at ei.handleRequestError (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:125:6911)
+    at ei.handleAndLogRequestError (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:125:6593)
+    at ei.request (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:125:6300)
+    at async a (/home/luong/Projects/WebsiteLookBookBanQuanAoExpressjsNextjs/backend/src/generated/prisma/runtime/library.js:134:9551)
+2025-12-07 05:51:43 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:51:51 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:51:53 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 05:52:42 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:53:46 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:54:19 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:54:24 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:54:56 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:54:58 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:55:36 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:55:41 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:55:43 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:57:07 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:57:18 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:57:37 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:57:50 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:57:52 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:57:57 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:57:59 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:58:02 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 05:59:55 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:00:06 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:00:42 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:00:46 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:02:31 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:02:40 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:02:51 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:02:58 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:03:00 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:03:01 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:03:03 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:03:07 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:03:08 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:03:10 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:03:33 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:03:34 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:03:36 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:03:53 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:03:55 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:04:02 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:04:24 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:04:28 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:04:50 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:04:52 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:04:53 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:04:55 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:04:56 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:05:12 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:05:27 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:05:44 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:05:48 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:05:49 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:05:50 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:06:01 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:06:42 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:06:46 [INFO] Server running in development mode at http://localhost:8000
+2025-12-07 06:06:50 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:06:52 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:06:57 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:06:59 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:06:59 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:07:56 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:13:18 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:14:09 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:15:27 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:16:02 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"
+2025-12-07 06:19:57 [INFO] "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc2NTA3ODMzNiwiZXhwIjoxODUxNDc4MzM2fQ.EWdzOBY7nyZg_77fHH3DsDxikuBf9ETUMsWTQXW37L4"

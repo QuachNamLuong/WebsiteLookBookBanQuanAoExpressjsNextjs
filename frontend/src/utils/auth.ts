@@ -9,7 +9,7 @@ export type IsLoginResponse = {
 
 export async function isLogin() {
   try {
-    const res = await api.get<IsLoginResponse>("/auth/me");
+    const res = await api.get<IsLoginResponse>("/auth/get-me");
     if (res.status === HttpStatusCode.Ok) {
       return res.data.user.userId;
     }

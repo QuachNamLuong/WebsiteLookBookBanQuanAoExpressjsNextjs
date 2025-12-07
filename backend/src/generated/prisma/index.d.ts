@@ -83,7 +83,15 @@ export type ProductEvent = $Result.DefaultSelection<Prisma.$ProductEventPayload>
  * Enums
  */
 export namespace $Enums {
-  export const Size: {
+  export const RoleName: {
+  USER: 'USER',
+  ADMIN: 'ADMIN'
+};
+
+export type RoleName = (typeof RoleName)[keyof typeof RoleName]
+
+
+export const Size: {
   XS: 'XS',
   S: 'S',
   M: 'M',
@@ -95,6 +103,10 @@ export namespace $Enums {
 export type Size = (typeof Size)[keyof typeof Size]
 
 }
+
+export type RoleName = $Enums.RoleName
+
+export const RoleName: typeof $Enums.RoleName
 
 export type Size = $Enums.Size
 
@@ -3437,14 +3449,14 @@ export namespace Prisma {
 
   export type RoleMinAggregateOutputType = {
     id: number | null
-    name: string | null
+    name: $Enums.RoleName | null
     description: string | null
     createdAt: Date | null
   }
 
   export type RoleMaxAggregateOutputType = {
     id: number | null
-    name: string | null
+    name: $Enums.RoleName | null
     description: string | null
     createdAt: Date | null
   }
@@ -3576,7 +3588,7 @@ export namespace Prisma {
 
   export type RoleGroupByOutputType = {
     id: number
-    name: string
+    name: $Enums.RoleName
     description: string | null
     createdAt: Date
     _count: RoleCountAggregateOutputType | null
@@ -3648,7 +3660,7 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      name: string
+      name: $Enums.RoleName
       description: string | null
       createdAt: Date
     }, ExtArgs["result"]["role"]>
@@ -4077,7 +4089,7 @@ export namespace Prisma {
    */
   interface RoleFieldRefs {
     readonly id: FieldRef<"Role", 'Int'>
-    readonly name: FieldRef<"Role", 'String'>
+    readonly name: FieldRef<"Role", 'RoleName'>
     readonly description: FieldRef<"Role", 'String'>
     readonly createdAt: FieldRef<"Role", 'DateTime'>
   }
@@ -5644,16 +5656,19 @@ export namespace Prisma {
   export type ProductCategoryMinAggregateOutputType = {
     id: number | null
     name: string | null
+    slug: string | null
   }
 
   export type ProductCategoryMaxAggregateOutputType = {
     id: number | null
     name: string | null
+    slug: string | null
   }
 
   export type ProductCategoryCountAggregateOutputType = {
     id: number
     name: number
+    slug: number
     _all: number
   }
 
@@ -5669,16 +5684,19 @@ export namespace Prisma {
   export type ProductCategoryMinAggregateInputType = {
     id?: true
     name?: true
+    slug?: true
   }
 
   export type ProductCategoryMaxAggregateInputType = {
     id?: true
     name?: true
+    slug?: true
   }
 
   export type ProductCategoryCountAggregateInputType = {
     id?: true
     name?: true
+    slug?: true
     _all?: true
   }
 
@@ -5771,6 +5789,7 @@ export namespace Prisma {
   export type ProductCategoryGroupByOutputType = {
     id: number
     name: string
+    slug: string
     _count: ProductCategoryCountAggregateOutputType | null
     _avg: ProductCategoryAvgAggregateOutputType | null
     _sum: ProductCategorySumAggregateOutputType | null
@@ -5795,6 +5814,7 @@ export namespace Prisma {
   export type ProductCategorySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    slug?: boolean
     products?: boolean | ProductCategory$productsArgs<ExtArgs>
     _count?: boolean | ProductCategoryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["productCategory"]>
@@ -5802,19 +5822,22 @@ export namespace Prisma {
   export type ProductCategorySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    slug?: boolean
   }, ExtArgs["result"]["productCategory"]>
 
   export type ProductCategorySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    slug?: boolean
   }, ExtArgs["result"]["productCategory"]>
 
   export type ProductCategorySelectScalar = {
     id?: boolean
     name?: boolean
+    slug?: boolean
   }
 
-  export type ProductCategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name", ExtArgs["result"]["productCategory"]>
+  export type ProductCategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "slug", ExtArgs["result"]["productCategory"]>
   export type ProductCategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     products?: boolean | ProductCategory$productsArgs<ExtArgs>
     _count?: boolean | ProductCategoryCountOutputTypeDefaultArgs<ExtArgs>
@@ -5830,6 +5853,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       name: string
+      slug: string
     }, ExtArgs["result"]["productCategory"]>
     composites: {}
   }
@@ -6256,6 +6280,7 @@ export namespace Prisma {
   interface ProductCategoryFieldRefs {
     readonly id: FieldRef<"ProductCategory", 'Int'>
     readonly name: FieldRef<"ProductCategory", 'String'>
+    readonly slug: FieldRef<"ProductCategory", 'String'>
   }
     
 
@@ -16629,7 +16654,8 @@ export namespace Prisma {
 
   export const ProductCategoryScalarFieldEnum: {
     id: 'id',
-    name: 'name'
+    name: 'name',
+    slug: 'slug'
   };
 
   export type ProductCategoryScalarFieldEnum = (typeof ProductCategoryScalarFieldEnum)[keyof typeof ProductCategoryScalarFieldEnum]
@@ -16768,6 +16794,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'RoleName'
+   */
+  export type EnumRoleNameFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'RoleName'>
+    
+
+
+  /**
    * Reference to a field of type 'Size'
    */
   export type EnumSizeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Size'>
@@ -16864,7 +16897,7 @@ export namespace Prisma {
     OR?: RoleWhereInput[]
     NOT?: RoleWhereInput | RoleWhereInput[]
     id?: IntFilter<"Role"> | number
-    name?: StringFilter<"Role"> | string
+    name?: EnumRoleNameFilter<"Role"> | $Enums.RoleName
     description?: StringNullableFilter<"Role"> | string | null
     createdAt?: DateTimeFilter<"Role"> | Date | string
     users?: UserListRelationFilter
@@ -16882,15 +16915,15 @@ export namespace Prisma {
 
   export type RoleWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    name?: $Enums.RoleName
     AND?: RoleWhereInput | RoleWhereInput[]
     OR?: RoleWhereInput[]
     NOT?: RoleWhereInput | RoleWhereInput[]
-    name?: StringFilter<"Role"> | string
     description?: StringNullableFilter<"Role"> | string | null
     createdAt?: DateTimeFilter<"Role"> | Date | string
     users?: UserListRelationFilter
     permissions?: PermissionListRelationFilter
-  }, "id">
+  }, "id" | "name">
 
   export type RoleOrderByWithAggregationInput = {
     id?: SortOrder
@@ -16909,7 +16942,7 @@ export namespace Prisma {
     OR?: RoleScalarWhereWithAggregatesInput[]
     NOT?: RoleScalarWhereWithAggregatesInput | RoleScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Role"> | number
-    name?: StringWithAggregatesFilter<"Role"> | string
+    name?: EnumRoleNameWithAggregatesFilter<"Role"> | $Enums.RoleName
     description?: StringNullableWithAggregatesFilter<"Role"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Role"> | Date | string
   }
@@ -16972,27 +17005,31 @@ export namespace Prisma {
     NOT?: ProductCategoryWhereInput | ProductCategoryWhereInput[]
     id?: IntFilter<"ProductCategory"> | number
     name?: StringFilter<"ProductCategory"> | string
+    slug?: StringFilter<"ProductCategory"> | string
     products?: ProductListRelationFilter
   }
 
   export type ProductCategoryOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
+    slug?: SortOrder
     products?: ProductOrderByRelationAggregateInput
   }
 
   export type ProductCategoryWhereUniqueInput = Prisma.AtLeast<{
     id?: number
     name?: string
+    slug?: string
     AND?: ProductCategoryWhereInput | ProductCategoryWhereInput[]
     OR?: ProductCategoryWhereInput[]
     NOT?: ProductCategoryWhereInput | ProductCategoryWhereInput[]
     products?: ProductListRelationFilter
-  }, "id" | "name">
+  }, "id" | "name" | "slug">
 
   export type ProductCategoryOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
+    slug?: SortOrder
     _count?: ProductCategoryCountOrderByAggregateInput
     _avg?: ProductCategoryAvgOrderByAggregateInput
     _max?: ProductCategoryMaxOrderByAggregateInput
@@ -17006,6 +17043,7 @@ export namespace Prisma {
     NOT?: ProductCategoryScalarWhereWithAggregatesInput | ProductCategoryScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"ProductCategory"> | number
     name?: StringWithAggregatesFilter<"ProductCategory"> | string
+    slug?: StringWithAggregatesFilter<"ProductCategory"> | string
   }
 
   export type ProductWhereInput = {
@@ -17568,7 +17606,7 @@ export namespace Prisma {
   }
 
   export type RoleCreateInput = {
-    name: string
+    name: $Enums.RoleName
     description?: string | null
     createdAt?: Date | string
     users?: UserCreateNestedManyWithoutRolesInput
@@ -17577,7 +17615,7 @@ export namespace Prisma {
 
   export type RoleUncheckedCreateInput = {
     id?: number
-    name: string
+    name: $Enums.RoleName
     description?: string | null
     createdAt?: Date | string
     users?: UserUncheckedCreateNestedManyWithoutRolesInput
@@ -17585,7 +17623,7 @@ export namespace Prisma {
   }
 
   export type RoleUpdateInput = {
-    name?: StringFieldUpdateOperationsInput | string
+    name?: EnumRoleNameFieldUpdateOperationsInput | $Enums.RoleName
     description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUpdateManyWithoutRolesNestedInput
@@ -17594,7 +17632,7 @@ export namespace Prisma {
 
   export type RoleUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    name?: EnumRoleNameFieldUpdateOperationsInput | $Enums.RoleName
     description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUncheckedUpdateManyWithoutRolesNestedInput
@@ -17603,20 +17641,20 @@ export namespace Prisma {
 
   export type RoleCreateManyInput = {
     id?: number
-    name: string
+    name: $Enums.RoleName
     description?: string | null
     createdAt?: Date | string
   }
 
   export type RoleUpdateManyMutationInput = {
-    name?: StringFieldUpdateOperationsInput | string
+    name?: EnumRoleNameFieldUpdateOperationsInput | $Enums.RoleName
     description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type RoleUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    name?: EnumRoleNameFieldUpdateOperationsInput | $Enums.RoleName
     description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -17673,38 +17711,45 @@ export namespace Prisma {
 
   export type ProductCategoryCreateInput = {
     name: string
+    slug: string
     products?: ProductCreateNestedManyWithoutProductCategoryInput
   }
 
   export type ProductCategoryUncheckedCreateInput = {
     id?: number
     name: string
+    slug: string
     products?: ProductUncheckedCreateNestedManyWithoutProductCategoryInput
   }
 
   export type ProductCategoryUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     products?: ProductUpdateManyWithoutProductCategoryNestedInput
   }
 
   export type ProductCategoryUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     products?: ProductUncheckedUpdateManyWithoutProductCategoryNestedInput
   }
 
   export type ProductCategoryCreateManyInput = {
     id?: number
     name: string
+    slug: string
   }
 
   export type ProductCategoryUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
   }
 
   export type ProductCategoryUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
   }
 
   export type ProductCreateInput = {
@@ -18280,6 +18325,13 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
+  export type EnumRoleNameFilter<$PrismaModel = never> = {
+    equals?: $Enums.RoleName | EnumRoleNameFieldRefInput<$PrismaModel>
+    in?: $Enums.RoleName[]
+    notIn?: $Enums.RoleName[]
+    not?: NestedEnumRoleNameFilter<$PrismaModel> | $Enums.RoleName
+  }
+
   export type StringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | null
@@ -18348,6 +18400,16 @@ export namespace Prisma {
     id?: SortOrder
   }
 
+  export type EnumRoleNameWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.RoleName | EnumRoleNameFieldRefInput<$PrismaModel>
+    in?: $Enums.RoleName[]
+    notIn?: $Enums.RoleName[]
+    not?: NestedEnumRoleNameWithAggregatesFilter<$PrismaModel> | $Enums.RoleName
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumRoleNameFilter<$PrismaModel>
+    _max?: NestedEnumRoleNameFilter<$PrismaModel>
+  }
+
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | null
@@ -18407,6 +18469,7 @@ export namespace Prisma {
   export type ProductCategoryCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    slug?: SortOrder
   }
 
   export type ProductCategoryAvgOrderByAggregateInput = {
@@ -18416,11 +18479,13 @@ export namespace Prisma {
   export type ProductCategoryMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    slug?: SortOrder
   }
 
   export type ProductCategoryMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    slug?: SortOrder
   }
 
   export type ProductCategorySumOrderByAggregateInput = {
@@ -19034,6 +19099,10 @@ export namespace Prisma {
     create?: XOR<PermissionCreateWithoutRolesInput, PermissionUncheckedCreateWithoutRolesInput> | PermissionCreateWithoutRolesInput[] | PermissionUncheckedCreateWithoutRolesInput[]
     connectOrCreate?: PermissionCreateOrConnectWithoutRolesInput | PermissionCreateOrConnectWithoutRolesInput[]
     connect?: PermissionWhereUniqueInput | PermissionWhereUniqueInput[]
+  }
+
+  export type EnumRoleNameFieldUpdateOperationsInput = {
+    set?: $Enums.RoleName
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
@@ -19668,6 +19737,13 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
+  export type NestedEnumRoleNameFilter<$PrismaModel = never> = {
+    equals?: $Enums.RoleName | EnumRoleNameFieldRefInput<$PrismaModel>
+    in?: $Enums.RoleName[]
+    notIn?: $Enums.RoleName[]
+    not?: NestedEnumRoleNameFilter<$PrismaModel> | $Enums.RoleName
+  }
+
   export type NestedStringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | null
@@ -19680,6 +19756,16 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type NestedEnumRoleNameWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.RoleName | EnumRoleNameFieldRefInput<$PrismaModel>
+    in?: $Enums.RoleName[]
+    notIn?: $Enums.RoleName[]
+    not?: NestedEnumRoleNameWithAggregatesFilter<$PrismaModel> | $Enums.RoleName
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumRoleNameFilter<$PrismaModel>
+    _max?: NestedEnumRoleNameFilter<$PrismaModel>
   }
 
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -19782,7 +19868,7 @@ export namespace Prisma {
   }
 
   export type RoleCreateWithoutUsersInput = {
-    name: string
+    name: $Enums.RoleName
     description?: string | null
     createdAt?: Date | string
     permissions?: PermissionCreateNestedManyWithoutRolesInput
@@ -19790,7 +19876,7 @@ export namespace Prisma {
 
   export type RoleUncheckedCreateWithoutUsersInput = {
     id?: number
-    name: string
+    name: $Enums.RoleName
     description?: string | null
     createdAt?: Date | string
     permissions?: PermissionUncheckedCreateNestedManyWithoutRolesInput
@@ -19874,7 +19960,7 @@ export namespace Prisma {
     OR?: RoleScalarWhereInput[]
     NOT?: RoleScalarWhereInput | RoleScalarWhereInput[]
     id?: IntFilter<"Role"> | number
-    name?: StringFilter<"Role"> | string
+    name?: EnumRoleNameFilter<"Role"> | $Enums.RoleName
     description?: StringNullableFilter<"Role"> | string | null
     createdAt?: DateTimeFilter<"Role"> | Date | string
   }
@@ -20023,7 +20109,7 @@ export namespace Prisma {
   }
 
   export type RoleCreateWithoutPermissionsInput = {
-    name: string
+    name: $Enums.RoleName
     description?: string | null
     createdAt?: Date | string
     users?: UserCreateNestedManyWithoutRolesInput
@@ -20031,7 +20117,7 @@ export namespace Prisma {
 
   export type RoleUncheckedCreateWithoutPermissionsInput = {
     id?: number
-    name: string
+    name: $Enums.RoleName
     description?: string | null
     createdAt?: Date | string
     users?: UserUncheckedCreateNestedManyWithoutRolesInput
@@ -20112,11 +20198,13 @@ export namespace Prisma {
 
   export type ProductCategoryCreateWithoutProductsInput = {
     name: string
+    slug: string
   }
 
   export type ProductCategoryUncheckedCreateWithoutProductsInput = {
     id?: number
     name: string
+    slug: string
   }
 
   export type ProductCategoryCreateOrConnectWithoutProductsInput = {
@@ -20210,11 +20298,13 @@ export namespace Prisma {
 
   export type ProductCategoryUpdateWithoutProductsInput = {
     name?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
   }
 
   export type ProductCategoryUncheckedUpdateWithoutProductsInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
   }
 
   export type ProductVariantUpsertWithWhereUniqueWithoutProductInput = {
@@ -20842,7 +20932,7 @@ export namespace Prisma {
   }
 
   export type RoleUpdateWithoutUsersInput = {
-    name?: StringFieldUpdateOperationsInput | string
+    name?: EnumRoleNameFieldUpdateOperationsInput | $Enums.RoleName
     description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     permissions?: PermissionUpdateManyWithoutRolesNestedInput
@@ -20850,7 +20940,7 @@ export namespace Prisma {
 
   export type RoleUncheckedUpdateWithoutUsersInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    name?: EnumRoleNameFieldUpdateOperationsInput | $Enums.RoleName
     description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     permissions?: PermissionUncheckedUpdateManyWithoutRolesNestedInput
@@ -20858,7 +20948,7 @@ export namespace Prisma {
 
   export type RoleUncheckedUpdateManyWithoutUsersInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    name?: EnumRoleNameFieldUpdateOperationsInput | $Enums.RoleName
     description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -20966,7 +21056,7 @@ export namespace Prisma {
   }
 
   export type RoleUpdateWithoutPermissionsInput = {
-    name?: StringFieldUpdateOperationsInput | string
+    name?: EnumRoleNameFieldUpdateOperationsInput | $Enums.RoleName
     description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUpdateManyWithoutRolesNestedInput
@@ -20974,7 +21064,7 @@ export namespace Prisma {
 
   export type RoleUncheckedUpdateWithoutPermissionsInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    name?: EnumRoleNameFieldUpdateOperationsInput | $Enums.RoleName
     description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUncheckedUpdateManyWithoutRolesNestedInput
@@ -20982,7 +21072,7 @@ export namespace Prisma {
 
   export type RoleUncheckedUpdateManyWithoutPermissionsInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    name?: EnumRoleNameFieldUpdateOperationsInput | $Enums.RoleName
     description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

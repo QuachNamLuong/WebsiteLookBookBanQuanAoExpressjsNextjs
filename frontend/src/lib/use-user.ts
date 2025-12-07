@@ -35,7 +35,7 @@ const fetcher = async (url: string) => {
  */
 export function useUser(): UseUserResult {
   const { data, error, mutate, isValidating } = useSWR<{ user: User }>(
-    `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080'}/api/auth/me`,
+    `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/auth/get-me`,
     fetcher,
     {
       revalidateOnFocus: true,

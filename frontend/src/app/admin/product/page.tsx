@@ -1,62 +1,38 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { toast } from "sonner";
-import ProductTable from "@/components/table/product-table";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useState } from "react";
+import ProductTable from "./(components)/(table)/product-table";
 
-interface Product {
-  productId: string;
-  productName: string;
-  quantity: number;
-  price?: number;
-}
+// Create a client instance outside the component to avoid re-creation on every render
+// You might also put this in a separate Provider component for global use.
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // Set a short stale time to re-fetch product lists quickly when user interacts
+      staleTime: 1000 * 60, // 1 minute
+    },
+  },
+});
 
-interface PaginatedResponse {
-  data: Product[];
-  nextCursor: string | null;
-  hasNextPage: boolean;
-}
-
-export default function AdminProductPage() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [cursor, setCursor] = useState<string | null>(null);
-  const [hasNextPage, setHasNextPage] = useState<boolean>(true);
-  const [loading, setLoading] = useState(false);
-
-  const fetchProducts = async () => {
-    if (!hasNextPage || loading) return;
-    setLoading(true);
-
-    try {
-      const res = await axios.get<PaginatedResponse>(
-        "http://localhost:3000/api/product",
-        {
-          params: { limit: 6, cursor },
-        }
-      );
-
-      const { data, nextCursor, hasNextPage } = res.data;
-      toast.info(data.toString())
-      // Append new products to existing list
-      setProducts((prev) => [...prev, ...data]);
-      setCursor(nextCursor);
-      setHasNextPage(hasNextPage);
-    } catch (err) {
-      console.error("Failed to fetch products:", err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Load first page on mount
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
+export default function ProductsPage() {
   return (
-    <div className="max-w-[1440px] mx-auto p-6">
-      <ProductTable />
-    </div>
+    // Wrap the entire application or the specific section that uses TanStack Query
+    <QueryClientProvider client={queryClient}>
+      <div className="p-6 md:p-8">
+        {/* Header Section */}
+        <header className="mb-6">
+          <h1 className="text-3xl font-bold tracking-tight">
+            Quản Lý Sản Phẩm
+          </h1>
+          <p className="text-muted-foreground">
+            Xem, thêm, sửa, và xóa thông tin sản phẩm.
+          </p>
+        </header>
+
+        {/* Main Content (The Table Component) */}
+        <ProductTable />
+      </div>
+    </QueryClientProvider>
   );
 }
