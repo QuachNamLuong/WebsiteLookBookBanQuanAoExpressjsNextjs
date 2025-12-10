@@ -3,9 +3,12 @@ import { AppError } from "types/app.d";
 import { StatusCodes } from "http-status-codes";
 import logger from "utils/logger";
 
-type ProductsWithCount = {
+// ✅ MODIFIED: Updated the return type to include page and totalPages
+export type ProductsWithPagination = {
   products: Product[];
   totalCount: number;
+  currentPage: number; // Current page number being returned
+  totalPages: number;  // Total number of pages
 };
 
 type GetProductsOptions = {
@@ -22,27 +25,38 @@ type GetProductsOptions = {
 export async function getProductsRepo(
   prisma: PrismaClient,
   options: GetProductsOptions
-): Promise<ProductsWithCount> {
+): Promise<ProductsWithPagination> { // ✅ USE NEW TYPE
 
   const page = options.paging.page > 0 ? options.paging.page : 1;
-  const skip = (page - 1) * options.paging.maxItem;
+  const maxItem = options.paging.maxItem; // Use a clearer variable name
+  const skip = (page - 1) * maxItem;
 
   try {
-    const where = { ...((options.query && options.query.name) && { name: { contains: options.query.name } }) }
+    // Construct the 'where' clause, ensuring it's an empty object if no name is provided.
+    const where = options.query?.name 
+      ? { name: { contains: options.query.name } } 
+      : {};
+      
     const [products, totalCount] = await prisma.$transaction([
       prisma.product.findMany({
         where,
         skip: skip,
-        take: options.paging.maxItem,
+        take: maxItem,
       }),
       prisma.product.count({
         where,
       }),
     ]);
+    
+    // ✅ CALCULATE totalPages
+    const totalPages = Math.ceil(totalCount / maxItem);
 
+    // ✅ RETURN the new fields
     return {
       products: products,
       totalCount: totalCount,
+      currentPage: page,
+      totalPages: totalPages,
     };
 
   } catch (error) {

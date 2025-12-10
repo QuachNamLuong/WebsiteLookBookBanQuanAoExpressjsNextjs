@@ -1,5 +1,5 @@
 import type { PrismaClient } from "@generated/prisma";
-import { AppError } from "types/app";
+import { AppError } from "types/app.d";
 import { StatusCodes } from "http-status-codes";
 import { getProductByIdRepo } from "./repo";
 import { productToGetProductByIdResponseSchema } from "./mapping";
@@ -7,7 +7,7 @@ import { productToGetProductByIdResponseSchema } from "./mapping";
 export async function getProductByIdService(prisma: PrismaClient, productId: number) {
   try {
     const product = await getProductByIdRepo(prisma, productId);
-    if (product) return productToGetProductByIdResponseSchema(product);
+    if (product) return product;
 
     throw new AppError(
       1000,

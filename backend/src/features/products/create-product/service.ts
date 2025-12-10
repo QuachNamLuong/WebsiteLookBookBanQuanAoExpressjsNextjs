@@ -16,7 +16,14 @@ export async function createProductService(prisma: PrismaClient, request: Create
   try {
     const productId = await createProductRepo(prisma, {
       name: request.name,
-      code: await getNextProductCode(prisma)
+      code: await getNextProductCode(prisma),
+      price: request.price,
+      stock: request.quantity,
+      color: request.color,
+      material: request.material,
+      nameMean: request.nameMeaning,
+      style: request.style,
+      usage: request.usage
     });
     return productId;
   } catch (error) {

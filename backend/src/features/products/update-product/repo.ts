@@ -1,4 +1,4 @@
-import type { PrismaClient, Product } from "@generated/prisma/client";
+import type { Prisma, PrismaClient, Product } from "@generated/prisma/client";
 import { AppError } from "types/app.d";
 import { StatusCodes } from "http-status-codes";
 import type { UpdateProductBodySchema } from "./schema";
@@ -20,13 +20,13 @@ export async function getProductByIdRepo(prisma: PrismaClient, productId: number
 export async function updateProductRepo(
   prisma: PrismaClient,
   productId: number,
-  data: UpdateProductBodySchema
+  data: Prisma.ProductUpdateInput
 ) {
 
   try {
     const updatedProduct = await prisma.product.update({
       where: { id: productId },
-      data: { name: data.product.name }
+      data
     });
 
     return updatedProduct;

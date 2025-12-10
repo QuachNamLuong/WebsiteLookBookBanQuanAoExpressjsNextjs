@@ -10,7 +10,7 @@ import axios from "axios"; // Needed for axios.isAxiosError check
  */
 export async function deleteProduct(productId: string): Promise<void> {
   // Sử dụng URL tương đối nếu baseURL đã được cấu hình trong /lib/axios.ts
-  const API_URL = `/api/products/${productId}`;
+  const API_URL = `/products/${productId}`;
 
   try {
     // Gọi DELETE bằng instance 'api' tùy chỉnh

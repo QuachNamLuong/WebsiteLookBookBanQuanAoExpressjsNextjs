@@ -1,5 +1,5 @@
 import type { PrismaClient } from "@generated/prisma";
-import { AppError } from "types/app";
+import { AppError } from "types/app.d";
 import { StatusCodes } from "http-status-codes";
 import logger from "utils/logger";
 

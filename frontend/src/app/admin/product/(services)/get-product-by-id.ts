@@ -1,22 +1,6 @@
 import api from "@/lib/axios";
 import axios from "axios";
-
-// --- Định nghĩa kiểu dữ liệu (Types) ---
-
-// Giao diện Product phải khớp với cấu trúc dữ liệu trả về từ API
-interface Product {
-  productId: string;
-  productName: string;
-  quantity: number;
-  price?: number;
-  nameMeaning?: string;
-  material?: string;
-  style?: string;
-  color?: string;
-  usage?: string;
-  // Thêm bất kỳ trường nào khác mà bạn cần cho trang chỉnh sửa
-}
-
+import { Product } from "./types";
 
 
 export async function getProductById(productId: string): Promise<Product> {

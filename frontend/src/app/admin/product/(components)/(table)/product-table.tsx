@@ -104,11 +104,11 @@ export default function ProductTable() {
   // 4. Column Definitions
   const columns: ColumnDef<Product>[] = [
     // ... Data Columns ...
-    { accessorKey: "productId", header: "ID" },
-    { accessorKey: "productName", header: "Tên sản phẩm", enableGlobalFilter: true },
+    { accessorKey: "code", header: "Mã" },
+    { accessorKey: "name", header: "Tên sản phẩm", enableGlobalFilter: true },
     { accessorKey: "price", header: "Giá" },
-    { accessorKey: "quantity", header: "Số lượng" }, 
-    { accessorKey: "nameMeaning", header: "Ý nghĩa tên" }, 
+    { accessorKey: "stock", header: "Số lượng" }, 
+    { accessorKey: "nameMean", header: "Ý nghĩa tên" }, 
     { accessorKey: "material", header: "Chất liệu" },
     { accessorKey: "color", header: "Màu sắc" },
     { accessorKey: "style", header: "Phong cách" },
@@ -128,11 +128,11 @@ export default function ProductTable() {
               <DialogTrigger asChild>
                 <Button variant="outline" size="sm">Sửa</Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[550px]">
+              <DialogContent className="sm:max-w-2/3">
                 <DialogHeader>
-                  <DialogTitle>Chỉnh sửa sản phẩm: {product.productName}</DialogTitle>
+                  <DialogTitle>Chỉnh sửa sản phẩm: {product.name}</DialogTitle>
                 </DialogHeader>
-                <UpdateProductForm productId={product.productId} updateMutation={updateMutation} />
+                <UpdateProductForm productId={product.id} updateMutation={updateMutation} />
               </DialogContent>
             </Dialog>
 
@@ -140,7 +140,7 @@ export default function ProductTable() {
             <Button
               variant="destructive"
               size="sm"
-              onClick={() => deleteMutation.mutate(product.productId)}
+              onClick={() => deleteMutation.mutate(product.id)}
               disabled={deleteMutation.isPending}
             >
               Xóa

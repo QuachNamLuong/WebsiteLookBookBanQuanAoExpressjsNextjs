@@ -6724,11 +6724,15 @@ export namespace Prisma {
   export type ProductAvgAggregateOutputType = {
     id: number | null
     productCategoryId: number | null
+    price: Decimal | null
+    stock: number | null
   }
 
   export type ProductSumAggregateOutputType = {
     id: number | null
     productCategoryId: number | null
+    price: Decimal | null
+    stock: number | null
   }
 
   export type ProductMinAggregateOutputType = {
@@ -6736,6 +6740,13 @@ export namespace Prisma {
     code: string | null
     name: string | null
     productCategoryId: number | null
+    price: Decimal | null
+    style: string | null
+    nameMean: string | null
+    usage: string | null
+    material: string | null
+    color: string | null
+    stock: number | null
   }
 
   export type ProductMaxAggregateOutputType = {
@@ -6743,6 +6754,13 @@ export namespace Prisma {
     code: string | null
     name: string | null
     productCategoryId: number | null
+    price: Decimal | null
+    style: string | null
+    nameMean: string | null
+    usage: string | null
+    material: string | null
+    color: string | null
+    stock: number | null
   }
 
   export type ProductCountAggregateOutputType = {
@@ -6750,6 +6768,13 @@ export namespace Prisma {
     code: number
     name: number
     productCategoryId: number
+    price: number
+    style: number
+    nameMean: number
+    usage: number
+    material: number
+    color: number
+    stock: number
     _all: number
   }
 
@@ -6757,11 +6782,15 @@ export namespace Prisma {
   export type ProductAvgAggregateInputType = {
     id?: true
     productCategoryId?: true
+    price?: true
+    stock?: true
   }
 
   export type ProductSumAggregateInputType = {
     id?: true
     productCategoryId?: true
+    price?: true
+    stock?: true
   }
 
   export type ProductMinAggregateInputType = {
@@ -6769,6 +6798,13 @@ export namespace Prisma {
     code?: true
     name?: true
     productCategoryId?: true
+    price?: true
+    style?: true
+    nameMean?: true
+    usage?: true
+    material?: true
+    color?: true
+    stock?: true
   }
 
   export type ProductMaxAggregateInputType = {
@@ -6776,6 +6812,13 @@ export namespace Prisma {
     code?: true
     name?: true
     productCategoryId?: true
+    price?: true
+    style?: true
+    nameMean?: true
+    usage?: true
+    material?: true
+    color?: true
+    stock?: true
   }
 
   export type ProductCountAggregateInputType = {
@@ -6783,6 +6826,13 @@ export namespace Prisma {
     code?: true
     name?: true
     productCategoryId?: true
+    price?: true
+    style?: true
+    nameMean?: true
+    usage?: true
+    material?: true
+    color?: true
+    stock?: true
     _all?: true
   }
 
@@ -6877,6 +6927,13 @@ export namespace Prisma {
     code: string
     name: string
     productCategoryId: number | null
+    price: Decimal
+    style: string | null
+    nameMean: string | null
+    usage: string | null
+    material: string | null
+    color: string | null
+    stock: number
     _count: ProductCountAggregateOutputType | null
     _avg: ProductAvgAggregateOutputType | null
     _sum: ProductSumAggregateOutputType | null
@@ -6903,6 +6960,13 @@ export namespace Prisma {
     code?: boolean
     name?: boolean
     productCategoryId?: boolean
+    price?: boolean
+    style?: boolean
+    nameMean?: boolean
+    usage?: boolean
+    material?: boolean
+    color?: boolean
+    stock?: boolean
     productCategory?: boolean | Product$productCategoryArgs<ExtArgs>
     variants?: boolean | Product$variantsArgs<ExtArgs>
     productImage?: boolean | Product$productImageArgs<ExtArgs>
@@ -6915,6 +6979,13 @@ export namespace Prisma {
     code?: boolean
     name?: boolean
     productCategoryId?: boolean
+    price?: boolean
+    style?: boolean
+    nameMean?: boolean
+    usage?: boolean
+    material?: boolean
+    color?: boolean
+    stock?: boolean
     productCategory?: boolean | Product$productCategoryArgs<ExtArgs>
   }, ExtArgs["result"]["product"]>
 
@@ -6923,6 +6994,13 @@ export namespace Prisma {
     code?: boolean
     name?: boolean
     productCategoryId?: boolean
+    price?: boolean
+    style?: boolean
+    nameMean?: boolean
+    usage?: boolean
+    material?: boolean
+    color?: boolean
+    stock?: boolean
     productCategory?: boolean | Product$productCategoryArgs<ExtArgs>
   }, ExtArgs["result"]["product"]>
 
@@ -6931,9 +7009,16 @@ export namespace Prisma {
     code?: boolean
     name?: boolean
     productCategoryId?: boolean
+    price?: boolean
+    style?: boolean
+    nameMean?: boolean
+    usage?: boolean
+    material?: boolean
+    color?: boolean
+    stock?: boolean
   }
 
-  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "code" | "name" | "productCategoryId", ExtArgs["result"]["product"]>
+  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "code" | "name" | "productCategoryId" | "price" | "style" | "nameMean" | "usage" | "material" | "color" | "stock", ExtArgs["result"]["product"]>
   export type ProductInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     productCategory?: boolean | Product$productCategoryArgs<ExtArgs>
     variants?: boolean | Product$variantsArgs<ExtArgs>
@@ -6961,6 +7046,13 @@ export namespace Prisma {
       code: string
       name: string
       productCategoryId: number | null
+      price: Prisma.Decimal
+      style: string | null
+      nameMean: string | null
+      usage: string | null
+      material: string | null
+      color: string | null
+      stock: number
     }, ExtArgs["result"]["product"]>
     composites: {}
   }
@@ -7392,6 +7484,13 @@ export namespace Prisma {
     readonly code: FieldRef<"Product", 'String'>
     readonly name: FieldRef<"Product", 'String'>
     readonly productCategoryId: FieldRef<"Product", 'Int'>
+    readonly price: FieldRef<"Product", 'Decimal'>
+    readonly style: FieldRef<"Product", 'String'>
+    readonly nameMean: FieldRef<"Product", 'String'>
+    readonly usage: FieldRef<"Product", 'String'>
+    readonly material: FieldRef<"Product", 'String'>
+    readonly color: FieldRef<"Product", 'String'>
+    readonly stock: FieldRef<"Product", 'Int'>
   }
     
 
@@ -16665,7 +16764,14 @@ export namespace Prisma {
     id: 'id',
     code: 'code',
     name: 'name',
-    productCategoryId: 'productCategoryId'
+    productCategoryId: 'productCategoryId',
+    price: 'price',
+    style: 'style',
+    nameMean: 'nameMean',
+    usage: 'usage',
+    material: 'material',
+    color: 'color',
+    stock: 'stock'
   };
 
   export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
@@ -16797,6 +16903,13 @@ export namespace Prisma {
    * Reference to a field of type 'RoleName'
    */
   export type EnumRoleNameFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'RoleName'>
+    
+
+
+  /**
+   * Reference to a field of type 'Decimal'
+   */
+  export type DecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal'>
     
 
 
@@ -17054,6 +17167,13 @@ export namespace Prisma {
     code?: StringFilter<"Product"> | string
     name?: StringFilter<"Product"> | string
     productCategoryId?: IntNullableFilter<"Product"> | number | null
+    price?: DecimalFilter<"Product"> | Decimal | DecimalJsLike | number | string
+    style?: StringNullableFilter<"Product"> | string | null
+    nameMean?: StringNullableFilter<"Product"> | string | null
+    usage?: StringNullableFilter<"Product"> | string | null
+    material?: StringNullableFilter<"Product"> | string | null
+    color?: StringNullableFilter<"Product"> | string | null
+    stock?: IntFilter<"Product"> | number
     productCategory?: XOR<ProductCategoryNullableScalarRelationFilter, ProductCategoryWhereInput> | null
     variants?: ProductVariantListRelationFilter
     productImage?: ProductImageListRelationFilter
@@ -17065,6 +17185,13 @@ export namespace Prisma {
     code?: SortOrder
     name?: SortOrder
     productCategoryId?: SortOrderInput | SortOrder
+    price?: SortOrder
+    style?: SortOrderInput | SortOrder
+    nameMean?: SortOrderInput | SortOrder
+    usage?: SortOrderInput | SortOrder
+    material?: SortOrderInput | SortOrder
+    color?: SortOrderInput | SortOrder
+    stock?: SortOrder
     productCategory?: ProductCategoryOrderByWithRelationInput
     variants?: ProductVariantOrderByRelationAggregateInput
     productImage?: ProductImageOrderByRelationAggregateInput
@@ -17079,6 +17206,13 @@ export namespace Prisma {
     OR?: ProductWhereInput[]
     NOT?: ProductWhereInput | ProductWhereInput[]
     productCategoryId?: IntNullableFilter<"Product"> | number | null
+    price?: DecimalFilter<"Product"> | Decimal | DecimalJsLike | number | string
+    style?: StringNullableFilter<"Product"> | string | null
+    nameMean?: StringNullableFilter<"Product"> | string | null
+    usage?: StringNullableFilter<"Product"> | string | null
+    material?: StringNullableFilter<"Product"> | string | null
+    color?: StringNullableFilter<"Product"> | string | null
+    stock?: IntFilter<"Product"> | number
     productCategory?: XOR<ProductCategoryNullableScalarRelationFilter, ProductCategoryWhereInput> | null
     variants?: ProductVariantListRelationFilter
     productImage?: ProductImageListRelationFilter
@@ -17090,6 +17224,13 @@ export namespace Prisma {
     code?: SortOrder
     name?: SortOrder
     productCategoryId?: SortOrderInput | SortOrder
+    price?: SortOrder
+    style?: SortOrderInput | SortOrder
+    nameMean?: SortOrderInput | SortOrder
+    usage?: SortOrderInput | SortOrder
+    material?: SortOrderInput | SortOrder
+    color?: SortOrderInput | SortOrder
+    stock?: SortOrder
     _count?: ProductCountOrderByAggregateInput
     _avg?: ProductAvgOrderByAggregateInput
     _max?: ProductMaxOrderByAggregateInput
@@ -17105,6 +17246,13 @@ export namespace Prisma {
     code?: StringWithAggregatesFilter<"Product"> | string
     name?: StringWithAggregatesFilter<"Product"> | string
     productCategoryId?: IntNullableWithAggregatesFilter<"Product"> | number | null
+    price?: DecimalWithAggregatesFilter<"Product"> | Decimal | DecimalJsLike | number | string
+    style?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    nameMean?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    usage?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    material?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    color?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    stock?: IntWithAggregatesFilter<"Product"> | number
   }
 
   export type ProductImageWhereInput = {
@@ -17755,6 +17903,13 @@ export namespace Prisma {
   export type ProductCreateInput = {
     code: string
     name: string
+    price: Decimal | DecimalJsLike | number | string
+    style?: string | null
+    nameMean?: string | null
+    usage?: string | null
+    material?: string | null
+    color?: string | null
+    stock: number
     productCategory?: ProductCategoryCreateNestedOneWithoutProductsInput
     variants?: ProductVariantCreateNestedManyWithoutProductInput
     productImage?: ProductImageCreateNestedManyWithoutProductInput
@@ -17766,6 +17921,13 @@ export namespace Prisma {
     code: string
     name: string
     productCategoryId?: number | null
+    price: Decimal | DecimalJsLike | number | string
+    style?: string | null
+    nameMean?: string | null
+    usage?: string | null
+    material?: string | null
+    color?: string | null
+    stock: number
     variants?: ProductVariantUncheckedCreateNestedManyWithoutProductInput
     productImage?: ProductImageUncheckedCreateNestedManyWithoutProductInput
     productEvents?: ProductEventUncheckedCreateNestedManyWithoutProductInput
@@ -17774,6 +17936,13 @@ export namespace Prisma {
   export type ProductUpdateInput = {
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
     productCategory?: ProductCategoryUpdateOneWithoutProductsNestedInput
     variants?: ProductVariantUpdateManyWithoutProductNestedInput
     productImage?: ProductImageUpdateManyWithoutProductNestedInput
@@ -17785,6 +17954,13 @@ export namespace Prisma {
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     productCategoryId?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
     variants?: ProductVariantUncheckedUpdateManyWithoutProductNestedInput
     productImage?: ProductImageUncheckedUpdateManyWithoutProductNestedInput
     productEvents?: ProductEventUncheckedUpdateManyWithoutProductNestedInput
@@ -17795,11 +17971,25 @@ export namespace Prisma {
     code: string
     name: string
     productCategoryId?: number | null
+    price: Decimal | DecimalJsLike | number | string
+    style?: string | null
+    nameMean?: string | null
+    usage?: string | null
+    material?: string | null
+    color?: string | null
+    stock: number
   }
 
   export type ProductUpdateManyMutationInput = {
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
   }
 
   export type ProductUncheckedUpdateManyInput = {
@@ -17807,6 +17997,13 @@ export namespace Prisma {
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     productCategoryId?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
   }
 
   export type ProductImageCreateInput = {
@@ -18503,6 +18700,17 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
+  export type DecimalFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[]
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[]
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+  }
+
   export type ProductCategoryNullableScalarRelationFilter = {
     is?: ProductCategoryWhereInput | null
     isNot?: ProductCategoryWhereInput | null
@@ -18543,11 +18751,20 @@ export namespace Prisma {
     code?: SortOrder
     name?: SortOrder
     productCategoryId?: SortOrder
+    price?: SortOrder
+    style?: SortOrder
+    nameMean?: SortOrder
+    usage?: SortOrder
+    material?: SortOrder
+    color?: SortOrder
+    stock?: SortOrder
   }
 
   export type ProductAvgOrderByAggregateInput = {
     id?: SortOrder
     productCategoryId?: SortOrder
+    price?: SortOrder
+    stock?: SortOrder
   }
 
   export type ProductMaxOrderByAggregateInput = {
@@ -18555,6 +18772,13 @@ export namespace Prisma {
     code?: SortOrder
     name?: SortOrder
     productCategoryId?: SortOrder
+    price?: SortOrder
+    style?: SortOrder
+    nameMean?: SortOrder
+    usage?: SortOrder
+    material?: SortOrder
+    color?: SortOrder
+    stock?: SortOrder
   }
 
   export type ProductMinOrderByAggregateInput = {
@@ -18562,11 +18786,20 @@ export namespace Prisma {
     code?: SortOrder
     name?: SortOrder
     productCategoryId?: SortOrder
+    price?: SortOrder
+    style?: SortOrder
+    nameMean?: SortOrder
+    usage?: SortOrder
+    material?: SortOrder
+    color?: SortOrder
+    stock?: SortOrder
   }
 
   export type ProductSumOrderByAggregateInput = {
     id?: SortOrder
     productCategoryId?: SortOrder
+    price?: SortOrder
+    stock?: SortOrder
   }
 
   export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -18583,6 +18816,22 @@ export namespace Prisma {
     _sum?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedIntNullableFilter<$PrismaModel>
     _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type DecimalWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[]
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[]
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalWithAggregatesFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedDecimalFilter<$PrismaModel>
+    _sum?: NestedDecimalFilter<$PrismaModel>
+    _min?: NestedDecimalFilter<$PrismaModel>
+    _max?: NestedDecimalFilter<$PrismaModel>
   }
 
   export type ProductScalarRelationFilter = {
@@ -19289,6 +19538,14 @@ export namespace Prisma {
     connect?: ProductEventWhereUniqueInput | ProductEventWhereUniqueInput[]
   }
 
+  export type DecimalFieldUpdateOperationsInput = {
+    set?: Decimal | DecimalJsLike | number | string
+    increment?: Decimal | DecimalJsLike | number | string
+    decrement?: Decimal | DecimalJsLike | number | string
+    multiply?: Decimal | DecimalJsLike | number | string
+    divide?: Decimal | DecimalJsLike | number | string
+  }
+
   export type ProductCategoryUpdateOneWithoutProductsNestedInput = {
     create?: XOR<ProductCategoryCreateWithoutProductsInput, ProductCategoryUncheckedCreateWithoutProductsInput>
     connectOrCreate?: ProductCategoryCreateOrConnectWithoutProductsInput
@@ -19796,6 +20053,17 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
+  export type NestedDecimalFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[]
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[]
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+  }
+
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | null
@@ -19821,6 +20089,22 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedDecimalWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[]
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[]
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalWithAggregatesFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedDecimalFilter<$PrismaModel>
+    _sum?: NestedDecimalFilter<$PrismaModel>
+    _min?: NestedDecimalFilter<$PrismaModel>
+    _max?: NestedDecimalFilter<$PrismaModel>
   }
 
   export type NestedEnumSizeNullableFilter<$PrismaModel = never> = {
@@ -20147,6 +20431,13 @@ export namespace Prisma {
   export type ProductCreateWithoutProductCategoryInput = {
     code: string
     name: string
+    price: Decimal | DecimalJsLike | number | string
+    style?: string | null
+    nameMean?: string | null
+    usage?: string | null
+    material?: string | null
+    color?: string | null
+    stock: number
     variants?: ProductVariantCreateNestedManyWithoutProductInput
     productImage?: ProductImageCreateNestedManyWithoutProductInput
     productEvents?: ProductEventCreateNestedManyWithoutProductInput
@@ -20156,6 +20447,13 @@ export namespace Prisma {
     id?: number
     code: string
     name: string
+    price: Decimal | DecimalJsLike | number | string
+    style?: string | null
+    nameMean?: string | null
+    usage?: string | null
+    material?: string | null
+    color?: string | null
+    stock: number
     variants?: ProductVariantUncheckedCreateNestedManyWithoutProductInput
     productImage?: ProductImageUncheckedCreateNestedManyWithoutProductInput
     productEvents?: ProductEventUncheckedCreateNestedManyWithoutProductInput
@@ -20194,6 +20492,13 @@ export namespace Prisma {
     code?: StringFilter<"Product"> | string
     name?: StringFilter<"Product"> | string
     productCategoryId?: IntNullableFilter<"Product"> | number | null
+    price?: DecimalFilter<"Product"> | Decimal | DecimalJsLike | number | string
+    style?: StringNullableFilter<"Product"> | string | null
+    nameMean?: StringNullableFilter<"Product"> | string | null
+    usage?: StringNullableFilter<"Product"> | string | null
+    material?: StringNullableFilter<"Product"> | string | null
+    color?: StringNullableFilter<"Product"> | string | null
+    stock?: IntFilter<"Product"> | number
   }
 
   export type ProductCategoryCreateWithoutProductsInput = {
@@ -20392,6 +20697,13 @@ export namespace Prisma {
   export type ProductCreateWithoutProductImageInput = {
     code: string
     name: string
+    price: Decimal | DecimalJsLike | number | string
+    style?: string | null
+    nameMean?: string | null
+    usage?: string | null
+    material?: string | null
+    color?: string | null
+    stock: number
     productCategory?: ProductCategoryCreateNestedOneWithoutProductsInput
     variants?: ProductVariantCreateNestedManyWithoutProductInput
     productEvents?: ProductEventCreateNestedManyWithoutProductInput
@@ -20402,6 +20714,13 @@ export namespace Prisma {
     code: string
     name: string
     productCategoryId?: number | null
+    price: Decimal | DecimalJsLike | number | string
+    style?: string | null
+    nameMean?: string | null
+    usage?: string | null
+    material?: string | null
+    color?: string | null
+    stock: number
     variants?: ProductVariantUncheckedCreateNestedManyWithoutProductInput
     productEvents?: ProductEventUncheckedCreateNestedManyWithoutProductInput
   }
@@ -20425,6 +20744,13 @@ export namespace Prisma {
   export type ProductUpdateWithoutProductImageInput = {
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
     productCategory?: ProductCategoryUpdateOneWithoutProductsNestedInput
     variants?: ProductVariantUpdateManyWithoutProductNestedInput
     productEvents?: ProductEventUpdateManyWithoutProductNestedInput
@@ -20435,6 +20761,13 @@ export namespace Prisma {
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     productCategoryId?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
     variants?: ProductVariantUncheckedUpdateManyWithoutProductNestedInput
     productEvents?: ProductEventUncheckedUpdateManyWithoutProductNestedInput
   }
@@ -20442,6 +20775,13 @@ export namespace Prisma {
   export type ProductCreateWithoutVariantsInput = {
     code: string
     name: string
+    price: Decimal | DecimalJsLike | number | string
+    style?: string | null
+    nameMean?: string | null
+    usage?: string | null
+    material?: string | null
+    color?: string | null
+    stock: number
     productCategory?: ProductCategoryCreateNestedOneWithoutProductsInput
     productImage?: ProductImageCreateNestedManyWithoutProductInput
     productEvents?: ProductEventCreateNestedManyWithoutProductInput
@@ -20452,6 +20792,13 @@ export namespace Prisma {
     code: string
     name: string
     productCategoryId?: number | null
+    price: Decimal | DecimalJsLike | number | string
+    style?: string | null
+    nameMean?: string | null
+    usage?: string | null
+    material?: string | null
+    color?: string | null
+    stock: number
     productImage?: ProductImageUncheckedCreateNestedManyWithoutProductInput
     productEvents?: ProductEventUncheckedCreateNestedManyWithoutProductInput
   }
@@ -20510,6 +20857,13 @@ export namespace Prisma {
   export type ProductUpdateWithoutVariantsInput = {
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
     productCategory?: ProductCategoryUpdateOneWithoutProductsNestedInput
     productImage?: ProductImageUpdateManyWithoutProductNestedInput
     productEvents?: ProductEventUpdateManyWithoutProductNestedInput
@@ -20520,6 +20874,13 @@ export namespace Prisma {
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     productCategoryId?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
     productImage?: ProductImageUncheckedUpdateManyWithoutProductNestedInput
     productEvents?: ProductEventUncheckedUpdateManyWithoutProductNestedInput
   }
@@ -20866,6 +21227,13 @@ export namespace Prisma {
   export type ProductCreateWithoutProductEventsInput = {
     code: string
     name: string
+    price: Decimal | DecimalJsLike | number | string
+    style?: string | null
+    nameMean?: string | null
+    usage?: string | null
+    material?: string | null
+    color?: string | null
+    stock: number
     productCategory?: ProductCategoryCreateNestedOneWithoutProductsInput
     variants?: ProductVariantCreateNestedManyWithoutProductInput
     productImage?: ProductImageCreateNestedManyWithoutProductInput
@@ -20876,6 +21244,13 @@ export namespace Prisma {
     code: string
     name: string
     productCategoryId?: number | null
+    price: Decimal | DecimalJsLike | number | string
+    style?: string | null
+    nameMean?: string | null
+    usage?: string | null
+    material?: string | null
+    color?: string | null
+    stock: number
     variants?: ProductVariantUncheckedCreateNestedManyWithoutProductInput
     productImage?: ProductImageUncheckedCreateNestedManyWithoutProductInput
   }
@@ -20899,6 +21274,13 @@ export namespace Prisma {
   export type ProductUpdateWithoutProductEventsInput = {
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
     productCategory?: ProductCategoryUpdateOneWithoutProductsNestedInput
     variants?: ProductVariantUpdateManyWithoutProductNestedInput
     productImage?: ProductImageUpdateManyWithoutProductNestedInput
@@ -20909,6 +21291,13 @@ export namespace Prisma {
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     productCategoryId?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
     variants?: ProductVariantUncheckedUpdateManyWithoutProductNestedInput
     productImage?: ProductImageUncheckedUpdateManyWithoutProductNestedInput
   }
@@ -21081,11 +21470,25 @@ export namespace Prisma {
     id?: number
     code: string
     name: string
+    price: Decimal | DecimalJsLike | number | string
+    style?: string | null
+    nameMean?: string | null
+    usage?: string | null
+    material?: string | null
+    color?: string | null
+    stock: number
   }
 
   export type ProductUpdateWithoutProductCategoryInput = {
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
     variants?: ProductVariantUpdateManyWithoutProductNestedInput
     productImage?: ProductImageUpdateManyWithoutProductNestedInput
     productEvents?: ProductEventUpdateManyWithoutProductNestedInput
@@ -21095,6 +21498,13 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
     variants?: ProductVariantUncheckedUpdateManyWithoutProductNestedInput
     productImage?: ProductImageUncheckedUpdateManyWithoutProductNestedInput
     productEvents?: ProductEventUncheckedUpdateManyWithoutProductNestedInput
@@ -21104,6 +21514,13 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    style?: NullableStringFieldUpdateOperationsInput | string | null
+    nameMean?: NullableStringFieldUpdateOperationsInput | string | null
+    usage?: NullableStringFieldUpdateOperationsInput | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
+    color?: NullableStringFieldUpdateOperationsInput | string | null
+    stock?: IntFieldUpdateOperationsInput | number
   }
 
   export type ProductVariantCreateManyProductInput = {

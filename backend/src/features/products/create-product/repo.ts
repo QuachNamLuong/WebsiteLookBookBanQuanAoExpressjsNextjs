@@ -1,4 +1,4 @@
-import type { PrismaClient } from "@generated/prisma";
+import type { Prisma, PrismaClient } from "@generated/prisma";
 import { AppError } from "types/app.d";
 import { StatusCodes } from "http-status-codes";
 import logger from "utils/logger";
@@ -22,11 +22,8 @@ export async function getLastProductIdRepo(prisma: PrismaClient) {
   }
 }
 
-type CreateProductData = {
-  code: string,
-  name: string
-}
-export async function createProductRepo(prisma: PrismaClient, data: CreateProductData) {
+
+export async function createProductRepo(prisma: PrismaClient, data: Prisma.ProductCreateInput) {
   try {
     const { id } = await prisma.product.create({ data });
     return id;

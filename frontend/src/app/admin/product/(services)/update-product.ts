@@ -3,27 +3,20 @@
 import api from "@/lib/axios"; // Uses the default exported API instance
 import axios from "axios"; // Needed for axios.isAxiosError check
 
-// --- Type Definitions ---
-// The payload is typically a partial update, but must include the ID.
+
 export interface UpdateProductPayload {
-    productId?: string; // The ID is required to identify the resource
-    productName?: string;
-    quantity?: number;
+    productId?: string;
+    name?: string;
+    stock?: number;
     price?: number;
-    nameMeaning?: string;
+    nameMean?: string;
     material?: string;
     style?: string;
     color?: string;
     usage?: string;
-    // ... all updateable fields should be optional here
 }
-// ------------------------
 
-/**
- * Gửi yêu cầu PUT/PATCH đến API để cập nhật thông tin sản phẩm.
- * * @param payload Dữ liệu sản phẩm cần cập nhật (bao gồm productId).
- * @returns Promise<void> Trả về một Promise trống nếu cập nhật thành công.
- */
+
 export async function updateProduct(payload: UpdateProductPayload): Promise<void> {
   const productId = payload.productId;
   
@@ -32,11 +25,11 @@ export async function updateProduct(payload: UpdateProductPayload): Promise<void
   const updateData = { ...payload }; 
   delete updateData.productId; 
 
-  const API_URL = `/api/products/${productId}`;
+  const API_URL = `/products/${productId}`;
 
   try {
     // Sử dụng api.put (hoặc api.patch, tùy thuộc vào yêu cầu API backend của bạn)
-    await api.put(API_URL, updateData); 
+    await api.patch(API_URL, updateData); 
     
     // Nếu thành công (200), function kết thúc.
 

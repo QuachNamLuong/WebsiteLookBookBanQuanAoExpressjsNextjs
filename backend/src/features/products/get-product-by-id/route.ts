@@ -3,12 +3,12 @@ import { getProductByIdHandler } from "./handler";
 import { validateRequest } from "middlewares/validate-request.middleware";
 import { getProductByIdParamsSchema } from "./schema";
 
-const createProductRoute = Router();
+const getProductByIdRoute = Router();
 
-createProductRoute.post(
-  "/get-product-by-id/:productId",
+getProductByIdRoute.get(
+  "/:productId",
   validateRequest(getProductByIdParamsSchema, "params"),
   getProductByIdHandler
 );
 
-export default createProductRoute;
+export default getProductByIdRoute;

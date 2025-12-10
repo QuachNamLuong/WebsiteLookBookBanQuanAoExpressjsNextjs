@@ -1,14 +1,14 @@
 import { z } from 'zod';
 
 export const getProductByIdParamsSchema = z.object({
-  productId: z.number()
+  productId: z.coerce.number()
 });
 
 export type GetProductByIdParamsSchema = z.infer<typeof getProductByIdParamsSchema>;
 
 export const getProductByIdResponseSchema = z.object({
   product: z.object({
-    id: z.number(),
+    id: z.coerce.number(),
     name: z.string(),
     code: z.string()
   })

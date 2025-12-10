@@ -24,7 +24,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 // 1. Define the Zod Schema for Validation
 const formSchema = z.object({
-    productName: z.string().min(2, { message: "Tên sản phẩm phải có ít nhất 2 ký tự." }),
+    name: z.string().min(2, { message: "Tên sản phẩm phải có ít nhất 2 ký tự." }),
     quantity: z.number().min(1, { message: "Số lượng phải lớn hơn 0." }),
     price: z.number(),
     nameMeaning: z.string().optional(),
@@ -36,10 +36,8 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-// 2. Define Mutation Types
-// Define the arguments the mutation function accepts
 export interface CreateProductPayload {
-    productName: string;
+    name: string;
     quantity: number;
     price?: number;
     nameMeaning?: string;
@@ -49,7 +47,7 @@ export interface CreateProductPayload {
     usage?: string;
 }
 
-// Define the return type of the mutation function
+
 export interface CreateProductResult {
     productId: string;
 }
@@ -75,7 +73,7 @@ export default function CreateProductForm({ createMutation }: CreateProductFormP
     const form = useForm<FormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            productName: "",
+            name: "",
             quantity: 1,
             price: 100000,
             nameMeaning: "",
@@ -96,7 +94,7 @@ export default function CreateProductForm({ createMutation }: CreateProductFormP
         createMutation.mutate(payload, {
             onSuccess: (data) => {
                 // Success toast is handled in ProductTable, but we can add form-specific action here
-                toast.success(`Sản phẩm "${values.productName}" đã được tạo.`);
+                toast.success(`Sản phẩm "${values.name}" đã được tạo.`);
                 form.reset(); // Clear the form after successful submission
                 // NOTE: If you need to close the Dialog, you would manage its open state here
             },
@@ -114,7 +112,7 @@ export default function CreateProductForm({ createMutation }: CreateProductFormP
                 <div className="grid grid-cols-2 gap-4">
                     <FormField
                         control={form.control}
-                        name="productName"
+                        name="name"
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Tên sản phẩm</FormLabel>

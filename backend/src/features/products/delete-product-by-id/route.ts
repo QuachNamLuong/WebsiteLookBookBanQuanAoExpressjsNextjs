@@ -4,14 +4,14 @@ import { validateRequest } from "middlewares/validate-request.middleware";
 import { deleteProductParamsSchema } from "./schema";
 import { authenticate, authorize } from "middlewares/auth.middleware";
 
-const getProductByIdRoute = Router();
+const deleteProductByIdRoute = Router();
 
-getProductByIdRoute.delete(
+deleteProductByIdRoute.delete(
   "/:productId",
   authenticate,
-  authorize("ADMIN"),
+  // authorize("ADMIN"),
   validateRequest(deleteProductParamsSchema, "params"),
   deleteProductByIdHandler
 );
 
-export default getProductByIdRoute;
+export default deleteProductByIdRoute;

@@ -5,7 +5,7 @@ import type { UpdateProductBodySchema, UpdateProductParamsSchema } from "./schem
 import { updateProductService } from "./service";
 
 export async function updateProductHandler(req: Request, res: Response) {
-  const {productId} = (req.params as unknown) as UpdateProductParamsSchema;
+  const {productId} = req.validatedData?.params as UpdateProductParamsSchema;
   const updateProductData = req.body as UpdateProductBodySchema;
   await updateProductService(prisma, productId, updateProductData);
   res.status(StatusCodes.NO_CONTENT).end();

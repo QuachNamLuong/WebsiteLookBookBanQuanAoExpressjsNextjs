@@ -6,7 +6,7 @@ import axios from "axios"; // Needed for axios.isAxiosError check
 // --- Type Definitions ---
 // These types should match what is defined in your CreateProductForm
 export interface CreateProductPayload {
-    productName: string;
+    name: string;
     quantity: number;
     price?: number;
     nameMeaning?: string;
@@ -24,14 +24,10 @@ export interface CreateProductResult {
 
 // ------------------------
 
-/**
- * Gửi yêu cầu POST đến API để tạo một sản phẩm mới.
- * @param payload Dữ liệu sản phẩm mới.
- * @returns Promise<CreateProductResult> ID của sản phẩm vừa tạo.
- */
+
 export async function createProduct(payload: CreateProductPayload): Promise<CreateProductResult> {
   // Sử dụng URL tương đối nếu baseURL đã được cấu hình trong /lib/axios.ts
-  const API_URL = `/api/products`;
+  const API_URL = `/products`;
 
   try {
     // Gọi POST bằng instance 'api' tùy chỉnh

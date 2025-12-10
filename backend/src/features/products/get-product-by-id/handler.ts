@@ -5,7 +5,7 @@ import prisma from "@infra/db/prisma";
 import { StatusCodes } from "http-status-codes";
 
 export async function getProductByIdHandler(req: Request, res: Response) {
-  const { productId } = (req.params as unknown) as GetProductByIdParamsSchema;
+  const { productId } = req.validatedData?.params as GetProductByIdParamsSchema;
   const response = await getProductByIdService(prisma, productId);
   res.status(StatusCodes.OK).json(response);
 };

@@ -8,8 +8,6 @@ import {
   useReactTable,
   // Add features needed for sorting, filtering, and pagination
   getPaginationRowModel,
-  ColumnFiltersState,
-  getFilteredRowModel,
   PaginationState,
 } from "@tanstack/react-table";
 
@@ -22,7 +20,6 @@ import {
   TableRow,
 } from "@/components/ui/table"; // Shadcn table components
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton"; // Assuming you have a Skeleton component
 
 // --- Component Props Interface ---

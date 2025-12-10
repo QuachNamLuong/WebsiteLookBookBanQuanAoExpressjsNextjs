@@ -23,7 +23,16 @@ async function validateProductById(prisma: PrismaClient, productId: number) {
 export async function updateProductService(prisma: PrismaClient, productId: number, updateProductData: UpdateProductBodySchema) {
   try {
     await validateProductById(prisma, productId);
-    await updateProductRepo(prisma, productId, updateProductData);
+    await updateProductRepo(prisma, productId, {
+      color: updateProductData.color,
+      material: updateProductData.material,
+      name: updateProductData.name,
+      nameMean: updateProductData.nameMean,
+      price: updateProductData.price,
+      stock: updateProductData.stock,
+      style: updateProductData.style,
+      usage: updateProductData.usage
+    });
   } catch (error) {
     if (error instanceof AppError) throw error;
 

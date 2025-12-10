@@ -60,6 +60,13 @@ model Product {
 
   productCategoryId Int?
   productCategory   ProductCategory? @relation(fields: [productCategoryId], references: [id])
+  price             Decimal
+  style             String?
+  nameMean          String?
+  usage             String?
+  material          String?
+  color             String?
+  stock             Int
 
   variants     ProductVariant[]
   productImage ProductImage[]

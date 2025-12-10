@@ -6,7 +6,7 @@ import { updateProductBodySchema, updateProductParamsSchema } from "./schema";
 const updateProductRoute = Router();
 
 updateProductRoute.patch(
-  "/update-product/:productId",
+  "/:productId",
   validateRequest(updateProductParamsSchema, "params"),
   validateRequest(updateProductBodySchema, "body"),
   updateProductHandler
