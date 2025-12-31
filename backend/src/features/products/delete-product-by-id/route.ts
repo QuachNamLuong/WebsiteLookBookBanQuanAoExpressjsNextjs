@@ -8,7 +8,7 @@ const deleteProductByIdRoute = Router();
 
 deleteProductByIdRoute.delete(
   "/:productId",
-  authenticate,
+  // authenticate,
   // authorize("ADMIN"),
   validateRequest(deleteProductParamsSchema, "params"),
   deleteProductByIdHandler

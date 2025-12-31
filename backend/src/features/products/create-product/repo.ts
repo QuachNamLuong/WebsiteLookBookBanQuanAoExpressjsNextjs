@@ -1,5 +1,5 @@
 import type { Prisma, PrismaClient } from "@generated/prisma";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 import { StatusCodes } from "http-status-codes";
 import logger from "utils/logger";
 
@@ -12,7 +12,6 @@ export async function getLastProductIdRepo(prisma: PrismaClient) {
 
     return last?.id ?? 0;
   } catch (error) {
-    logger.error("Failed to get last product id:", error);
     throw new AppError(
       1000,
       "Failed to get last product id",

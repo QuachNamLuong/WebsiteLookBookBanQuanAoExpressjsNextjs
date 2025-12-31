@@ -1,10 +1,10 @@
 import { StatusCodes } from "http-status-codes";
 import prisma from "../../lib/prisma";
-import { AppError } from "../../types/app.d";
+import { AppError } from "../../types/app";
 import { createActiveCart, getActiveCartByUserId, getCartItemHaveProduct, getOrCreateActiveCart, getUserById, removeCartItem, validateProduct, validateUser } from "./cart.helper";
-import { updateCartItemQuantity } from "../../services/cart.service";
 
-export const getCartDetail = async (userId: string) => {
+
+export const getCartDetail = async (userId: number) => {
   try {
     const user = await getUserById(userId);
 
@@ -138,4 +138,8 @@ export const changeProductQuantity = async (
     );
   }
 };
+
+function updateCartItemQuantity(id: number, arg1: any) {
+  
+}
 

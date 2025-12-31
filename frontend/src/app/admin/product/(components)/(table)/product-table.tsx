@@ -128,7 +128,7 @@ export default function ProductTable() {
               <DialogTrigger asChild>
                 <Button variant="outline" size="sm">Sửa</Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-2/3">
+              <DialogContent className="sm:max-w-4/5">
                 <DialogHeader>
                   <DialogTitle>Chỉnh sửa sản phẩm: {product.name}</DialogTitle>
                 </DialogHeader>

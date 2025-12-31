@@ -11,7 +11,7 @@ export default function ProductItem({ product }: { product: Product }) {
   const router = useRouter();
 
   const handleView = useCallback(() => {
-    const target = `/product/${product.productId}`;
+    const target = `/products/detail/${product.id}`;
     router.push(target);
   }, [product, router]);
 
@@ -20,10 +20,10 @@ export default function ProductItem({ product }: { product: Product }) {
   return (
     <div className="w-[300px] flex flex-col items-center">
       <div className="overflow-hidden rounded">
-        <Image src={product.productImage[0].productImageUrl} alt={product.productName} height={600} width={370} />
+        <Image src={product.productImage[0]?.href} alt={product.name} height={600} width={370} />
       </div>
 
-      <h3 className="mt-3 text-sm font-semibold line-clamp-2 text-center">{product.productName}</h3>
+      <h3 className="mt-3 text-sm font-semibold line-clamp-2 text-center">{product.name}</h3>
       <p className="text-xs text-gray-500 font-extrabold mb-3 text-center">{formattedPrice}</p>
 
       <Button

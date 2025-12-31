@@ -1,6 +1,6 @@
 import type { Prisma, PrismaClient } from "@generated/prisma/client";
 import { createNewUserRepo, getRoleByRoleName, getUserByEmailRepo, getUserByUsernameRepo } from "./repo";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 import { StatusCodes } from "http-status-codes";
 import { hashPassword } from "utils/password";
 import type { LoginBodySchema } from "../login/schema";

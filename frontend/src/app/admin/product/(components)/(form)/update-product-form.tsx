@@ -4,6 +4,7 @@ import {
   UseMutationResult,
   useQuery,
   useMutation,
+  dataTagErrorSymbol,
 } from "@tanstack/react-query";
 import { useFieldArray, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -26,6 +27,7 @@ import type { Product } from "../../(services)/types";
 import { ArrowDown, ArrowUp, X, Plus, UploadCloud } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import { ProductCategoryCombobox } from "../product-category-combobox";
 
 // -------------------------------------------------------------------
 // 1. SCHEMA & TYPES
@@ -33,7 +35,7 @@ import Image from "next/image";
 
 const imageSchema = z.object({
   id: z.string().optional(),
-  url: z.string().url().or(z.literal("")).optional(), // URL cuối cùng sau khi upload
+  href: z.string().url().or(z.literal("")).optional(), // URL cuối cùng sau khi upload
   order: z.number().int().min(0),
   file: z.any().optional(), // File object (tạm thời)
   previewUrl: z.string().optional(), // URL tạm thời cho preview
@@ -50,8 +52,8 @@ const formSchema = z.object({
   style: z.string().optional(),
   color: z.string().optional(),
   usage: z.string().optional(),
-
   images: z.array(imageSchema).optional(),
+  productCategoryId: z.number(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -80,13 +82,23 @@ async function uploadImageApi(
   file: File,
   productId: string,
 ): Promise<{ url: string; imageId: string }> {
-  console.log(`[API CALL] Uploading file: ${file.name}`);
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  return {
-    url: `https://mock-cdn/${productId}/${Date.now()}_${file.name.substring(0, 10)}.jpg`,
-    imageId: `img_${Date.now()}`,
-  };
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const res = await fetch(`/api/product-images/${productId}`, {
+    method: "POST",
+    body: formData,
+  });
+
+  if (!res.ok) {
+    throw new Error("Upload failed");
+  }
+
+  const data = await res.json();
+
+  return { imageId: data.id, url: data.url };
 }
+
 async function deleteImageApi(imageId: string) {
   console.log(`[API CALL] Deleting image ID: ${imageId}`);
   await new Promise((resolve) => setTimeout(resolve, 500));
@@ -220,9 +232,10 @@ export default function UpdateProductForm({
           style: product.style ?? "",
           color: product.color ?? "",
           usage: product.usage ?? "",
+          productCategoryId: product.productCategoryId ?? -1,
           // ✅ KHỞI TẠO MẢNG IMAGES TỪ DỮ LIỆU FETCH
           images:
-            product.images
+            product.productImages
               ?.map((img) => ({
                 ...img,
                 order: img.order || 0,
@@ -247,7 +260,7 @@ export default function UpdateProductForm({
 
   // Kiểm tra xem có slot nào đã chọn file nhưng chưa upload (không có url)
   const hasUnuploadedSlot = watchedImages?.some(
-    (item) => !item?.url && !!item?.file,
+    (item) => !item?.href && !!item?.file,
   );
 
   // --- LOGIC TƯƠNG TÁC TỨC THÌ (Dùng useMutation) ---
@@ -274,30 +287,6 @@ export default function UpdateProductForm({
       });
 
       update(index, {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
         ...watchedImages[index]!,
         url: url,
         id: imageId,
@@ -365,7 +354,7 @@ export default function UpdateProductForm({
       style: values.style,
       color: values.color,
       usage: values.usage,
-      // KHÔNG GỬI MẢNG IMAGES
+      productCategoryId: values.productCategoryId,
     };
 
     updateMutation.mutate(payload, {
@@ -418,6 +407,26 @@ export default function UpdateProductForm({
               </FormItem>
             )}
           />
+          <FormField
+            control={form.control}
+            name="productCategoryId"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Danh mục sản phẩm</FormLabel>
+                <FormControl>
+                  <ProductCategoryCombobox
+                    onChange={(value) => {
+                      field.onChange(value);
+                      field.onBlur(); 
+                    }}
+                    postCategoryId={field.value}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           <FormField
             control={form.control}
             name="name"
@@ -545,7 +554,6 @@ export default function UpdateProductForm({
           )}
         />
 
-        {/* ------------------------------------------------- */}
         {/* 7. KHU VỰC QUẢN LÝ DANH SÁCH ẢNH */}
         {/* ------------------------------------------------- */}
         <section className="space-y-3 border p-4 rounded-md">

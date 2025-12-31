@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* =========================
+   Base variables
+========================= */
+body {
+  --tt-toolbar-height: 44px;
+  --tt-theme-text: var(--tt-gray-light-900);
+
+  .dark & {
+    --tt-theme-text: var(--tt-gray-dark-900);
+  }
+}
+
+/* =========================
+   Global styles
+========================= */
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--tt-theme-text);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0;
+  overscroll-behavior-y: none;
+}
+
+html,
+body {
+  overscroll-behavior-x: none;
+}
+
+html,
+body,
+#root,
+#app {
+  height: 100%;
+  background-color: var(--tt-bg-color);
+}
+
+/* =========================
+   Scrollbar
+========================= */
+::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--tt-scrollbar-color) transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--tt-scrollbar-color);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =========================
+   TipTap base
+========================= */
+.tiptap.ProseMirror {
+  font-family: "DM Sans", sans-serif;
+}
+
+/* =========================
+   Simple Editor Layout (FIX LỆCH)
+========================= */
+
+/* ❌ KHÔNG dùng 100vw / 100vh trong layout grid */
+.simple-editor-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+/* ❌ KHÔNG auto-center theo viewport */
+.simple-editor-content {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ✅ Center NỘI DUNG – không center container */
+.simple-editor-content .tiptap.ProseMirror.simple-editor {
+  width: 100%;
+  max-width: 900px; /* dễ đọc như Notion */
+  margin: 0 auto;
+  flex: 1;
+  padding: 3rem 3rem 30vh;
+}
+
+@media screen and (max-width: 480px) {
+  .simple-editor-content .tiptap.ProseMirror.simple-editor {
+    padding: 1rem 1.5rem 30vh;
+  }
+}
+
+/* =========================
+   Image handling
+========================= */
+.ProseMirror img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  pointer-events: auto;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* Image selected */
+.ProseMirror img.ProseMirror-selectednode {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Image alignment */
+.ProseMirror img[data-align="left"] {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.ProseMirror img[data-align="center"] {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ProseMirror img[data-align="right"] {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* ❌ KHÔNG override align bằng rule chung */
+/* .tiptap img { ... }  <-- ĐÃ XOÁ */
+
+
+// @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+// body {
+//   --tt-toolbar-height: 44px;
+//   --tt-theme-text: var(--tt-gray-light-900);
+
+//   .dark & {
+//     --tt-theme-text: var(--tt-gray-dark-900);
+//   }
+// }
+
+// body {
+//   font-family: "Inter", sans-serif;
+//   color: var(--tt-theme-text);
+//   font-optical-sizing: auto;
+//   font-weight: 400;
+//   font-style: normal;
+//   padding: 0;
+//   overscroll-behavior-y: none;
+// }
+
+// html,
+// body {
+//   overscroll-behavior-x: none;
+// }
+
+// html,
+// body,
+// #root,
+// #app {
+//   height: 100%;
+//   background-color: var(--tt-bg-color);
+// }
+
+// ::-webkit-scrollbar {
+//   width: 0.25rem;
+// }
+
+// * {
+//   scrollbar-width: thin;
+//   scrollbar-color: var(--tt-scrollbar-color) transparent;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background-color: var(--tt-scrollbar-color);
+//   border-radius: 9999px;
+// }
+
+// ::-webkit-scrollbar-track {
+//   background: transparent;
+// }
+
+// .tiptap.ProseMirror {
+//   font-family: "DM Sans", sans-serif;
+// }
+
+// .simple-editor-wrapper {
+//   width: 100vw;
+//   height: 100vh;
+//   overflow: auto;
+// }
+
+// .simple-editor-content {
+//   max-width: 1200px;
+//   width: 100%;
+//   margin: 0 auto;
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   flex: 1;
+// }
+
+// .simple-editor-content .tiptap.ProseMirror.simple-editor {
+//   flex: 1;
+//   padding: 3rem 3rem 30vh;
+// }
+
+// @media screen and (max-width: 480px) {
+//   .simple-editor-content .tiptap.ProseMirror.simple-editor {
+//     padding: 1rem 1.5rem 30vh;
+//   }
+// }
+
+
+// .ProseMirror img {
+//   display: block;
+//   max-width: 100%;
+//   height: auto;
+
+//   pointer-events: auto;   /* ✅ cho phép click */
+//   user-select: none;      /* ✅ tránh chọn text ảo */
+//   cursor: pointer;        /* ✅ UX rõ ràng */
+// }
+
+// /* === Image selected state === */
+// .ProseMirror img.ProseMirror-selectednode {
+//   outline: 2px solid #2563eb;
+//   outline-offset: 2px;
+// }
+
+// .ProseMirror img {
+//   display: block;
+//   max-width: 100%;
+// }
+
+// .ProseMirror img[data-align="left"] {
+//   margin-left: 0;
+//   margin-right: auto;
+// }
+
+// .ProseMirror img[data-align="center"] {
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+
+// .ProseMirror img[data-align="right"] {
+//   margin-left: auto;
+//   margin-right: 0;
+// }
+
+
+// .tiptap img {
+//   display: block;
+//   margin-left: auto;
+//   margin-right: auto;
+// }

@@ -16,19 +16,14 @@ export interface ProductResponse {
   productImages: ProductImage[];
 }
 
-export const getProductImage = async (productId: string): Promise<ProductResponse | null> => {
-  try {
-    const res = await api.get<ProductResponse>(`${API_URL}/product-image/${productId}`);
+export const getProductImage = async (productId: string): Promise<ProductResponse | undefined> => {
+  const res = await fetch(`/api/product-images/${productId}`);
 
-    if (res.status === HttpStatusCode.Ok) {
-      return res.data;
-    }
-
-    toast.error("Không thể tải hình ảnh sản phẩm!");
-    return null;
-  } catch (err) {
-    console.error("❌ Error fetching product:", err);
-    toast.error("Lỗi khi tải sản phẩm!");
-    return null;
+  if (!res.ok) {
+    toast.error("Tải hình ảnh thất bại");
+    return;
   }
+  toast.success("Tải hình ảnh thành công");
+
+  return res.json();
 };

@@ -1,5 +1,5 @@
 import type { PrismaClient } from "@generated/prisma";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 import { StatusCodes } from "http-status-codes";
 import { deleteProductByIdRepo, getProductByIdRepo } from "./repo";
 

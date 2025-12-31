@@ -5,8 +5,8 @@ import { toast } from "sonner";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export type Product = {
-  productId: string;
-  productName: string;
+  id: string;
+  name: string;
   price: string;
   quantity: number;
   material: string;
@@ -15,9 +15,9 @@ export type Product = {
   style: string;
   usage: string;
   productImage: {
-    productImageId: string;
-    productImageUrl: string;
-    productImageName: string;
+    id: string;
+    href: string;
+    name: string;
     objectName: string;
     productId: string;
   }[];
@@ -35,26 +35,35 @@ interface PaginatedResponse {
   pagination: Pagination;
 }
 
-export const getPaginateProduct = async (page = 1, limit = 10) => {
+export const getPaginateProduct = async (page = 1, limit = 10, slug?: string, category?: string) => {
   if (page < 0 || limit < 10 || limit > 100) {
     toast.error("Số trang hoặc số lượng hàng của bảng không hợp lệ");
     return null;
   }
-
-  try {
-    const res = await api.get<PaginatedResponse>(`${API_URL}/product`, {
-      params: { page, limit },
-    });
-
-    if (res.status === HttpStatusCode.Ok || res.status === HttpStatusCode.NotModified) {
-      return res.data;
+  if (slug) {
+    const res = await fetch(`/api/products/get-products?slug=${slug}`);
+    if (res.ok) {
+      toast.success("Lấy danh sách sản phẩm thành công!")
+      return res.json();
     }
-
-    toast.error("Không thể tải danh sách sản phẩm");
-    return null;
-  } catch (error) {
-    console.error(error);
-    toast.error("Lỗi khi kết nối với máy chủ");
-    return null;
+    toast.error("Lấy danh sách sản phẩm thất bại!")
+    return;
   }
+
+  if (slug) {
+    const res = await fetch(`/api/products/get-products?category=${category}`);
+    if (res.ok) {
+      toast.success("Lấy danh sách sản phẩm thành công!")
+      return res.json();
+    }
+    toast.error("Lấy danh sách sản phẩm thất bại!")
+    return;
+  }
+
+  const res = await fetch(`/api/products/get-products?limit=${limit}&page=${page}`);
+  if (res.ok) {
+    toast.success("Lấy danh sách sản phẩm thành công!")
+    return res.json();
+  }
+  toast.error("Lấy danh sách sản phẩm thất bại!")
 };

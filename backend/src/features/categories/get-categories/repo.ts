@@ -1,6 +1,6 @@
 import type { PrismaClient } from "@generated/prisma";
 import { StatusCodes } from "http-status-codes";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 
 export async function getCategoriesRepo(prisma: PrismaClient) {
   try {

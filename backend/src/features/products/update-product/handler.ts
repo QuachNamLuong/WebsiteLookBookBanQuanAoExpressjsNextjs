@@ -1,8 +1,8 @@
 import type { Request, Response } from "express";
-import prisma from "@infra/db/prisma";
 import { StatusCodes } from "http-status-codes";
 import type { UpdateProductBodySchema, UpdateProductParamsSchema } from "./schema";
 import { updateProductService } from "./service";
+import prisma from "lib/prisma";
 
 export async function updateProductHandler(req: Request, res: Response) {
   const {productId} = req.validatedData?.params as UpdateProductParamsSchema;

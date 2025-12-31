@@ -1,6 +1,6 @@
 import { ZodType } from "zod";
 import type { Request, Response, NextFunction } from "express";
-import { AppError } from "../types/app.d";
+import { AppError } from "../types/app";
 import { StatusCodes } from "http-status-codes";
 import logger from "../utils/logger";
 import { error } from "console";

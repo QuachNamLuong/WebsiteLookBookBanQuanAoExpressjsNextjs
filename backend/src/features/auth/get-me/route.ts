@@ -7,7 +7,6 @@ const getMeRoute = Router();
 
 getMeRoute.get(
   "/get-me", 
-  authenticate,
   catchAsync(getMeHandler)
 );
 

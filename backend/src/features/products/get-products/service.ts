@@ -1,5 +1,5 @@
 import type { PrismaClient } from "@generated/prisma";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 import { StatusCodes } from "http-status-codes";
 import { getProductsRepo } from "./repo";
 import type { GetProductsQuerySchema } from "./schema";
@@ -7,8 +7,10 @@ import type { GetProductsQuerySchema } from "./schema";
 export async function getProductsService(prisma: PrismaClient, query: GetProductsQuerySchema) {
   try {
     const products = await getProductsRepo(prisma, {
-      paging: {page: query.page, maxItem: query.limit}, 
-      query: {name: query.search}}
+      paging: { page: query.page, maxItem: query.limit },
+      query: { name: query.search },
+      slug: query.slug
+    }
     );
     return products;
   } catch (error) {

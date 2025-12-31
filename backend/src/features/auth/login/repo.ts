@@ -1,6 +1,6 @@
 import type { PrismaClient } from "@generated/prisma/client";
 import { StatusCodes } from "http-status-codes";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 
 export async function getUserByEmailRepo(prisma: PrismaClient, email: string) {
   try {
@@ -36,7 +36,7 @@ export async function getUserByUsernameRepo(prisma: PrismaClient, username: stri
       "Invalid credentials",
       StatusCodes.UNAUTHORIZED
     );
-    
+
   } catch (error) {
     if (error instanceof AppError) throw error;
 

@@ -3,19 +3,14 @@ import appConfig from "@config/app.config";
 import { StatusCodes } from "http-status-codes";
 
 export async function logoutHandler(req: Request, res: Response) {
-  res.cookie("accessToken", "", {
+  const cookieOptions = {
     httpOnly: true,
     secure: appConfig.mode === "production",
-    sameSite: "strict",
-    maxAge: 0
-  });
+    sameSite: "lax" as const,
+  };
 
-  res.cookie("refreshToken", "", {
-    httpOnly: true,
-    secure: appConfig.mode === "production",
-    sameSite: "strict",
-    maxAge: 0
-  });
+  res.clearCookie("accessToken", cookieOptions);
+  res.clearCookie("refreshToken", cookieOptions);
 
   res.status(StatusCodes.NO_CONTENT).end()
 }

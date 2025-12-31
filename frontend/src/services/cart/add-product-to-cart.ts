@@ -10,7 +10,7 @@ export enum AddProductToCartEnum {
 }
 
 export const addProductToCart = async (
-  productId: string
+  productId: number
 ): Promise<AddProductToCartEnum> => {
   try {
     let meRes = await getMe();
@@ -22,10 +22,7 @@ export const addProductToCart = async (
     }
 
     const userId = meRes.user.userId;
-    const res = await api.post(`/cart`, {
-      userId,
-      productId,
-    });
+    const res = await api.post(`/carts/${productId}`);
 
     if (res.status === HttpStatusCode.Ok) {
       return AddProductToCartEnum.OK;

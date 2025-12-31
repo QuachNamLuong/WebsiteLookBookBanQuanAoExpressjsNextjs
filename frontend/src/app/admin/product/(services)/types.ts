@@ -16,7 +16,8 @@ export type Product = {
   style: string;
   color: string;
   usage: string;
-  images: ProductImage[]
+  productImages: ProductImage[];
+  productCategoryId: number;
 };
 
 export interface PaginatedResponse<T> {

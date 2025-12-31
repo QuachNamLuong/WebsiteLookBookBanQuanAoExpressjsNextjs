@@ -1,6 +1,6 @@
 import type { PrismaClient } from "@generated/prisma";
 import type { RegisterBodySchema } from "./schema";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 import { StatusCodes } from "http-status-codes";
 import { createNewUserHelper, getRoleUserHelper, validateNewUserEmailHelper, validateNewUserUsernameHelper } from "./helper";
 import { signAccessToken, signRefreshToken } from "utils/jwt";

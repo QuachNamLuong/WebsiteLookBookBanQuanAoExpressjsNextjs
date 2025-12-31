@@ -1,15 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
   output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
 }
 
 model User {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
   username String @unique
   email String @unique
   passwordHash String @unique
@@ -17,13 +22,14 @@ model User {
   updatedAt DateTime @updatedAt
 
   roles Role[]
-  createGoodsReceipts GoodsReceipt[] @relation(name: "createGoodsReceiptBy")
-  updateGoodsReceipts GoodsReceipt[] @relation(name: "updateGoodsReceiptBy")
+  orders Order[]
+  cart Cart?
 }
 
 enum RoleName {
   USER
   ADMIN
+  GUEST
 }
 
 model Role {
@@ -33,16 +39,47 @@ model Role {
   createdAt DateTime @default(now())
 
   users User[]
-  permissions Permission[]
 }
 
-model Permission {
+
+enum PostStatus {
+  ARCHIVE
+  PUBLISHED
+}
+
+model Post {
+  id Int @id @default(autoincrement())
+  slug String
+  title String
+  content String
+  status PostStatus
+
+  images PostImage[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  categoryId Int
+  category PostCategory @relation(fields: [categoryId], references: [id])
+
+  @@unique([slug, categoryId])
+}
+
+model PostImage {
+  id Int @id @default(autoincrement())
+  url String
+  height Int
+  width Int
+  postId Int
+  post Post @relation(fields: [postId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model PostCategory {
   id Int @id @default(autoincrement())
   name String
-  description String?
-  createdAt DateTime @default(now())
+  slug String
 
-  roles Role[]
+  posts Post[]
 }
 
 model ProductCategory {
@@ -68,10 +105,11 @@ model Product {
   color String?
   stock Int
 
-  variants ProductVariant[]
-  productImage ProductImage[]
+  productImage ProductImage[] 
+  cartItem CartItem[]
 
-  productEvents ProductEvent[]
+  productCollectionId Int?
+  productCollection ProductCollection? @relation(fields: [productCollectionId], references: [id])
 }
 
 model ProductImage {
@@ -83,48 +121,13 @@ model ProductImage {
   product Product @relation(fields: [productId], references: [id])
 }
 
-enum Size {
-  XS
-  S
-  M
-  L
-  XL
-  XXL
-}
-
-model ProductVariant {
-  id Int @id @default(autoincrement())
-  size Size?
-  stock Int @default(0)
-
-  productId Int
-  product Product @relation(fields: [productId], references: [id])
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  orderItems OrderItem[]
-  cartItems CartItem[]
-}
-
-model GoodsReceipt {
-  id Int @id @default(autoincrement())
-  code String @unique
-  quantity Int
-
-  createdByUserId Int 
-  createdByUser User @relation(name: "createGoodsReceiptBy", fields: [createdByUserId], references: [id])
-
-  updatedByUserId Int?
-  updatedByUser User? @relation(name: "updateGoodsReceiptBy", fields: [updatedByUserId], references: [id])
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
 model Order {
   id Int @id @default(autoincrement())
   code String @unique
+  guestId String?
+
+  userId String?
+  user User? @relation(fields: [userId], references: [id])
 
   totalPrice BigInt
 }
@@ -133,35 +136,34 @@ model OrderItem {
   id Int @id @default(autoincrement())
 
   productVariantId Int
-  productVariant ProductVariant @relation(fields: [productVariantId], references: [id])
 }
 
 model Cart {
   id Int @id @default(autoincrement())
+  total Decimal @default(0)
+
+  guestId String? @unique
+  userId String? @unique
+  user User? @relation(fields: [userId], references: [id])
 
   cartItems CartItem[]
 }
 
 model CartItem {
   id Int @id @default(autoincrement())
-
-  productVariantId Int
-  productVariant ProductVariant @relation(fields: [productVariantId], references: [id])
+  quantity Int @default(1)
+  productVariantId Int?
+  productId Int
+  product Product @relation(fields: [productId], references: [id])
   cartId Int
   cart Cart @relation(fields: [cartId], references: [id])
 }
 
-model ProductEvent {
-  id           BigInt   @id @default(autoincrement())
+model ProductCollection {
+  id Int @id @default(autoincrement())
 
-  clickCount   Int      @default(0)
-  addToCartCount Int    @default(0)
-  orderCount   Int      @default(0)
-  day          DateTime @default(now())
+  name String @unique
+  slug String @unique
 
-  productId    Int
-  product      Product  @relation(fields: [productId], references: [id])
-
-  @@unique([productId, day])
-  @@index([day])
+  product Product[]
 }

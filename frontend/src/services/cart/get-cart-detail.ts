@@ -1,8 +1,9 @@
 import api from "@/lib/axios";
 import { HttpStatusCode } from "axios";
+import { toast } from "sonner";
 
 export type ProductImage = {
-  productImageUrl: string;
+  href: string;
 };
 
 export type Product = {
@@ -35,12 +36,14 @@ export type CartDetailResponse = {
   isActive: boolean;
   userId: string;
   cartItems: CartItemData[];
+  total: number
 };
 
-export const getCartDetail = async (userId: string) => {
+export const getCartDetail = async () => {
   try {
-    const res = await api.get<CartDetailResponse>(`/cart/${userId}`);
+    const res = await api.get<CartDetailResponse>(`/carts/user-cart`);
     if (res.status === HttpStatusCode.Ok) {
+      toast.info(JSON.stringify(res.data));
       return res.data;
     }
   } catch (error) {

@@ -2,7 +2,7 @@ import type { PrismaClient } from "@generated/prisma";
 import { generateProductCodeHelper } from "./helper";
 import { createProductRepo, getLastProductIdRepo } from "./repo";
 import type { CreateProductBody } from "./schema";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 import logger from "utils/logger";
 import { StatusCodes } from "http-status-codes";
 

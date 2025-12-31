@@ -3,7 +3,7 @@ import { StatusCodes } from "http-status-codes";
 import type { AuthenticatedRequest } from "../types/express";
 import { verifyAccessToken } from "../utils/jwt";
 import prisma from "lib/prisma";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 import type { RoleName } from "@generated/prisma";
 
 export const authenticate = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {

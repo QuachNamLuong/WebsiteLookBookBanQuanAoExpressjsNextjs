@@ -1,15 +1,15 @@
 import jwt, { type JwtPayload } from 'jsonwebtoken';
 import jwtConfig from '../config/jwt.config';
 import logger from './logger';
-import { AppError } from 'types/app.d';
+import { AppError } from 'types/app';
 import { StatusCodes } from 'http-status-codes';
 
 export interface AccessJwtPayload extends JwtPayload {
-  userId: number;
+  userId: string;
 }
 
 export interface RefreshJwtPayload extends JwtPayload {
-  userId: number;
+  userId: string;
 }
 
 export const signAccessToken = (payload: AccessJwtPayload): string => {

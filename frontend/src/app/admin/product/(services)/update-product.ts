@@ -17,6 +17,8 @@ export interface UpdateProductPayload {
 }
 
 
+
+
 export async function updateProduct(payload: UpdateProductPayload): Promise<void> {
   const productId = payload.productId;
   

@@ -1,9 +1,37 @@
 "use client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactNode, useState } from "react";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { type ReactNode, useEffect, useState } from "react";
+import { toast } from "sonner";
 
 export default function QueryProvider({ children }: { children: ReactNode }) {
-  const [client] = useState(() => new QueryClient());
-  return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: 30_000,
+            refetchOnWindowFocus: false,
+            retry: 1,
+          },
+        },
+      }),
+  );
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === "development") {
+      toast.info("React Query Devtools activated");
+    }
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      {children}
+
+      {process.env.NODE_ENV === "development" && (
+        <ReactQueryDevtools initialIsOpen={false} />
+      )}
+    </QueryClientProvider>
+  );
 }

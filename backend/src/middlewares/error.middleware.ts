@@ -1,6 +1,6 @@
 import express from "express";
 import logger from "../utils/logger";
-import { AppError } from "../types/app.d";
+import { AppError } from "../types/app";
 
 export const errorHandler = (
     err: any,

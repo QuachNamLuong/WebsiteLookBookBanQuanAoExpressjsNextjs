@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/sonner";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
-import QueryProvider from "@/components/provider/query-provider";
-import AuthInitializer from "./auth-initializer";
+import Providers from "../components/provider/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,18 +31,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        <Header />
-
-        {/* Main content expands to fill available space */}
-        <main className="flex-grow">
-          <QueryProvider><AuthInitializer>{children}</AuthInitializer></QueryProvider>
-        </main>
-
-        {/* Footer stays at bottom when content is short */}
-        <Footer />
-
-        {/* Toaster stays on top */}
-        <Toaster />
+        <Providers>
+          <Header />
+          <main className="max-w-[1440px] mx-auto">{children}</main>
+          <Footer />
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );

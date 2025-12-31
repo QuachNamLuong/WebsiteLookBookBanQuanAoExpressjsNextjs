@@ -24,8 +24,8 @@ export default function ProductInfo({ productId }: { productId: string }) {
         setIsLoading(true);
         const data = await getProductInfo(productId);
         if (!data) throw new Error();
-        setProductName(data.productName);
-        setNameMeaning(data.nameMeaning);
+        setProductName(data.name);
+        setNameMeaning(data.nameMean);
         setMaterial(data.material);
         setStyle(data.style);
         setColor(data.color);
@@ -94,7 +94,7 @@ export default function ProductInfo({ productId }: { productId: string }) {
       </div>
 
       <Button className="mt-6 w-full bg-green-800 hover:bg-green-700 text-white"
-        onClick={async () => await addProductToCart(productId)}>
+        onClick={async () => await addProductToCart(Number(productId))}>
         Thêm vào giỏ hàng
       </Button>
     </div>

@@ -1,5 +1,5 @@
 import type { PrismaClient } from "@generated/prisma";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 import { StatusCodes } from "http-status-codes";
 import logger from "utils/logger";
 
@@ -22,6 +22,9 @@ export async function getProductByIdRepo(prisma: PrismaClient, productId: number
 
 export async function deleteProductByIdRepo(prisma: PrismaClient, productId: number) {
   try {
+    await prisma.productImage.deleteMany({
+      where: { productId },
+    });
     await prisma.product.delete({
       where: { id: productId },
     });
@@ -29,8 +32,8 @@ export async function deleteProductByIdRepo(prisma: PrismaClient, productId: num
     logger.error(`[deleteProductByIdRepo] Failed to delete product id ${productId}`, error);
 
     throw new AppError(
-      1000, 
-      "Internal error in deleteProductByIdRepo", 
+      1000,
+      "Internal error in deleteProductByIdRepo",
       "Unable to delete product",
       StatusCodes.INTERNAL_SERVER_ERROR
     );

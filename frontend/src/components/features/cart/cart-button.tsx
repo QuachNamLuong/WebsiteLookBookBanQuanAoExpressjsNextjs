@@ -1,13 +1,43 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ShoppingCart } from "lucide-react"
 
-interface CartButtonProps {
-  count?: number
-  onClick?: () => void
+import { useQuery } from "@tanstack/react-query";
+
+interface CartResponse {
+  cartCount: number
 }
 
-export const CartButton = ({ count = 10, onClick }: CartButtonProps) => {
+export async function fetchCart() {
+  const res = await fetch("/api/carts", {
+    method: "GET",
+    credentials: "include",
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch cart");
+  }
+
+  return (await res.json()) as CartResponse;
+}
+
+
+interface CartButtonProps {
+  onClick?: () => void;
+}
+
+export const CartButton = ({ onClick }: CartButtonProps) => {
+  const { data: cart } = useQuery({
+    queryKey: ["cart"],
+    queryFn: fetchCart,
+    staleTime: 1000 * 30, // 30s
+  });
+
+  const count = cart?.cartCount??0;
+
   return (
     <div className="relative">
       <Button
@@ -27,5 +57,5 @@ export const CartButton = ({ count = 10, onClick }: CartButtonProps) => {
         </Badge>
       )}
     </div>
-  )
-}
+  );
+};

@@ -1,5 +1,5 @@
 import type { PrismaClient } from "@generated/prisma";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 import { StatusCodes } from "http-status-codes";
 import logger from "utils/logger";
 
@@ -7,6 +7,7 @@ export async function getProductByIdRepo(prisma: PrismaClient, productId: number
   try {
     return await prisma.product.findUnique({
       where: { id: productId },
+      include: {productImage: true}
     });
   } catch (error) {
     logger.error(`[getProductByIdRepo] Failed to get product id ${productId}`, error);

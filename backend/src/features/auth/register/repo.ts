@@ -1,6 +1,6 @@
 import type { Prisma, PrismaClient, RoleName } from "@generated/prisma";
 import { StatusCodes } from "http-status-codes";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 
 export async function getRoleByRoleName(prisma: PrismaClient, roleName: RoleName) {
   try {

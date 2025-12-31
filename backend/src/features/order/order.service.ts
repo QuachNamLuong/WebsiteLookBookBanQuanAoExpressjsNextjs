@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import prisma from "../../lib/prisma";
-import { AppError } from "../../types/app.d";
+import { AppError } from "../../types/app";
 
 import { Prisma } from '@prisma/client';
 

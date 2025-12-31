@@ -6,11 +6,11 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 interface ProductDetailResponse {
   productId: string;
-  productName: string;
+  name: string;
   material: string
   color: string
   price: number;
-  nameMeaning: string;
+  nameMean: string;
   style: string;
   usage: string;
   productSizes: {
@@ -21,8 +21,8 @@ interface ProductDetailResponse {
 
 export const getProductInfo = async (productId: string) => {
   try {
-    const res = await api.get<ProductDetailResponse>(`${API_URL}/product/${productId}`);
-    if (res.status == HttpStatusCode.Ok) {
+    const res = await api.get<ProductDetailResponse>(`/products/${productId}`);
+    if (res.status === HttpStatusCode.Ok) {
       return res.data;
     }
   } catch (error) {

@@ -1,5 +1,5 @@
 import type { PrismaClient } from "@generated/prisma";
-import { AppError } from "types/app.d";
+import { AppError } from "types/app";
 import type { UpdateProductBodySchema } from "./schema";
 import { getProductByIdRepo, updateProductRepo } from "./repo";
 import { StatusCodes } from "http-status-codes";
@@ -31,7 +31,8 @@ export async function updateProductService(prisma: PrismaClient, productId: numb
       price: updateProductData.price,
       stock: updateProductData.stock,
       style: updateProductData.style,
-      usage: updateProductData.usage
+      usage: updateProductData.usage,
+      // productCategory: { connect: { id: updateProductData.productCategoryId } }
     });
   } catch (error) {
     if (error instanceof AppError) throw error;

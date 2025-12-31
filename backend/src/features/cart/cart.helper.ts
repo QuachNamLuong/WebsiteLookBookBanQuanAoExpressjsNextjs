@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import prisma from "../../lib/prisma";
-import { AppError } from "../../types/app.d";
+import { AppError } from "../../types/app";
 
 export const getUserById = async (userId: string) => {
   return await prisma.user.findUnique({
@@ -120,5 +120,5 @@ export const changeQuantityOfProductInCart = async (cartItemId: string, quantity
 }
 
 export const removeCartItem = (cartId: string, productId: string) => {
-  return prisma.cartItem.delete({where: {cartId_productId: {cartId, productId}},})
+  return prisma.cartItem.delete({ where: { cartId_productId: { cartId, productId } }, })
 };
